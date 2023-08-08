@@ -1,0 +1,175 @@
+/*Hero Style*/
+.container {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap:12px;
+  top: 68px;
+  left: 10%;
+  right: 10%;
+  margin: auto 0;
+  justify-content: space-between;
+  padding: 24px;
+  z-index: 10;
+  align-items:baseline;
+  overflow: hidden;
+}
+@media only  screen  and (max-width: 768px){
+.container {
+  left: 5%;
+  right: 5%;
+}
+  }
+.glass {
+position: relative;
+max-width: 400px;
+margin-top: 64px;
+padding: 40px;
+border-radius: 10px;
+font-size: 20px;
+backdrop-filter: saturate(130%) blur(8px) !important;
+background-color: var(--transparent-glass) !important;
+box-shadow: inset -6px -6px 22px var(--glow),
+            inset 1px 1px 2px var(--btn-glow2),
+                  3px 3px 8px var(--shadow);
+}
+@media only  screen  and (max-width: 768px){
+.glass {
+  padding: 15px;
+}
+  }
+.header {
+margin-top: -64px;
+font-family:cursive;
+color: var(--secondaryColor);
+justify-content: center;
+text-align: center;
+  @apply 
+  text-4xl 
+  font-semibold
+  leading-[1.5] 
+  md:text-5xl;
+}
+
+.subtitle {
+  @apply my-1
+  text-2xl
+  font-light
+  text-center
+  max-w-lg;
+}
+
+.desc {
+  @apply
+  text-base
+  font-light
+  hidden
+  md:flex
+  max-w-lg;
+}
+  /*Payment Option Style*/
+  .pay_canvas {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+    border-color: var(--border1);
+  }
+  .payImgContainer {
+    position: relative;
+    display: flex;
+    padding: 12px;
+    flex: 1;
+  }
+  
+
+/*FAQ Style*/
+.faq_canvas {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  padding-top: 20px;
+  margin: auto;
+  flex-direction: column;
+  background-color: var(--transparent);
+}
+.faq_canvas2 {
+  @apply max-w-7xl w-full m-auto}
+.faq_tier {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 30%;
+  gap: 40px;
+  padding: 10px;
+  padding-inline: 30px;
+  overflow-x: scroll;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: 10px;
+  align-items: baseline;
+  /* grid-template-columns: auto auto auto; */
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+@media only  screen  and (max-width: 768px){
+.faq_tier {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  gap: 40px;
+  padding: 10px;
+  padding-inline: 30px;
+  overflow-x: scroll;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: 10px;
+  align-items: baseline;
+  /* grid-template-columns: auto auto auto; */
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+  }
+.faq_tier::-webkit-scrollbar{
+  width: 10px;
+
+  /* display: none; */
+}
+.faq_mode {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: end;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq_card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: justify;
+  font-weight: 300;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: var(--card1);
+  background-clip: padding-box;
+  border-radius: 10px;
+  border-color: var(--border1);
+  border-width: 1px;
+  box-shadow: 11px 11px 22px var(--btn-shadow2),
+              -11px -11px 22px var(--btn-glow2);
+}
+

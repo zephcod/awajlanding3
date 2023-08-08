@@ -1,0 +1,63 @@
+.modal_backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--backdrop);
+    height: 100%;
+    width: 100%;
+    z-index: 15;
+  }
+  .modal {
+    position: fixed;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    bottom: 40%;
+    margin: auto;
+    width: 500px;
+    height: 300px;
+    background-color: var(--card1);
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: var(--card1);
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, .05),
+                -5px -5px 5px rgb(255, 255, 255, .02);
+    padding: 10px;
+    z-index: 15;
+  }
+  .modal_cat {
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: var(--border1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+
+  }
+  .button {
+      border-width: 1px;
+      border-color: var(--card1);
+      box-shadow: inset 5px 5px 5px rgb(0, 0, 0, .05),
+                  inset -5px -5px 5px rgb(255, 255, 255, .05),
+                  5px 5px 5px rgb(0, 0, 0, .05),
+                  -5px -5px 5px rgb(255, 255, 255, .05);
+      border-radius: 10px;
+      @apply 
+      inline-flex 
+      items-center 
+      py-1 
+      font-semibold 
+      tracking-tighter 
+      transition 
+      duration-500 
+      ease-in-out 
+      transform 
+      bg-transparent 
+      bg-gradient-to-r 
+      from-orange-300 to-orange-400 
+      px-5 
+      text-gray-900
+  }

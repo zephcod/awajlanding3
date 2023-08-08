@@ -1,0 +1,38 @@
+.container {
+  @apply relative
+  z-10 
+  flex 
+  justify-center 
+  items-center 
+  h-screen
+  flex-col 
+  max-w-7xl 
+  mx-auto 
+  sm:px-16
+  px-6;
+}
+.header {
+    @apply my-5 
+    text-3xl 
+    font-extrabold 
+    leading-[1.15] 
+    lg:text-4xl;
+  }
+  .title {
+    @apply my-3 
+    text-lg 
+    font-bold 
+    leading-[1.15] 
+    lg:text-2xl;
+  }
+  .desc {
+    @apply my-3 
+    text-sm
+    font-extralight
+    text-center
+    lg:text-base 
+    max-w-2xl;
+  }
+  .icon {
+    color: #808080;
+  }
