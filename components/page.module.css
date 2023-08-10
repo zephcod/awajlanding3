@@ -8,20 +8,20 @@
     @apply relative 
     z-10 
     items-center 
-    grid
-    lg:grid-cols-6
+    flex
+    flex-wrap
     m-auto 
-    sm:px-16 
-    pt-10;
+    md:px-10 
+    pt-6;
 }
 .footcta {
     @apply relative 
     z-10 
-    justify-start
+    justify-between
     items-center
-    lg:col-span-2
+    w-full
+    flex-1
     mx-auto 
-    sm:px-16 
     divide-y divide-gray-500/25
     px-6;
 }
@@ -30,7 +30,7 @@
     z-10 
     text-sm font-medium 
     grid
-    lg:col-span-4
+    flex-grow
     sm:px-16 
     pb-4
     px-6;

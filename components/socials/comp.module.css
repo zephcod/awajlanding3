@@ -1,16 +1,17 @@
 .container {
-    height: 50px;
+    height: 70px;
     font-size: 14px;
     display: flex;
     margin: auto;
     align-items: center;
-    justify-content: stretch;
+    justify-content: space-evenly;
     flex-direction: row;
   }
 
 .social {
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     gap: 10px;
     flex: 1;
   }

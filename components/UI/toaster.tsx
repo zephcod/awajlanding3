@@ -5,12 +5,12 @@ import { Toaster as RadToaster } from "sonner"
 export function Toaster() {
   return (
     <RadToaster
-      position="bottom-right"
+      position="bottom-left"
       toastOptions={{
         style: {
-          background: "hsl(var(--background))",
-          color: "hsl(var(--foreground))",
-          border: "1px solid hsl(var(--border))",
+          background: "rgb(var(--card))",
+          color: "rgb(var(--secondary))",
+          border: "1px solid rgb(var(--border))",
         },
       }}
     />

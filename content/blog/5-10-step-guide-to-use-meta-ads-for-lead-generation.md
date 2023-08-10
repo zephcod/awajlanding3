@@ -38,7 +38,7 @@ It works much like Google’s responsive search ads in that it’s a single ad u
 The system then mixes and matches these to find winning combinations.
 
 This approach is far better in bringing down your cost per lead and increasing your conversion rate, so there are a few situations where we don’t recommend dynamic creative.
-##3. Attribution
+## 3. Attribution
 In terms of attribution, you want to avoid view-through conversions. Typically, one day is enough with lead generation on Meta because you ask them to fill out a form. 
 
 It’s unlike e-commerce, where it could take another 10+ days until that person decides to purchase. You can also use a seven-day click model.

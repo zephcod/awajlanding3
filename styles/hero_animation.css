@@ -52,11 +52,8 @@
   }
   .statue1 {
     position: absolute;
-    /* height: 500px; 
-    width: 600px;  */
     bottom: -10px;
     left: 0;
-    /* background: url(https://gennbi.com/src/awaj_ethio_lion.png) no-repeat; */
   }
   .statue2 {
     position: absolute;
@@ -81,10 +78,8 @@
   }
   .statue5 {
     position: absolute;
-    height: 1300px; 
-    width: 250px; 
-    bottom: 0;
-    background: url(https://gennbi.com/src/bg-05.svg) no-repeat;
+    bottom: -5px;
+    left: 0;
   }
   .rock {
     margin-top: -17%;

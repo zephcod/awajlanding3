@@ -11,7 +11,7 @@ Digital marketing has become a crucial part of the modern business landscape. It
 
 In this blog post, we will provide a quick start guide on digital marketing to help businesses and individuals get started.
 
-## 1\.Define Your Goals
+## 1\. Define Your Goals
 
 Before you start any marketing campaign, you need to define your goals. What do you want to achieve from your digital marketing campaign? Do you want to increase website traffic, generate leads, or boost sales? Defining your goals will help you determine your target audience and the digital marketing strategies that will work best for you.
 
@@ -40,7 +40,7 @@ Email marketing is an effective way of reaching out to your customers and prospe
 Digital marketing is an ongoing process, and it’s essential to track and analyze your results regularly. Use tools like Google Analytics to measure your website’s performance, social media metrics/Algorithms, and email marketing metrics. This will help you identify what’s working and what’s not, and make data-driven decisions to optimize your digital marketing campaigns.
 
 <Image
-  src='https://gennbi.com/src/under-construction-01.svg'
+  src='https://gennbi.com/src/blog/b7.jpg'
   alt="Skateboarding"
   width={718}
   height={404}

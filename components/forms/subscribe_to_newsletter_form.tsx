@@ -35,8 +35,10 @@ export function SubscribeToNewsletterForm() {
   async function onSubmit(data: Inputs) {
     console.log(data)
 
-      const response = await fetch("/api/newsletter/subscribe", {
+      const response = await fetch("/api/subscribers", {
         method: "POST",
+        headers:{"Content-Type":"application/json",},
+        // body: JSON.stringify({email})
         body: JSON.stringify({
           email: data.email,
           // This token is used as a search param in the email preferences page to identify the subscriber.
@@ -70,18 +72,18 @@ export function SubscribeToNewsletterForm() {
   return (
     <Form {...form}>
       <form
-        className="grid w-full"
+        className="grid w-full "
         onSubmit={(...args) => void form.handleSubmit(onSubmit)(...args)}
       >
         <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
-            <FormItem className="relative">
+            <FormItem className="relative ">
               <FormLabel className="sr-only">Email</FormLabel>
               <FormControl>
                 <Input
-                  placeholder="skate@gmail.com"
+                  placeholder="abera@etmail.com"
                   className="pr-12"
                   {...field}
                 />
@@ -89,6 +91,7 @@ export function SubscribeToNewsletterForm() {
               <FormMessage />
               <Button
                 className="absolute right-[5.2px] top-[5.5px] z-20 h-7 w-7"
+                variant="outline"
                 size="icon"
                 disabled={isPending}
               >

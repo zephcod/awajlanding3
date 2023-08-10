@@ -2,55 +2,74 @@ import React from "react";
 import { ReactNode } from 'react';
 import styles from "@/components/socials/comp.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const social_item = [
     {
       id:"1",
       alt:"Awaj Ad Facebook Account",
       url:"/about",
-      img:"/1.png"
+      img:"/social/svg/Facebook_icon.svg"
     },
     {
       id:"2",
       alt:"Awaj Ad Instagram Account",
       url:"/about",
-      img:"/2.png"
+      img:"/social/svg/Instagramicon.svg"
     },
     {
       id:"3",
       alt:"Awaj Ad Twitter Account",
       url:"/about",
-      img:"/3.png"
+      img:"/social/svg/Twitter_icon.svg"
     },
     {
       id:"4",
       alt:"Awaj Ad You Tube Account",
       url:"/about",
-      img:"/4.png"
+      img:"/social/svg/Youtube_icon.svg"
     },
     {
       id:"5",
-      alt:"Awaj Ad Facebook Account",
+      alt:"Awaj Ad Snapchat Account",
       url:"/about",
-      img:"/1.png"
+      img:"/social/svg/Snapcat_icon.svg"
     },
     {
       id:"6",
-      alt:"Awaj Ad Facebook Account",
+      alt:"Awaj Ad Tictok Account",
       url:"/about",
-      img:"/2.png"
+      img:"/social/svg/Tictok_icon.svg"
+    },
+    {
+      id:"7",
+      alt:"Awaj Ad Google Account",
+      url:"/about",
+      img:"/social/svg/Googel_icon.svg"
+    },
+    {
+      id:"8",
+      alt:"Awaj Ad Telegram Account",
+      url:"/about",
+      img:"/social/svg/Telegram_icon.svg"
+    },
+    {
+      id:"9",
+      alt:"Awaj Ad Whatsapp Account",
+      url:"/about",
+      img:"/social/svg/Whatsapp_icon.svg"
     },
   ];
 
 function SocialList({}: { children: ReactNode }) {
     return (
-      <div className="flex flex-row m-auto space-x-3 w-max">
+      <div className="flex flex-row mx-auto w-full items-center px-0 md:px-12">
       {social_item.map(card=>(
-        <a key={card.id} href={card.url}>
         <div className={styles.social}>
-          <Image src={card.img} width={15} height={15} className={styles.icon} alt={card.alt}/>
+        <Link key={card.id} href={card.url}>
+          <Image src={card.img} width={25} height={25} className={styles.icon} alt={card.alt}/>
+        </Link>
         </div>
-        </a>
       ))}
       </div>
     );

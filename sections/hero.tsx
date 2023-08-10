@@ -4,6 +4,7 @@ import Image from "next/image";
 import Awaj from "@/public/awaj_ad.png";
 import styles from '@/sections/page.module.css'
 import Statue1 from '@/public/character/awaj_ethio_lion.png'
+import Statue2 from '@/public/character/awaj_ethio_piassa.png'
 import BubbleBg from '@/components/UI/bubble_bg';
 import Link from 'next/link';
 import { buttonVariants } from '@/components/UI/button';
@@ -50,18 +51,20 @@ const Hero = () => {
             <div className="tree"></div>
             <div className="tree"></div>
             <div className="tree"></div>
-            <div className='statue1 mb-4'>
-                <Image src={Statue1.src} width={400} height={300}alt=''/>
+            <div className='statue1'>
+                <Image src={Statue1.src} width={300} height={250}alt='' priority/>
             </div>
             {/* <div className='statue2'></div>
             <div className='statue3'></div>
             <div className='statue4'></div> */}
-            <div className='statue5'></div>
+            <div className='statue5'>
+                <Image src={Statue2.src} width={500} height={600}alt=''/>
+            </div>
             {/* <div className="rock"></div> */}
             <div className="truck">
-                <div className='awaj'>አዋጅ</div>
-                <div className='awaj'>አዋጅ</div>
-                <div className='awaj'>አዋጅ</div>
+                <div className='awaj'>አዋጅ!</div>
+                <div className='awaj'>አዋጅ!</div>
+                <div className='awaj'>አዋጅ!</div>
             </div>
         </div>
   )

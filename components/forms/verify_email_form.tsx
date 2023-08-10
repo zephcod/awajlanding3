@@ -52,10 +52,10 @@ export function VerifyEmailForm() {
         if (completeSignUp.status === "complete") {
           await setActive({ session: completeSignUp.createdSessionId })
 
-          router.push(`${window.location.origin}/`)
+          router.push('/');
         }
       } catch (err) {
-        catchClerkError(err)
+        console.error(JSON.stringify(err,null,2));
       }
     })
   }

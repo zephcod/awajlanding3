@@ -6,11 +6,13 @@ import { cn } from "@/app/utils/utils"
 import '@/styles/globals.css'
 import { Providers } from '@/components/providers'
 import { Toaster } from "@/components/UI/toaster"
+import NewHeader from '@/components/layouts/new_header'
 
 
 
 export default async function RootLayout({children,}:{children: React.ReactNode}) {
-  const user = await currentUser()
+  // const user = await currentUser()
+
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
@@ -21,7 +23,7 @@ export default async function RootLayout({children,}:{children: React.ReactNode}
             )}>
             <Providers attribute="class" defaultTheme="system" enableSystem>
             <div className='allparent'>
-              <SiteHeader user={user}/>
+              <NewHeader/>
                 {children}
               <Footer />
             </div>
