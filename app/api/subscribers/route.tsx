@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import Subscriber from "@/app/models/Subscriber";
 import { type ErrorResponse } from "resend"
 import { resend } from "@/lib/resend"
 import { emailPreferences } from "@/db/schema"
