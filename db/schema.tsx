@@ -1,76 +1,60 @@
 import type { CartItem, CheckoutItem, StoredFile } from "@/types"
 import { relations, type InferModel } from "drizzle-orm"
-import {
-  boolean,
-  decimal,
-  int,
-  json,
-  mysqlEnum,
-  mysqlTable,
-  serial,
-  text,
-  timestamp,
-  varchar,
-} from "drizzle-orm/mysql-core"
+import { pgTable, serial, boolean, timestamp, text, integer, decimal, varchar, uniqueIndex, json, pgEnum } from 'drizzle-orm/pg-core';
 
-export const stores = mysqlTable("stores", {
+
+export const stores = pgTable("stores", {
   id: serial("id").primaryKey(),
-  userId: varchar("userId", { length: 191 }).notNull(),
+  userid: varchar("userid", { length: 191 }).notNull(),
   name: varchar("name", { length: 191 }).notNull(),
   description: text("description"),
   slug: text("slug"),
   active: boolean("active").notNull().default(true),
-  stripeAccountId: varchar("stripeAccountId", { length: 191 }),
-  createdAt: timestamp("createdAt").defaultNow(),
+  image: varchar("image", { length: 191 }),
+  createdat: timestamp("createdat").defaultNow(),
 })
 
 export type Store = InferModel<typeof stores>
 
 export const storesRelations = relations(stores, ({ many }) => ({
-  products: many(products),
+  products: many(solutions),
 }))
 
-export const products = mysqlTable("products", {
+export const solutions = pgTable("solutions", {
   id: serial("id").primaryKey(),
   name: varchar("name", { length: 191 }).notNull(),
   description: text("description"),
   images: json("images").$type<StoredFile[] | null>().default(null),
-  category: mysqlEnum("category", [
-    "solutions",
-    "resources",
-    "company",
-  ])
-    .notNull()
-    .default("solutions"),
-  subcategory: varchar("subcategory", { length: 191 }),
+  // category: pgEnum("category", ["solutions","resources","company"]).notNull().default("solutions").driverparam(),
+  subcategory: varchar("subcategory", { length: 191 }).notNull(),
   price: decimal("price", { precision: 10, scale: 2 }).notNull().default("0"),
-  inventory: int("inventory").notNull().default(0),
-  rating: int("rating").notNull().default(0),
-  tags: json("tags").$type<string[] | null>().default(null),
-  storeId: int("storeId").notNull(),
-  createdAt: timestamp("createdAt").defaultNow(),
+  inventory: integer("inventory").notNull().default(0),
+  rating: integer("rating").notNull().default(0),
+  // tags: json("tags").$type<string[] | null>().default(null),
+  storeid: integer("storeid").notNull(),
+  createdat: timestamp("createdat").defaultNow(),
 })
 
-export type Product = InferModel<typeof products>
+export type Product = InferModel<typeof solutions>
 
-export const productsRelations = relations(products, ({ one }) => ({
-  store: one(stores, { fields: [products.storeId], references: [stores.id] }),
+export const solutionsRelations = relations(solutions, ({ one }) => ({
+  store: one(stores, { fields: [solutions.storeid], references: [stores.id] }),
 }))
 
-export const carts = mysqlTable("carts", {
+export const carts = pgTable("carts", {
   id: serial("id").primaryKey(),
-  userId: varchar("userId", { length: 191 }),
-  paymentIntentId: varchar("paymentIntentId", { length: 191 }),
-  clientSecret: varchar("clientSecret", { length: 191 }),
+  clientid: varchar("clientid", { length: 191 }),
+  paymentintentid: varchar("paymentintentid", { length: 191 }),
+  clientsecret: varchar("clientsecret", { length: 191 }),
   items: json("items").$type<CartItem[] | null>().default(null),
-  createdAt: timestamp("createdAt").defaultNow(),
+  createdat: timestamp("createdat").defaultNow(),
 })
 
 export type Cart = InferModel<typeof carts>
 
-export const emailPreferences = mysqlTable("email_preferences", {
+export const emailPreferences = pgTable("email_preferences", {
   id: serial("id").primaryKey(),
-  userId: varchar("userId", { length: 191 }),
+  clientid: varchar("clientid", { length: 191 }),
   email: varchar("email", { length: 191 }).notNull(),
   token: varchar("token", { length: 191 }).notNull(),
   newsletter: boolean("newsletter").notNull().default(false),
@@ -81,47 +65,62 @@ export const emailPreferences = mysqlTable("email_preferences", {
 
 export type EmailPreference = InferModel<typeof emailPreferences>
 
-export const payments = mysqlTable("payments", {
+
+export const UsersTable = pgTable(
+  'users',
+  {
+    id: serial('id').primaryKey(),
+    name: text('name').notNull(),
+    email: text('email').notNull(),
+    image: text('image').notNull(),
+    createdAt: timestamp('createdAt').defaultNow().notNull(),
+  },
+  (users) => {
+    return {
+      uniqueIdx: uniqueIndex('unique_idx').on(users.email),
+    }
+  }
+)
+
+export type User = InferModel<typeof UsersTable>
+export type NewUser = InferModel<typeof UsersTable, 'insert'>
+
+
+export const payments = pgTable("payments", {
   id: serial("id").primaryKey(),
-  userId: varchar("userId", { length: 191 }),
-  storeId: int("storeId").notNull(),
-  stripeAccountId: varchar("stripeAccountId", { length: 191 }).notNull(),
-  stripeAccountCreatedAt: int("stripeAccountCreatedAt").notNull(),
-  stripeAccountExpiresAt: int("stripeAccountExpiresAt").notNull(),
-  detailsSubmitted: boolean("detailsSubmitted").notNull().default(false),
-  createdAt: timestamp("createdAt").defaultNow(),
+  userid: varchar("userid", { length: 191 }),
+  storeid: integer("storeid").notNull(),
+  detailssubmitted: boolean("detailssubmitted").notNull().default(false),
+  createdat: timestamp("createdat").defaultNow(),
 })
 
 export type Payment = InferModel<typeof payments>
 
-export const orders = mysqlTable("orders", {
+export const orders = pgTable("orders", {
   id: serial("id").primaryKey(),
-  userId: varchar("userId", { length: 191 }),
-  storeId: int("storeId").notNull(),
+  userid: varchar("userid", { length: 191 }),
+  storeid: integer("storeid").notNull(),
   items: json("items").$type<CheckoutItem[] | null>().default(null),
   total: decimal("total", { precision: 10, scale: 2 }).notNull().default("0"),
-  stripePaymentIntentId: varchar("stripePaymentIntentId", {
-    length: 191,
-  }).notNull(),
-  stripePaymentIntentStatus: varchar("stripePaymentIntentStatus", {
-    length: 191,
-  }).notNull(),
+  // stripePaymentIntentId: varchar("stripePaymentIntentId", {
+  //   length: 191,
+  // }).notNull(),
+  // stripePaymentIntentStatus: varchar("stripePaymentIntentStatus", {
+  //   length: 191,
+  // }).notNull(),
   name: varchar("name", { length: 191 }),
   email: varchar("email", { length: 191 }),
-  addressId: int("addressId"),
-  createdAt: timestamp("createdAt").defaultNow(),
+  addressid: integer("addressid"),
+  createdat: timestamp("createdat").defaultNow(),
 })
 
 export type Order = InferModel<typeof orders>
 
-export const addresses = mysqlTable("addresses", {
+export const addresses = pgTable("addresses", {
   id: serial("id").primaryKey(),
   line1: varchar("line1", { length: 191 }),
   line2: varchar("line2", { length: 191 }),
-  city: varchar("city", { length: 191 }),
-  state: varchar("state", { length: 191 }),
-  postalCode: varchar("postalCode", { length: 191 }),
-  country: varchar("country", { length: 191 }),
+  address: varchar("address", { length: 191 }),
   createdAt: timestamp("createdAt").defaultNow(),
 })
 

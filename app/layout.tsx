@@ -1,8 +1,5 @@
 import Footer from '@/components/Footer'
-import { SiteHeader } from '@/components/layouts/site_header'
 import { ClerkProvider, currentUser } from "@clerk/nextjs"
-import { fontMono, fontSans } from "@/lib/fonts"
-import { cn } from "@/app/utils/utils"
 import '@/styles/globals.css'
 import { Providers } from '@/components/providers'
 import { Toaster } from "@/components/UI/toaster"
@@ -16,11 +13,7 @@ export default async function RootLayout({children,}:{children: React.ReactNode}
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
-        <body className={cn(
-              "font-sans antialiased",
-              fontSans.variable,
-              fontMono.variable
-            )}>
+        <body>
             <Providers attribute="class" defaultTheme="system" enableSystem>
             <div className='allparent'>
               <NewHeader/>

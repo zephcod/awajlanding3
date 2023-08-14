@@ -9,7 +9,7 @@
 }
 .logo_slider{
     background-color: var(--transparent);
-    height: 120px;
+    height: 100px;
     width: 75vw;
     position: relative;
     display: flex;
@@ -27,35 +27,35 @@
   .logo_slide {
     display: block;
     position: absolute;
-    height: 75px;
-    width: 75px;
+    height: 100px;
+    width: 100px;
     animation: slidelogo 27s 0s linear infinite;
     }
-    .logo_slide:nth-child(2) { transform: translateX(300px); animation-delay: 3s;
+    .logo_slide:nth-child(2) { transform: translateX(300px); animation-delay: -3s; 
     }
 
-    .logo_slide:nth-child(3) { transform: translateX(600px); animation-delay: 6s;
+    .logo_slide:nth-child(3) { transform: translateX(600px); animation-delay: -6s; 
     }
 
-    .logo_slide:nth-child(4) { transform: translateX(900px); animation-delay: 9s;
+    .logo_slide:nth-child(4) { transform: translateX(900px); animation-delay: -9s;
     }
 
-    .logo_slide:nth-child(5) { transform: translateX(1200px); animation-delay: 12s;
+    .logo_slide:nth-child(5) { transform: translateX(1200px); animation-delay: -12s;
     }
 
-    .logo_slide:nth-child(6) { transform: translateX(1500px); animation-delay: 15s;
+    .logo_slide:nth-child(6) { transform: translateX(1500px); animation-delay: -15s;
     }
 
-    .logo_slide:nth-child(7) { transform: translateX(1800px); animation-delay: 18s;
+    .logo_slide:nth-child(7) { transform: translateX(1800px); animation-delay: -18s;
     }
     
-    .logo_slide:nth-child(8) { transform: translateX(2100px); animation-delay: 21s;
+    .logo_slide:nth-child(8) { transform: translateX(2100px); animation-delay: -21s;
     }
 
-    .logo_slide:nth-child(9) { transform: translateX(2400px); animation-delay: 24s;
+    .logo_slide:nth-child(9) { transform: translateX(2400px); animation-delay: -24s;
     }
     
-    .logo_slide:nth-child(10) { transform: translateX(2700px); animation-delay: 27s;
+    .logo_slide:nth-child(10) { transform: translateX(2700px); animation-delay: -27s;
     }
 
   

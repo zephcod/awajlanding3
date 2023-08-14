@@ -37,7 +37,7 @@ export const siteConfig = {
         },
         {
           title: "Build a Campaign",
-          href: "/pricing/build_campaign",
+          href: "/build_campaign",
           description: "Build your own custom campaign.",
           items: [],
         },

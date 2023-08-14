@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache"
 import { cookies } from "next/headers"
 import { db } from "@/db"
-import { carts, products, stores } from "@/db/schema"
+import { carts, solutions, stores } from "@/db/schema"
 import type { CartLineItem } from "@/types"
 import { eq, inArray } from "drizzle-orm"
 import { type z } from "zod"
@@ -31,19 +31,19 @@ export async function getCartAction(): Promise<CartLineItem[]> {
 
   const cartLineItems = await db
     .select({
-      id: products.id,
-      name: products.name,
-      images: products.images,
-      category: products.category,
-      subcategory: products.subcategory,
-      price: products.price,
-      inventory: products.inventory,
-      storeId: products.storeId,
+      id: solutions.id,
+      name: solutions.name,
+      images: solutions.images,
+      category: solutions.subcategory,
+      subcategory: solutions.subcategory,
+      price: solutions.price,
+      inventory: solutions.inventory,
+      storeid: solutions.storeid,
       storeName: stores.name,
     })
-    .from(products)
-    .leftJoin(stores, eq(stores.id, products.storeId))
-    .where(inArray(products.id, uniqueProductIds))
+    .from(solutions)
+    .leftJoin(stores, eq(stores.id, solutions.storeid))
+    .where(inArray(solutions.id, uniqueProductIds))
 
   const allCartLineItems = cartLineItems.map((item) => {
     const quantity = cart?.items?.find(
@@ -73,10 +73,12 @@ export async function addToCartAction(input: z.infer<typeof cartItemSchema>) {
   const cookieStore = cookies()
   const cartId = cookieStore.get("cartId")?.value
 
+  console.log(JSON.stringify(input))
+
   if (!cartId) {
     const cart = await db.insert(carts).values({
-      items: [input],
-    })
+      clientid: '35'
+    });
 
     // Note: .set() is only available in a Server Action or Route Handler
     cookieStore.set("cartId", String(cart.insertId))

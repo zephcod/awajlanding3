@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache"
 import { db } from "@/db"
-import { products, stores, type Store } from "@/db/schema"
+import { solutions, stores, type Store } from "@/db/schema"
 import { and, asc, desc, eq, gt, lt, sql } from "drizzle-orm"
 import { type z } from "zod"
 
@@ -28,19 +28,19 @@ export async function getStoresAction(input: {
       .select({
         id: stores.id,
         name: stores.name,
-        productCount: sql<number>`count(${products.id})`,
+        productCount: sql<number>`count(${solutions.id})`,
       })
       .from(stores)
       .limit(limit)
       .offset(offset)
-      .leftJoin(products, eq(stores.id, products.storeId))
+      .leftJoin(solutions, eq(stores.id, solutions.storeId))
       .where(input.userId ? eq(stores.userId, input.userId) : undefined)
       .groupBy(stores.id)
       .orderBy(
         input.sort === "productCount.asc"
-          ? asc(sql<number>`count(${products.id})`)
+          ? asc(sql<number>`count(${solutions.id})`)
           : input.sort === "productCount.desc"
-          ? desc(sql<number>`count(${products.id})`)
+          ? desc(sql<number>`count(${solutions.id})`)
           : column && column in stores
           ? order === "asc"
             ? asc(stores[column])

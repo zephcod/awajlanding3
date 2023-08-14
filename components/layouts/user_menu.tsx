@@ -16,6 +16,7 @@ import {
 import { useUser } from "@clerk/nextjs";
 import { Icons } from "@/components/UI/icons"
 import '@/styles/globals.css'
+import { LogOutDropmenu } from "../auth/logout-dropdown"
 
 const UserMenu = () => {
     
@@ -60,22 +61,22 @@ const email =
                   <DropdownMenuSeparator />
                   <DropdownMenuGroup>
                     <DropdownMenuItem asChild>
+                      <Link href="/dashboard/main">
+                        <Icons.terminal
+                          className="mr-2 h-4 w-4"
+                          aria-hidden="true"
+                        />
+                        Dashboard
+                        <DropdownMenuShortcut></DropdownMenuShortcut>
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
                       <Link href="/dashboard/account">
                         <Icons.user
                           className="mr-2 h-4 w-4"
                           aria-hidden="true"
                         />
                         Account
-                        <DropdownMenuShortcut></DropdownMenuShortcut>
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/dashboard/stores">
-                        <Icons.terminal
-                          className="mr-2 h-4 w-4"
-                          aria-hidden="true"
-                        />
-                        Dashboard
                         <DropdownMenuShortcut></DropdownMenuShortcut>
                       </Link>
                     </DropdownMenuItem>
@@ -112,14 +113,7 @@ const email =
                   </DropdownMenuGroup>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
-                    <Link href="/signout">
-                      <Icons.logout
-                        className="mr-2 h-4 w-4"
-                        aria-hidden="true"
-                      />
-                      Log out
-                      <DropdownMenuShortcut></DropdownMenuShortcut>
-                    </Link>
+                    <LogOutDropmenu/>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>

@@ -14,6 +14,7 @@
     position: absolute;
     right: -900px;
     bottom: -20px;
+    border-radius: 20px;
     width: 2px;
     height: 2px;
     box-shadow: 
@@ -57,24 +58,18 @@
   }
   .statue2 {
     position: absolute;
-    height: 1000px; 
-    width: 400px; 
-    bottom: 0;
-    background: url(https://gennbi.com/src/bg-02.svg) no-repeat;
+    bottom: -10px;
+    left: 0;
   }
   .statue3 {
     position: absolute;
-    height: 1000px; 
-    width: 500px; 
-    bottom: 0;
-    background: url(https://gennbi.com/src/bg-03.svg) no-repeat;
+    bottom: -10px;
+    left: 0;
   }
   .statue4 {
     position: absolute;
-    height: 1000px; 
-    width: 500px; 
-    bottom: 0;
-    background: url(https://gennbi.com/src/bg-04.svg) no-repeat;
+    bottom: -10px;
+    left: 0;
   }
   .statue5 {
     position: absolute;
@@ -133,12 +128,11 @@
   .tree:nth-child(2)  { animation: tree2 3s 0.150s linear infinite; }
   .tree:nth-child(3)  { animation: tree3 9s 0.050s linear infinite; }
 
-  .statue1  { animation: statue1 15s 0.000s linear infinite; }
-  .statue2  { animation: statue2 20s 0.000s linear infinite; }
-  .statue3  { animation: statue3 20s 0.000s linear infinite; }
-  .statue4  { animation: statue4 15s 0.000s linear infinite; }
-  .statue5  { animation: statue5 25s 0.000s linear infinite; }
-  .rock  { animation: rock 6s   -0.530s linear infinite; }
+  .statue1  { animation: statue1 30s -5s linear infinite; }
+  .statue2  { animation: statue2 30s -10s linear infinite; }
+  .statue3  { animation: statue3 30s -15s linear infinite; }
+  .statue4  { animation: statue4 30s -20s linear infinite; }
+  .statue5  { animation: statue5 30s -25s linear infinite; }
   .truck  { animation: truck 4s   0.30s ease-in-out infinite; }
   .truck:before { animation: wind 1.5s   0.000s ease infinite; }
 
@@ -167,27 +161,27 @@
   @keyframes statue1 {
     0%   { transform: translate(2350px); }
     50% {}
-    100% { transform: translate(-500px); }
+    100% { transform: translate(-1500px); }
   }
   @keyframes statue2 {
-    0%   { transform: translate(3350px); }
+    0%   { transform: translate(2350px); }
     50% {}
-    100% { transform: translate(-500px); }
+    100% { transform: translate(-1500px); }
   }
   @keyframes statue3 {
-    0%   { transform: translate(2400px); }
+    0%   { transform: translate(2350px); }
     50% {}
-    100% { transform: translate(-1000px); }
+    100% { transform: translate(-1500px); }
   }
   @keyframes statue4 {
-    0%   { transform: translate(4000px); }
+    0%   { transform: translate(2350px); }
     50% {}
-    100% { transform: translate(-500px); }
+    100% { transform: translate(-1500px); }
   }
   @keyframes statue5 {
-    0%   { transform: translate(3000px); }
+    0%   { transform: translate(2350px); }
     50% {}
-    100% { transform: translate(-500px); }
+    100% { transform: translate(-1500px); }
   }
   
   @keyframes rock {

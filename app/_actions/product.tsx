@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache"
 import { db } from "@/db"
-import { products, type Product } from "@/db/schema"
+import { solutions, type Product } from "@/db/schema"
 import type { StoredFile } from "@/types"
 import {
   and,
@@ -31,16 +31,16 @@ export async function filterProductsAction(query: string) {
 
   const filteredProducts = await db
     .select({
-      id: products.id,
-      name: products.name,
-      category: products.category,
+      id: solutions.id,
+      name: solutions.name,
+      category: solutions.subcategory,
     })
-    .from(products)
-    .where(like(products.name, `%${query}%`))
-    .orderBy(desc(products.createdAt))
+    .from(solutions)
+    .where(like(solutions.name, `%${query}%`))
+    .orderBy(desc(solutions.createdat))
     .limit(10)
 
-  const productsByCategory = Object.values(products.category.enumValues).map(
+  const productsByCategory = Object.values(solutions.subcategory.enumValues).map(
     (category) => ({
       category,
       products: filteredProducts.filter(
@@ -62,53 +62,53 @@ export async function getProductsAction(
     ]) ?? []
   const [minPrice, maxPrice] = input.price_range?.split("-") ?? []
   const categories =
-    (input.categories?.split(".") as Product["category"][]) ?? []
+    (input.categories?.split(".") as Product["subcategory"][]) ?? []
   const subcategories = input.subcategories?.split(".") ?? []
   const storeIds = input.store_ids?.split(".").map(Number) ?? []
 
   const { items, total } = await db.transaction(async (tx) => {
     const items = await tx
       .select()
-      .from(products)
+      .from(solutions)
       .limit(input.limit)
       .offset(input.offset)
       .where(
         and(
-          categories.length
-            ? inArray(products.category, categories)
-            : undefined,
+          // categories.length
+          //   ? inArray(solutions.category, categories)
+          //   : undefined,
           subcategories.length
-            ? inArray(products.subcategory, subcategories)
+            ? inArray(solutions.subcategory, subcategories)
             : undefined,
-          minPrice ? gte(products.price, minPrice) : undefined,
-          maxPrice ? lte(products.price, maxPrice) : undefined,
-          storeIds.length ? inArray(products.storeId, storeIds) : undefined
+          minPrice ? gte(solutions.price, minPrice) : undefined,
+          maxPrice ? lte(solutions.price, maxPrice) : undefined,
+          storeIds.length ? inArray(solutions.storeid, storeIds) : undefined
         )
       )
       .orderBy(
-        column && column in products
+        column && column in solutions
           ? order === "asc"
-            ? asc(products[column])
-            : desc(products[column])
-          : desc(products.createdAt)
+            ? asc(solutions[column])
+            : desc(solutions[column])
+          : desc(solutions.createdat)
       )
 
     const total = await tx
       .select({
-        count: sql<number>`count(${products.id})`,
+        count: sql<number>`count(${solutions.id})`,
       })
-      .from(products)
+      .from(solutions)
       .where(
         and(
-          categories.length
-            ? inArray(products.category, categories)
-            : undefined,
+          // categories.length
+          //   ? inArray(solutions.category, categories)
+          //   : undefined,
           subcategories.length
-            ? inArray(products.subcategory, subcategories)
+            ? inArray(solutions.subcategory, subcategories)
             : undefined,
-          minPrice ? gte(products.price, minPrice) : undefined,
-          maxPrice ? lte(products.price, maxPrice) : undefined,
-          storeIds.length ? inArray(products.storeId, storeIds) : undefined
+          minPrice ? gte(solutions.price, minPrice) : undefined,
+          maxPrice ? lte(solutions.price, maxPrice) : undefined,
+          storeIds.length ? inArray(solutions.storeid, storeIds) : undefined
         )
       )
 
@@ -125,10 +125,10 @@ export async function getProductsAction(
 }
 
 export async function checkProductAction(input: { name: string; id?: number }) {
-  const productWithSameName = await db.query.products.findFirst({
+  const productWithSameName = await db.query.solutions.findFirst({
     where: input.id
-      ? and(not(eq(products.id, input.id)), eq(products.name, input.name))
-      : eq(products.name, input.name),
+      ? and(not(eq(solutions.id, input.id)), eq(solutions.name, input.name))
+      : eq(solutions.name, input.name),
   })
 
   if (productWithSameName) {
@@ -138,66 +138,66 @@ export async function checkProductAction(input: { name: string; id?: number }) {
 
 export async function addProductAction(
   input: z.infer<typeof productSchema> & {
-    storeId: number
+    storeid: number
     images: StoredFile[] | null
   }
 ) {
-  const productWithSameName = await db.query.products.findFirst({
-    where: eq(products.name, input.name),
+  const productWithSameName = await db.query.solutions.findFirst({
+    where: eq(solutions.name, input.name),
   })
 
   if (productWithSameName) {
     throw new Error("Product name already taken.")
   }
 
-  await db.insert(products).values({
+  await db.insert(solutions).values({
     ...input,
-    storeId: input.storeId,
+    storeid: input.storeid,
     images: input.images,
   })
 
-  revalidatePath(`/dashboard/stores/${input.storeId}/products.`)
+  revalidatePath(`/dashboard/stores/${input.storeid}/products.`)
 }
 
 export async function updateProductAction(
   input: z.infer<typeof productSchema> & {
-    storeId: number
+    storeid: number
     id: number
     images: StoredFile[] | null
   }
 ) {
-  const product = await db.query.products.findFirst({
-    where: and(eq(products.id, input.id), eq(products.storeId, input.storeId)),
+  const product = await db.query.solutions.findFirst({
+    where: and(eq(solutions.id, input.id), eq(solutions.storeid, input.storeid)),
   })
 
   if (!product) {
     throw new Error("Product not found.")
   }
 
-  await db.update(products).set(input).where(eq(products.id, input.id))
+  await db.update(solutions).set(input).where(eq(solutions.id, input.id))
 
-  revalidatePath(`/dashboard/stores/${input.storeId}/products/${input.id}`)
+  revalidatePath(`/dashboard/stores/${input.storeid}/products/${input.id}`)
 }
 
 export async function deleteProductAction(
   input: z.infer<typeof getProductSchema>
 ) {
-  and(eq(products.id, input.id), eq(products.storeId, input.storeId)),
+  and(eq(solutions.id, input.id), eq(solutions.storeid, input.storeid)),
     await db
-      .delete(products)
+      .delete(solutions)
       .where(
-        and(eq(products.id, input.id), eq(products.storeId, input.storeId))
+        and(eq(solutions.id, input.id), eq(solutions.storeid, input.storeid))
       )
 
-  revalidatePath(`/dashboard/stores/${input.storeId}/products`)
+  revalidatePath(`/dashboard/stores/${input.storeid}/products`)
 }
 
 export async function getNextProductIdAction(
   input: z.infer<typeof getProductSchema>
 ) {
-  const product = await db.query.products.findFirst({
-    where: and(eq(products.storeId, input.storeId), gt(products.id, input.id)),
-    orderBy: asc(products.id),
+  const product = await db.query.solutions.findFirst({
+    where: and(eq(solutions.storeid, input.storeid), gt(solutions.id, input.id)),
+    orderBy: asc(solutions.id),
   })
 
   if (!product) {
@@ -210,9 +210,9 @@ export async function getNextProductIdAction(
 export async function getPreviousProductIdAction(
   input: z.infer<typeof getProductSchema>
 ) {
-  const product = await db.query.products.findFirst({
-    where: and(eq(products.storeId, input.storeId), lt(products.id, input.id)),
-    orderBy: desc(products.id),
+  const product = await db.query.solutions.findFirst({
+    where: and(eq(solutions.storeid, input.storeid), lt(solutions.id, input.id)),
+    orderBy: desc(solutions.id),
   })
 
   if (!product) {

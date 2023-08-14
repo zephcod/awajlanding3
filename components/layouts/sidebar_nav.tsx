@@ -17,7 +17,7 @@ export function SidebarNav({ items }: SidebarNavProps) {
   if (!items?.length) return null
 
   return (
-    <div className="flex w-full flex-col gap-2">
+    <div className="relative flex w-full flex-col gap-2">
       {items.map((item, index) => {
         const Icon = Icons[item.icon ?? "chevronLeft"]
 

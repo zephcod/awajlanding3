@@ -43,31 +43,31 @@ export function ResetPasswordStep2Form() {
   function onSubmit(data: Inputs) {
     if (!isLoaded) return
 
-    startTransition( () => {
+    startTransition(async () => {
       try {
-        const attemptFirstFactor = signIn.attemptFirstFactor({
+        const attemptFirstFactor = await signIn.attemptFirstFactor({
           strategy: "reset_password_email_code",
           code: data.code,
           password: data.password,
         })
 
-        // if (attemptFirstFactor.status === "needs_second_factor") {
-        //   // TODO: implement 2FA (requires clerk pro plan)
-        // } else if (attemptFirstFactor.status === "complete") {
-        //   await setActive({
-        //     session: attemptFirstFactor.createdSessionId,
-        //   })
-        //   router.push(`${window.location.origin}/`)
-        //   toast.success("Password reset successfully.")
-        // } 
-        // else {
-        //   console.error(attemptFirstFactor)
-        // }
+        if (attemptFirstFactor.status === "needs_second_factor") {
+          // TODO: implement 2FA (requires clerk pro plan)
+        } else if (attemptFirstFactor.status === "complete") {
+          await setActive({
+            session: attemptFirstFactor.createdSessionId,
+          })
+          router.push(`${window.location.origin}/`)
+          toast.success("Password reset successfully.")
+        } else {
+          console.error(attemptFirstFactor)
+        }
       } catch (err) {
         catchClerkError(err)
       }
     })
   }
+
 
   return (
     <Form {...form}>

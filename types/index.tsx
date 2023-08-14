@@ -75,11 +75,11 @@ export interface CartLineItem
     | "id"
     | "name"
     | "images"
-    | "category"
+    // | "category"
     | "subcategory"
     | "price"
     | "inventory"
-    | "storeId"
+    | "storeid"
   > {
   quantity?: number
   storeName: string | null

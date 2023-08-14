@@ -4,8 +4,7 @@ import { currentUser } from "@clerk/nextjs"
 import { dashboardConfig } from "@/config/dashboard"
 import { ScrollArea } from "@/components/UI/scroll_area"
 import { SidebarNav } from "@/components/layouts/sidebar_nav"
-import { SiteFooter } from "@/components/layouts/site_footer"
-import { SiteHeader } from "@/components/layouts/site_header"
+import styles from './layout.module.css'
 
 interface DashboardLayoutProps {
   children: React.ReactNode
@@ -14,24 +13,19 @@ interface DashboardLayoutProps {
 export default async function DashboardLayout({
   children,
 }: DashboardLayoutProps) {
-  const user = await currentUser()
 
-  if (!user) {
-    redirect("/signin")
-  }
 
   return (
-    <div className="flex min-h-screen flex-col mt-14">
-      {/* <SiteHeader user={user} /> */}
-      <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
-        <aside className="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 overflow-y-auto border-r md:sticky md:block">
-          <ScrollArea className="py-6 pr-6 lg:py-8">
-            <SidebarNav items={dashboardConfig.sidebarNav} />
-          </ScrollArea>
-        </aside>
-        <main className="flex w-full flex-col overflow-hidden">{children}</main>
+    <div className={styles.container}>
+      <div className={styles.side_bar}>
+        <div className={styles.side_content}>
+          <h1 className={styles.mainTitle}>Awaj Studio</h1>
+          <SidebarNav items={dashboardConfig.sidebarNav} />
+        </div>
       </div>
-      {/* <SiteFooter /> */}
+      <div className={styles.main_bar}>
+        {children}
+      </div>
     </div>
   )
 }

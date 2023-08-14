@@ -31,12 +31,12 @@ return str
 
 export function formatPrice(
   price: number | string,
-  currency: "USD" | "EUR" | "GBP" | "BDT" = "USD",
+  currency: "USD" | "EUR" | "GBP" | "ETB" | "BDT" = "USD",
   notation: "compact" | "engineering" | "scientific" | "standard" = "standard"
 ) {
-  return new Intl.NumberFormat("en-US", {
+  return new Intl.NumberFormat('am-ET', {
     style: "currency",
-    currency,
+    currency: 'ETB',
     notation,
   }).format(Number(price))
 }
@@ -89,4 +89,43 @@ export function catchError(err: unknown) {
   } else {
     return toast("Something went wrong, please try again later.")
   }
+}
+
+//
+
+export function toTitleCase(str: string) {
+  return str.replace(
+    /\w\S*/g,
+    (txt) => txt.charAt(0).toUpperCase() + txt.slice(1).toLowerCase()
+  )
+}
+
+//
+
+export function unslugify(str: string) {
+  return str.replace(/_/g, " ")
+}
+
+//
+
+export function isArrayOfFile(files: unknown): files is File[] {
+  const isArray = Array.isArray(files)
+  if (!isArray) return false
+  return files.every((file) => file instanceof File)
+}
+
+//
+
+export function formatBytes(
+  bytes: number,
+  decimals = 0,
+  sizeType: "accurate" | "normal" = "normal"
+) {
+  const sizes = ["Bytes", "KB", "MB", "GB", "TB"]
+  const accurateSizes = ["Bytes", "KiB", "MiB", "GiB", "TiB"]
+  if (bytes === 0) return "0 Byte"
+  const i = Math.floor(Math.log(bytes) / Math.log(1024))
+  return `${(bytes / Math.pow(1024, i)).toFixed(decimals)} ${
+    sizeType === "accurate" ? accurateSizes[i] ?? "Bytest" : sizes[i] ?? "Bytes"
+  }`
 }

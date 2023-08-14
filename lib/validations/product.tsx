@@ -1,4 +1,4 @@
-import { products } from "@/db/schema"
+import { solutions } from "@/db/schema"
 import * as z from "zod"
 
 export const productSchema = z.object({
@@ -6,12 +6,12 @@ export const productSchema = z.object({
     message: "Must be at least 1 character",
   }),
   description: z.string().optional(),
-  category: z
-    .enum(products.category.enumValues, {
-      required_error: "Must be a valid category",
-    })
-    .default(products.category.enumValues[0]),
-  subcategory: z.string().optional().nullable(),
+  // category: z
+  //   .enum(solutions.subcategory.enumValues, {
+  //     required_error: "Must be a valid category",
+  //   })
+  //   .default(solutions.subcategory.enumValues[0]),
+  subcategory: z.string().optional().default('social_media'),
   price: z.string().regex(/^\d+(\.\d{1,2})?$/, {
     message: "Must be a valid price",
   }),
@@ -34,7 +34,7 @@ export const filterProductsSchema = z.object({
 
 export const getProductSchema = z.object({
   id: z.number(),
-  storeId: z.number(),
+  storeid: z.number(),
 })
 
 export const getProductsSchema = z.object({
