@@ -29,7 +29,7 @@ const nextConfig = {
     serverActions: true,
   },
   images: {
-    domains: ["pbs.twimg.com","gennbi.com"],
+    domains: ["pbs.twimg.com","gennbi.com","uploadthing.com"],
   },
 };
 

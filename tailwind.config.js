@@ -12,6 +12,9 @@ module.exports = {
         satoshi: ['Satoshi', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
       },
+      flex: {
+        full: "0 0 100%",
+      },
       colors: {
         border: "rgb(var(--border))",
         input: "hsl(var(--input))",

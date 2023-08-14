@@ -12,8 +12,9 @@ export const env = createEnv({
     CLERK_SECRET_KEY: z.string('sk_test_RChscSwKLC1wixP2fYYpjZoHUWqb0QwyQZCIK0pY81'),
     RESEND_API_KEY: z.string("re_DezGELzD_6k9PMZrR4uNy8dDS3s44RjDH"),
     EMAIL_FROM_ADDRESS: z.string().email("cto@gebeyaw.com"),
-    // UPLOADTHING_SECRET: z.string(),
-    // UPLOADTHING_APP_ID: z.string(),
+    
+    UPLOADTHING_SECRET: z.string("sk_live_630074e7a117be444d0929d1e3d42d3de2f0c02f810cdcff870f4b0047a49bcb"),
+    UPLOADTHING_APP_ID: z.string("pjkq008pqs"),
     
     POSTGRES_URL: z.string("postgres://default:6pkql7TQhEYi@ep-withered-poetry-08252282-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb"),
     // POSTGRES_PRISMA_URL: z.string("postgres://default:6pkql7TQhEYi@ep-withered-poetry-08252282-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb?pgbouncer=true&connect_timeout=15"),

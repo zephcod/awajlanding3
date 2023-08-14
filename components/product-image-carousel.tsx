@@ -3,7 +3,7 @@
 import * as React from "react"
 import Image from "next/image"
 import { type StoredFile } from "@/types"
-import { AspectRatio } from "@radix-ui/react-aspect-ratio"
+import { AspectRatio } from "@/components/UI/aspect_ratio"
 import useEmblaCarousel, {
   type EmblaCarouselType,
   type EmblaOptionsType,
@@ -111,7 +111,7 @@ export function ProductImageCarousel({
                   alt={image.name}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover"
+                  className="object-cover rounded-lg"
                   priority={index === 0}
                 />
               </AspectRatio>

@@ -103,7 +103,7 @@ export function ProductCard({
             <Button
               aria-label="Add to cart"
               size="sm"
-              className="h-8 w-full rounded-md"
+              className="h-8 w-full rounded-md flex-grow"
               onClick={() => {
                 startTransition(async () => {
                   try {
@@ -127,7 +127,7 @@ export function ProductCard({
                   aria-hidden="true"
                 />
               )}
-              <Icons.add className="h-4"/> 
+              <Icons.add className="h-3"/> 
               Add to cart
             </Button>
           </div>
