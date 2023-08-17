@@ -1,12 +1,12 @@
 "use server"
-
+import { NextRequest } from "next/server"
 import { revalidatePath } from "next/cache"
 import { cookies } from "next/headers"
 import { db } from "@/db"
 import { carts, solutions, stores } from "@/db/schema"
 import type { CartLineItem } from "@/types"
 import { eq, inArray } from "drizzle-orm"
-import { type z } from "zod"
+import { number, type z } from "zod"
 
 import type {
   cartItemSchema,
@@ -34,7 +34,7 @@ export async function getCartAction(): Promise<CartLineItem[]> {
       id: solutions.id,
       name: solutions.name,
       images: solutions.images,
-      category: solutions.subcategory,
+      // category: solutions.category,
       subcategory: solutions.subcategory,
       price: solutions.price,
       inventory: solutions.inventory,
@@ -71,26 +71,29 @@ export async function getCartItemsAction(input: { cartId?: number }) {
 
 export async function addToCartAction(input: z.infer<typeof cartItemSchema>) {
   const cookieStore = cookies()
-  const cartId = cookieStore.get("cartId")?.value
+  const cartId = cookieStore.get("cartId")
 
-  console.log(JSON.stringify(input))
+  console.log(JSON.stringify(cartId))
+  // if (!cartId) {
+    
+  //   let newcart: Array< {id:number; } > = await db.insert(carts).values({
+  //     items: [input],
+  //   }).returning();
 
-  if (!cartId) {
-    const cart = await db.insert(carts).values({
-      clientid: '35'
-    });
+    
+  //   const newcartid = newcart[0];
+  //   console.log(JSON.stringify(newcartid.id))
+  //   // Note: .set() is only available in a Server Action or Route Handler
+  //   cookieStore.set("cartId", String(newcartid.id))
 
-    // Note: .set() is only available in a Server Action or Route Handler
-    cookieStore.set("cartId", String(cart.insertId))
-
-    revalidatePath("/")
-    return
-  }
-
+  //   revalidatePath("/")
+  //   return
+  // }
+  const req = cartId?.value
   const cart = await db.query.carts.findFirst({
-    where: eq(carts.id, Number(cartId)),
+    where: eq(carts.id, Number(req)),
   })
-
+  
   if (!cart) {
     cookieStore.set({
       name: "cartId",
@@ -99,25 +102,27 @@ export async function addToCartAction(input: z.infer<typeof cartItemSchema>) {
     })
     throw new Error("Cart not found, please try again.")
   }
-
+  
   const cartItem = cart.items?.find(
     (item) => item.productId === input.productId
-  )
-
-  if (cartItem) {
-    cartItem.quantity += input.quantity
-  } else {
-    cart.items?.push(input)
-  }
+    )
+    
+    if (cartItem) {
+      cartItem.quantity += input.quantity
+    } else {
+      cart.items?.push(input)
+    }
+    console.log(cart.items)
 
   await db
     .update(carts)
     .set({
       items: cart.items,
     })
-    .where(eq(carts.id, Number(cartId)))
+    .where(eq(carts.id, Number(req)))
 
   revalidatePath("/")
+  return cart
 }
 
 export async function updateCartItemAction(
@@ -144,7 +149,6 @@ export async function updateCartItemAction(
   const cartItem = cart.items?.find(
     (item) => item.productId === input.productId
   )
-
   if (!cartItem) {
     throw new Error("CartItem not found, please try again.")
   }

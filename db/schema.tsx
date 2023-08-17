@@ -47,6 +47,9 @@ export const carts = pgTable("carts", {
   paymentintentid: varchar("paymentintentid", { length: 191 }),
   clientsecret: varchar("clientsecret", { length: 191 }),
   items: json("items").$type<CartItem[] | null>().default(null),
+  // productid: integer("quantity").notNull().default(1),
+  // quantity: integer("quantity").notNull().default(1),
+  // subcategory: varchar("subcategory", { length: 191 }),
   createdat: timestamp("createdat").defaultNow(),
 })
 

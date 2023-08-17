@@ -84,8 +84,8 @@ export function Products({
   )
 
   // Price filter
-  const [priceRange, setPriceRange] = React.useState<[number, number]>([0, 500])
-  const debouncedPrice = useDebounce(priceRange, 500)
+  const [priceRange, setPriceRange] = React.useState<[number, number]>([1000, 20000])
+  const debouncedPrice = useDebounce(priceRange, 5000)
 
   React.useEffect(() => {
     const [min, max] = debouncedPrice
@@ -170,14 +170,14 @@ export function Products({
             <div className="flex flex-1 flex-col gap-5 overflow-hidden px-1">
               <div className="space-y-4">
                 <h3 className="text-sm font-medium tracking-wide text-foreground">
-                  Price range ($)
+                  Price range (Br)
                 </h3>
                 <Slider
                   variant="range"
                   thickness="thin"
-                  defaultValue={[0, 500]}
-                  max={500}
-                  step={1}
+                  defaultValue={[1000, 50000]}
+                  max={50000}
+                  step={100}
                   value={priceRange}
                   onValueChange={(value: typeof priceRange) => {
                     setPriceRange(value)

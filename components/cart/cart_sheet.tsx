@@ -2,7 +2,7 @@ import Image from "next/image"
 
 import { formatPrice } from "@/app/utils/utils"
 import { Badge } from "@/components/UI/badge"
-import { Button } from "@/components/UI/button"
+import { Button, buttonVariants } from "@/components/UI/button"
 import { ScrollArea } from "@/components/UI/scroll_area"
 import { Separator } from "@/components/UI/separator"
 import {
@@ -16,6 +16,8 @@ import {
 import { UpdateCart } from "@/components/cart/update_cart"
 import { Icons } from "@/components/UI/icons"
 import { getCartAction } from "@/app/_actions/cart"
+import Link from "next/link"
+import ExpandingArrow from '@/components/expanding_arrow';
 
 export async function CartSheet() {
   const cartLineItems = await getCartAction()
@@ -41,8 +43,8 @@ export async function CartSheet() {
         >
           {itemCount > 0 && (
             <Badge
-              variant="secondary"
-              className="absolute -right-2 -top-2 h-6 w-6 rounded-full p-2"
+              // variant="secondary"
+              className="absolute -right-2 -top-2 h-6 w-6 rounded-full p-2 bg-primary"
             >
               {itemCount}
             </Badge>
@@ -96,8 +98,7 @@ export async function CartSheet() {
                             )}
                           </span>
                           <span className="line-clamp-1 text-xs capitalize text-muted-foreground">
-                            {`${item.category} ${
-                              item.subcategory ? `/ ${item.subcategory}` : ""
+                            {`category/solutions ${item.subcategory ? `/ ${item.subcategory}` : ""
                             }`}
                           </span>
                         </div>
@@ -116,26 +117,26 @@ export async function CartSheet() {
                 <span>{formatPrice(cartTotal.toFixed(2))}</span>
               </div>
               <div className="flex">
-                <span className="flex-1">Shipping</span>
+                <span className="flex-1">Payment Processing</span>
                 <span>Free</span>
               </div>
               <div className="flex">
                 <span className="flex-1">Taxes</span>
-                <span>Calculated at checkout</span>
+                <span>{formatPrice((cartTotal*.15).toFixed(2))}</span>
               </div>
               <Separator className="mt-2" />
               <div className="flex">
                 <span className="flex-1">Total</span>
-                <span>{formatPrice(cartTotal.toFixed(2))}</span>
+                <span>{formatPrice(((cartTotal*.15)+cartTotal).toFixed(2))}</span>
               </div>
               <SheetFooter className="mt-1.5">
-                <Button
-                  aria-label="Proceed to checkout"
-                  size="sm"
-                  className="w-full"
-                >
-                  Proceed to Checkout
-                </Button>
+                <Link href={"/pricing/check_out"}
+                  className="relative group mt-20 bg-primary w-full sm:mt-0 rounded-full flex items-center justify-center mx-auto text-card-foreground text-sm font-semibold py-2 px-6 transition-all">
+                  <p>Place Order</p>
+                  <SheetTrigger asChild/>
+                  <ExpandingArrow/>
+                  <span className="sr-only">Check Deals</span>
+                </Link>
               </SheetFooter>
             </div>
           </>

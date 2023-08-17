@@ -1,9 +1,7 @@
-import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { db } from "@/db"
 import { solutions, stores } from "@/db/schema"
-import { env } from "@/env.mjs"
 import { and, desc, eq, not } from "drizzle-orm"
 
 import { formatPrice, toTitleCase } from "@/app/utils/utils"
@@ -20,21 +18,16 @@ import { ProductCard } from "@/components/product_card"
 import { ProductImageCarousel } from "@/components/product-image-carousel"
 import { Shell } from "@/components/shells/shell"
 
-export const metadata: Metadata = {
-  metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
-  title: "Product",
-  description: "Product description",
-}
+
 
 interface ProductPageProps {
   params: {
-    productId: string
+    editid: string
   }
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
-  const productId = Number(params.productId)
-
+  const productId = Number(params.editid)
   const product = await db.query.solutions.findFirst({
     where: eq(solutions.id, productId),
   })
@@ -124,7 +117,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       {store && productsFromStore.length > 0 ? (
         <div className="overflow-hidden md:pt-6">
           <h2 className="line-clamp-1 flex-1 text-2xl font-bold">
-            More solutions from {store.name}
+            More products from {store.name}
           </h2>
           <div className="overflow-x-auto pb-2 pt-6">
             <div className="flex w-fit gap-4">

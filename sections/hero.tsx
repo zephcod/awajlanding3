@@ -23,7 +23,7 @@ const Hero = () => {
                     <br/>
                     <div className={styles.subtitle}>
                         <h2>
-                        A Digital Marketing Ace!
+                        Boost your online presence!
                         </h2>
                     </div>
                     <br/>
@@ -54,7 +54,7 @@ const Hero = () => {
             <div className="tree"></div>
             <div className="tree"></div>
             <div className="tree"></div>
-            <div className='statue1'>
+            {/* <div className='statue1'>
                 <Image src={Statue1.src} width={500} height={300}alt=''/></div>
             <div className='statue2'>
                 <Image src={Statue3.src} width={100} height={150}alt=''/></div>
@@ -63,7 +63,7 @@ const Hero = () => {
             <div className='statue4'>
                 <Image src={Statue4.src} width={125} height={125}alt=''/></div>
             <div className='statue5'>
-                <Image src={Statue5.src} width={400} height={300}alt=''/></div>
+                <Image src={Statue5.src} width={400} height={300}alt=''/></div> */}
             <div className="truck">
                 <div className='awaj'>አዋጅ!</div>
                 <div className='awaj'>አዋጅ!</div>

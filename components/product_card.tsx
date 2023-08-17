@@ -101,7 +101,7 @@ export function ProductCard({
               Order
             </Link>
             <Button
-              aria-label="Add to cart"
+              aria-label="Add to campaign"
               size="sm"
               className="h-8 w-full rounded-md flex-grow"
               onClick={() => {
@@ -111,7 +111,7 @@ export function ProductCard({
                       productId: product.id,
                       quantity: 1,
                     })
-                    toast.success("Added to cart.")
+                    toast.success("Added to campaign.")
                   } catch (error) {
                     error instanceof Error
                       ? toast.error(error.message)
@@ -128,7 +128,7 @@ export function ProductCard({
                 />
               )}
               <Icons.add className="h-3"/> 
-              Add to cart
+              Campaign
             </Button>
           </div>
         ) : (

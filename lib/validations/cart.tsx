@@ -4,7 +4,7 @@ import * as z from "zod"
 export const cartItemSchema = z.object({
   productId: z.number().default(0),
   quantity: z.number().min(0),
-  productSubcategory: z.string().optional().nullable(),
+  // productSubcategory: z.string().optional().nullable(),
 })
 
 export const checkoutItemSchema = cartItemSchema.extend({
@@ -15,11 +15,11 @@ export const cartLineItemSchema = z.object({
   id: z.number(),
   name: z.string(),
   images: z.array(z.string()).nullable(),
-  category: z.enum(solutions.subcategory.enumValues),
+  // category: z.enum(solutions.subcategory.enumValues),
   subcategory: z.string().optional().nullable(),
   price: z.string().regex(/^\d+(\.\d{1,2})?$/),
   inventory: z.number().default(0),
-  storeId: z.number(),
+  storeid: z.number(),
   storeName: z.string().optional().nullable(),
   quantity: z.number().min(0).default(1),
 })
