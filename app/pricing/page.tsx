@@ -3,7 +3,6 @@ import Button from '@/components/button/button';
 import React, { useState } from "react";
 import styles from '@/app/pricing/page.module.css'
 import '@/app/pricing/test.css'
-import type { Metadata } from 'next'
 import Outline from '@/components/button/outline';
 import { BsCheck } from 'react-icons/bs';
 import GlassModal from '@/components/modal/modal';
@@ -11,10 +10,6 @@ import PaymentOptions from '@/sections/payment_options';
 import PopularOrders from '@/app/pricing/popular_orders';
 import Faqs from '@/sections/faqs';
 
-export const metadata: Metadata = {
-  title: 'Awaj Pricing',
-  description: 'Awaj Advertising Agency Plans and Pricing',
-}
 
 
 export default function Price(){

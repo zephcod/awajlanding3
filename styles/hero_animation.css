@@ -95,15 +95,18 @@
     background: #eee;
   }
   .truck {
-    background: url(https://gennbi.com/src/awaj_hero.png) no-repeat;
+    /* position: absolute; */
+    /* bottom: 20px; */
+    margin:auto;
+    background: transparent;
     background-size: contain;
-    height: 360px;
-    width: 200px;
+    height: 260px;
+    width: 150px;
   }
   .truck:before {
     content: " ";
     position: absolute;
-    bottom:160px;
+    bottom: 100px;
     width: 25px;
     box-shadow:
       -30px 28px 0 1.5px #fff,
@@ -136,9 +139,9 @@
   .truck  { animation: truck 4s   0.30s ease-in-out infinite; }
   .truck:before { animation: wind 1.5s   0.000s ease infinite; }
 
-  .awaj:nth-child(1)  { animation: awaj 10s 1s ease-in-out infinite; }
-  .awaj:nth-child(2)  { animation: awaj2 10s 2s ease-in-out infinite; }
-  .awaj:nth-child(3)  { animation: awaj3 10s 3s ease-in-out infinite; }
+  .awaj:nth-child(2)  { animation: awaj 10s 1s ease-in-out infinite; }
+  .awaj:nth-child(3)  { animation: awaj2 10s 2s ease-in-out infinite; }
+  .awaj:nth-child(4)  { animation: awaj3 10s 3s ease-in-out infinite; }
   
   
   @keyframes tree {

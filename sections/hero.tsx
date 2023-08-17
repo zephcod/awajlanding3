@@ -3,6 +3,7 @@ import '@/styles/hero_animation.css'
 import Image from "next/image";
 import Awaj from "@/public/awaj_hero1.png";
 import styles from '@/sections/page.module.css'
+import Rocket from '@/public/character/awaj_hero.webp'
 import Statue5 from '@/public/character/awaj_ethio_lion.png'
 import Statue4 from '@/public/landmark/4.png'
 import Statue3 from '@/public/landmark/3.png'
@@ -18,7 +19,7 @@ const Hero = () => {
             <div className={styles.container}>
                 <div className={styles.glass}>
                     <div className={styles.header}>
-                    <Image src={Awaj} width={300} height={300}  alt='Social Media Awaj Ad'/>
+                    <Image src={Awaj} width={200} height={200}  alt='Social Media Awaj Ad'/>
                     </div>
                     <br/>
                     <div className={styles.subtitle}>
@@ -65,6 +66,7 @@ const Hero = () => {
             <div className='statue5'>
                 <Image src={Statue5.src} width={400} height={300}alt=''/></div> */}
             <div className="truck">
+            <Image src={Rocket.src} width={600} height={800}alt=''/>
                 <div className='awaj'>አዋጅ!</div>
                 <div className='awaj'>አዋጅ!</div>
                 <div className='awaj'>አዋጅ!</div>
