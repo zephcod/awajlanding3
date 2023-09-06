@@ -3,7 +3,6 @@ import { currentUser } from "@clerk/nextjs"
 
 import { dashboardConfig } from "@/config/dashboard"
 import { ScrollArea } from "@/components/UI/scroll_area"
-import { SidebarNav } from "@/components/layouts/sidebar_nav"
 import styles from './layout.module.css'
 
 interface DashboardLayoutProps {
@@ -20,7 +19,6 @@ export default async function DashboardLayout({
       <div className={styles.side_bar}>
         <div className={styles.side_content}>
           <h1 className={styles.mainTitle}>Awaj Studio</h1>
-          <SidebarNav items={dashboardConfig.sidebarNav} />
         </div>
       </div>
       <div className={styles.main_bar}>

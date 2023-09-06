@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import styles from '@/app/pricing/check_out/page.module.css'
+import styles from './page.module.css'
 import Image from 'next/image'
 import GlassModal from '@/components/modal/modal'
 
