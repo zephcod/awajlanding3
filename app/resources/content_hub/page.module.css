@@ -1,0 +1,20 @@
+.container {
+  perspective: 1000px;
+}
+.glass {
+  /* position: relative; */
+  max-width: 400px;
+  margin-top: 64px;
+  padding: 40px;
+  border-radius: 10px;
+  font-size: 20px;
+  backdrop-filter: saturate(130%) blur(8px) !important;
+  background-color: var(--transparent-glass) !important;
+  box-shadow: inset -6px -6px 22px var(--glow),
+              inset 1px 1px 2px var(--btn-glow2),
+                    3px 3px 8px var(--shadow);
+  /* overflow: hidden; */
+  transform: rotateX(10deg) rotateY(20deg) rotateZ(-5deg);
+}
+
+

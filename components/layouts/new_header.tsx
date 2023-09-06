@@ -15,11 +15,9 @@ const NewHeader = () => {
     const { userId } = auth();
   
     return (
-        <header className="fixed clearNav top-0 z-30 w-full">
-      <div className="w-full flex flex-row h-14 justify-between items-center flex-wrap px-2 py-1"> 
-        <div>
+    <header className="sticky clearNav top-0 z-30 w-full">
+      <div className="flex flex-row h-14 justify-between items-center flex-wrap px-4 py-1"> 
         <MainNav items={siteConfig.mainNav} />
-        </div>
         <MobileNav
           mainNavItems={siteConfig.mainNav}
           sidebarNavItems={dashboardConfig.sidebarNav}

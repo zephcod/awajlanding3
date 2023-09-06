@@ -1,18 +1,22 @@
 import React from 'react'
-import Image from "next/image";
-import Banks from "../public/all_banks.webp";
-import styles from '@/sections/page.module.css';
+import Payment_Card from '@/components/cards/payment-card';
+import Link from 'next/link';
 
 const PaymentOptions = () => {
   return (
-    <div className={styles.pay_canvas}>
-          <h2 className="text-2xl text-center font-bold">EASY PAYMENT OPTIONS!</h2><br/>
-          <span className='text-base font-light text-center'>
+    <div className='relative flex flex-col py-8 gap-4 w-full justify-center'>
+    <h2 className="text-3xl text-center font-bold leading-[1.15] lg:text-4xl">Easy payment options</h2>
+    <div className='flex flex-col md:flex-row gap-8 max-w-4xl p-6 md:p-0 justify-between items-center my-0 mx-auto'>
+          <Payment_Card/>
+        <div className='text-base font-light text-center flex-1'>
             You can make payment in Ethiopia through Tele Birr, CBE Birr, Commercial Bank of Ethiopia, 
-            Dashen Bank, Oromia Bank, Amhara Bank and Abyssinia Bank</span><br/>
-        <div className={styles.payImgContainer}>
-          <Image src={Banks} width={300} height={100} className={styles.image}  alt='Social Media Awaj Ad'/>
+            Dashen Bank, Oromia Bank, Amhara Bank and Abyssinia Bank
+            <br/>
+            <Link href={'pricing/payment-processing'} className='text-primary'>
+              See how payment is processed 🡥
+            </Link>
         </div>
+    </div>
     </div>
   )
 }

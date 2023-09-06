@@ -34,7 +34,7 @@ CardHeader.displayName = "CardHeader"
 const CardTitle = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLHeadingElement> & { as?: "h1" | "h2" | "h3" }
->(({ className, as: Comp = "h3", ...props }, ref) => (
+>(({ className, as: Comp = "h2", ...props }, ref) => (
   <Comp
     ref={ref}
     className={cn(

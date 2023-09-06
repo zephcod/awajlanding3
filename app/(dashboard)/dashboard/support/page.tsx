@@ -5,6 +5,7 @@ import { currentUser } from "@clerk/nextjs"
 
 import { Header } from "@/components/header"
 import { Shell } from "@/components/shells/shell"
+import { DemoReportAnIssue } from "@/components/report-issue"
 
 export const metadata: Metadata = {
 //   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
@@ -20,13 +21,15 @@ export default async function PurchasesPage() {
   }
 
   return (
-    <Shell variant="sidebar">
+    <Shell variant="sidebar" className="m-auto mt-0">
       <Header
-        title="Purchases"
-        description="Manage your purchases."
+        title="Get Support"
+        description="Submit ticket and contact with customer support"
         size="sm"
       />
-      <div>Support</div>
+      <div>
+        <DemoReportAnIssue/>
+      </div>
     </Shell>
   )
 }

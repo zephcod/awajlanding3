@@ -81,7 +81,7 @@ const email =
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                      <Link href="/dashboard/stores">
+                      <Link href="/dashboard/billing">
                         <Icons.billing
                           className="mr-2 h-4 w-4"
                           aria-hidden="true"
@@ -91,7 +91,7 @@ const email =
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                      <Link href="/dashboard/stores">
+                      <Link href="/dashboard/support">
                         <Icons.addCircle
                           className="mr-2 h-4 w-4"
                           aria-hidden="true"

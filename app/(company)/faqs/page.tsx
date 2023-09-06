@@ -1,102 +1,142 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { Suspense } from 'react'
-import React from 'react'
-import ExpandingArrow from '@/components/expanding_arrow'
-import TablePlaceholder from '@/components/table_placeholder'
-import Table from '@/components/table'
+'use client'
+import {toast} from 'sonner'
+import { useState } from 'react'
 
-export const preferredRegion = 'home'
-export const dynamic = 'force-dynamic'
+import useSWR from 'swr'
 
-const FAQs = () => {
-  return (
-    <main className="relative flex min-h-screen flex-col items-center justify-center">
-      <Link
-        href="https://vercel.com/templates/next.js/postgres-drizzle"
-        className="group mt-20 sm:mt-0 rounded-full flex space-x-1 bg-white/30 shadow-sm ring-1 ring-gray-900/5 text-gray-600 text-sm font-medium px-10 py-2 hover:shadow-lg active:shadow-sm transition-all"
-      >
-        <p>Deploy your own to Vercel</p>
-        <ExpandingArrow />
-      </Link>
-      <h1 className="pt-4 pb-8 bg-gradient-to-br from-black via-[#171717] to-[#4b4b4b] bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl">
-        Postgres on Vercel
-      </h1>
-      <Suspense fallback={<TablePlaceholder />}>
-        {/* @ts-expect-error Async Server Component */}
-        <Table />
-      </Suspense>
-      <p className="font-light text-gray-600 w-full max-w-lg text-center mt-6">
-        <Link
-          href="https://vercel.com/postgres"
-          className="font-medium underline underline-offset-4 hover:text-black transition-colors"
-        >
-          Vercel Postgres
-        </Link>{' '}
-        demo with{' '}
-        <Link
-          href="https://github.com/drizzle-team/drizzle-orm"
-          className="font-medium underline underline-offset-4 hover:text-black transition-colors"
-        >
-          Drizzle
-        </Link>{' '}
-        as the ORM. <br /> Built with{' '}
-        <Link
-          href="https://nextjs.org/docs"
-          className="font-medium underline underline-offset-4 hover:text-black transition-colors"
-        >
-          Next.js App Router
-        </Link>
-        .
-      </p>
+import {
+    getTodos,
+    addTodo,
+    updateTodo,
+    deleteTodo,
+    todosUrlEndpoint as cacheKey,
+} from '@/app/api/faqsApi/faqApi'
 
-      <div className="flex justify-center space-x-5 pt-10 mt-10 border-t border-gray-300 w-full max-w-xl text-gray-600">
-        <Link
-          href="https://postgres-prisma.vercel.app/"
-          className="font-medium underline underline-offset-4 hover:text-black transition-colors"
-        >
-          Prisma
-        </Link>
-        <Link
-          href="https://postgres-starter.vercel.app/"
-          className="font-medium underline underline-offset-4 hover:text-black transition-colors"
-        >
-          Starter
-        </Link>
-        <Link
-          href="https://postgres-kysely.vercel.app/"
-          className="font-medium underline underline-offset-4 hover:text-black transition-colors"
-        >
-          Kysely
-        </Link>
-      </div>
+import {
+    addTodoOptions,
+    updateTodoOptions,
+    deleteTodoOptions,
+} from "@/app/api/faqSWR/todosSWROptions"
 
-      <div className="sm:absolute sm:bottom-0 w-full px-20 py-10 flex justify-between">
-        <Link href="https://vercel.com">
-          <Image
-            src="/vercel.svg"
-            alt="Vercel Logo"
-            width={100}
-            height={24}
-            priority
-          />
-        </Link>
-        <Link
-          href="https://github.com/vercel/examples/tree/main/storage/postgres-drizzle"
-          className="flex items-center space-x-2"
-        >
-          <Image
-            src="/github.svg"
-            alt="GitHub Logo"
-            width={24}
-            height={24}
-            priority
-          />
-          <p className="font-light">Source</p>
-        </Link>
-      </div>
-    </main>
-  )
-}
+const TodoList = () => {
+    const [newTodo, setNewTodo] = useState('')
 
-export default FAQs
+    const {
+        isLoading,
+        error,
+        data: _faq,
+        mutate,
+    } = useSWR(cacheKey, getTodos)
+
+    const addTodoMutation = async (newTodo: { userId: any; title: any; completed: any; id?: number }) => {
+        try {
+            await mutate(
+                addTodo(newTodo),
+                addTodoOptions(newTodo)
+            )
+
+            toast.success("Faq created successfully.")
+        } catch (err) {
+            toast.error("Failed to add the new item.", {
+                duration: 1000,
+            })
+        }
+    }
+
+    const updateTodoMutation = async (updatedTodo: any) => {
+        try {
+            await mutate(
+                updateTodo(updatedTodo),
+                updateTodoOptions(updatedTodo)
+            )
+
+            toast.success("Success! Updated item.", {
+                duration: 1000,
+                icon: '🚀'
+            })
+        } catch (err) {
+            toast.error("Failed to update the item.", {
+                duration: 1000,
+            })
+        }
+    }
+
+    const deleteTodoMutation = async ( id: number ) => {
+        try {
+            await mutate(
+                deleteTodo({ id }),
+                deleteTodoOptions({ id })
+            )
+
+            toast.success("Success! Deleted item.", {
+                duration: 1000,
+            })
+        } catch (err) {
+            toast.error("Failed to delete the item.", {
+                duration: 1000,
+            })
+        }
+    }
+
+    const handleSubmit = (e: { preventDefault: () => void }) => {
+        e.preventDefault()
+        addTodoMutation({ userId: 1, title: newTodo, completed: false, id: 9999 })
+        setNewTodo('')
+    }
+
+    const newItemSection = (
+        <form onSubmit={handleSubmit}>
+            <label htmlFor="new-todo">Enter a new todo item</label>
+            <div className="new-todo">
+                <input
+                    type="text"
+                    id="new-todo"
+                    value={newTodo}
+                    onChange={(e) => setNewTodo(e.target.value)}
+                    placeholder="Enter new todo"
+                />
+            </div>
+            <button className="submit">
+                UP
+            </button>
+        </form>
+    )
+
+    let content
+    if (isLoading) {
+        content = <p>Loading...</p>
+    } else if (error) {
+        content = <p>{error.message}</p>
+    } else {
+        content = _faq.faq.slice(0,6).map((item: {question:string, id: number}) => (
+                <article key={item.id}>
+                    <div className="todo">
+                      {item.question}
+                        {/* <input
+                            type="checkbox"
+                            checked={todo.question}
+                            onChange={() =>
+                                updateTodoMutation({ ...todo, completed: !todo.completed })
+                            }
+                        /> */}
+                        {/* <label htmlFor={todo.id}>{todo.title}</label> */}
+                    </div>
+                    {/* <button className="trash" onClick={() => deleteTodoMutation({ id: todo.id })}>
+                        DELETE
+                    </button> */}
+                </article>
+            )
+        )
+    }
+    
+  
+
+    return (
+        <main>
+            <h1>Todo List</h1>
+            {newItemSection}
+            {content}
+        </main>
+    )
+    }
+export default TodoList

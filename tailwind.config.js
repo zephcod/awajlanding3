@@ -15,10 +15,6 @@ module.exports = {
       },
     },
     extend:{
-      fontFamily: {
-        satoshi: ['Satoshi', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
-      },
       flex: {
         full: "0 0 100%",
       },
@@ -56,7 +52,16 @@ module.exports = {
           DEFAULT: "rgb(var(--card));",
           foreground: "hsl(var(--card-foreground))",
         },
+        glass: {
+          DEFAULT: "rgb(var(--transparent-glass))",
+          foreground: "hsl(var(--card-foreground))",
+        },
       },
+      backgroundImage: ({ theme }) => ({
+        'vc-border-gradient': `radial-gradient(at left top, ${theme(
+          'colors.gray.500',
+        )}, 50px, ${theme('colors.gray.800')} 50%)`,
+      }),
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

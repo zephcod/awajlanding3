@@ -74,21 +74,21 @@ export async function addToCartAction(input: z.infer<typeof cartItemSchema>) {
   const cartId = cookieStore.get("cartId")
 
   console.log(JSON.stringify(cartId))
-  // if (!cartId) {
+  if (!cartId) {
     
-  //   let newcart: Array< {id:number; } > = await db.insert(carts).values({
-  //     items: [input],
-  //   }).returning();
+    let newcart: Array< {id:number; } > = await db.insert(carts).values({
+      items: [input],
+    }).returning();
 
     
-  //   const newcartid = newcart[0];
-  //   console.log(JSON.stringify(newcartid.id))
-  //   // Note: .set() is only available in a Server Action or Route Handler
-  //   cookieStore.set("cartId", String(newcartid.id))
+    const newcartid = newcart[0];
+    console.log(JSON.stringify(newcartid.id))
+    // Note: .set() is only available in a Server Action or Route Handler
+    cookieStore.set("cartId", String(newcartid.id))
 
-  //   revalidatePath("/")
-  //   return
-  // }
+    revalidatePath("/")
+    return
+  }
   const req = cartId?.value
   const cart = await db.query.carts.findFirst({
     where: eq(carts.id, Number(req)),

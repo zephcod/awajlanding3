@@ -1,4 +1,3 @@
-import { NextResponse } from "next/server";
 import { type ErrorResponse } from "resend"
 import { resend } from "@/lib/resend"
 import { emailPreferences } from "@/db/schema"
@@ -11,37 +10,6 @@ import NewsletterWelcomeEmail from "@/components/emails/newsletter_welcome"
 import { z } from "zod"
 
 
-// export const GET = async () => {
-
-//   try {
-
-//     await db();
-
-//     const subscribers = await Subscriber.find();
-
-//     return new NextResponse(JSON.stringify(subscribers), { status: 200 });
-    
-//   } catch (err) {
-//     return new NextResponse("Database Error", { status: 500 });
-//   }
-// };
-
-
-// export const POST = async (request) => {
-//   const body = await request.json();
-
-//   const newSubscriber = new Subscriber(body);
-
-//   try {
-//     await db();
-
-//     await newSubscriber.save();
-
-//     return new NextResponse("Post has been created", { status: 201 });
-//   } catch (err) {
-//     return new NextResponse("Database Error", { status: 500 });
-//   }
-// };
 export async function POST(req: Request) {
   const input = subscribeToNewsletterSchema.parse(await req.json())
 

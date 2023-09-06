@@ -1,9 +1,6 @@
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 
 @layer base {
@@ -31,14 +28,14 @@
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
   
-    --accent: 240 4.8% 95.9%;
+    --accent: 194, 25%, 90%, 0.8;
     --accent-foreground: ;
   
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
   
     --ring: 240 5% 64.9%;
-  
+    --transparent-glass: 211, 216, 218, 0.1;
     --radius: 0.5rem;
   
     --primaryColor: #eed45e;
@@ -50,7 +47,7 @@
     --backdrop: rgba(211, 216, 218, 0.6);
     --border1: rgb(211, 216, 218);
     --accent1: #948f7a;
-    --accent2: #e7c633;
+    --accent2: rgb(231, 198, 51);
     --card1: rgb(56, 59, 59,.8);
     --dropdown: rgb(56, 59, 59);
     --btn-bg: linear-gradient(145deg, #171717, #444245);
@@ -96,6 +93,8 @@
     --destructive-foreground: 0 85.7% 97.3%;
   
     --ring: 240 3.7% 15.9%;
+
+    --transparent-glass:211, 216, 218, 0.1;
   
   
     width:100%;
@@ -110,7 +109,7 @@
     --shadow: rgba(0, 0, 0, 0.06);
     --glow: rgba(255, 255, 255, 0.02);
     --transparent: rgba(74, 77, 78, 0.7);
-    --transparent-glass: rgba(74, 77, 78, 0.05);
+    --transparent-glass: hsla(195, 3%, 30%, 0.05);
     --backdrop: rgba(74, 77, 78, 0.8);
     --border1: rgb(97, 99, 102);
     --card1: rgb(49, 51, 51);
@@ -133,14 +132,8 @@
   
 
 }
+
 body {
-  width:100%;
-  min-height: 100vh;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0;
   background-color: var(--background);
   color: var(--foreground);
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -149,14 +142,11 @@ body {
 
 .allparent {
   position: relative;
-  background: transparent;
   display: flex;
-  min-height: 100vh;
+  min-height: 125vh;
   z-index: 10;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  /* width: 100vw; */
+  justify-content: center;
 }
 
 .light {
@@ -173,7 +163,7 @@ body {
  --glow: rgba(255, 255, 255, 0.3);
  --transparent: rgba(223, 233, 236, 0.7);
  --transparent-glass: rgba(223, 233, 236, 0.05);
- --backdrop: rgba(223, 233, 236, 0.8);
+ --backdrop: hsla(194, 25%, 90%, 0.8);
  --border1: rgb(193, 201, 201);
  --card1: rgb(244, 251, 255);
  --dropdown: rgb(228, 238, 245,.98);

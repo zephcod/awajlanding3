@@ -1,16 +1,15 @@
 import React from 'react'
 import styles from '@/sections/ctas/logoslider.module.css'
 import Image from "next/image";
-import Anbessa from '@/public/logo/logos_anebesacham.png'
-import Babi from '@/public/logo/logos_babisbistro.png'
-import Capital from '@/public/logo/logos_capitalhotel.png'
-import Deliver from '@/public/logo/logos_delier addis.png'
-import Entoto from '@/public/logo/logos_entotopark.png'
-import EtFitness from '@/public/logo/logos_ethiofitnessadnutriton.png'
-import Kestedemena from '@/public/logo/logos_kesetedemena.png'
-import Monarch from '@/public/logo/logos_monarch.png'
-import Hayat from '@/public/logo/logos_hyattregency.png'
-import Century from '@/public/logo/logos_centurymall.png'
+import Anbessa from '@/public/logo/ethiopian_logos_anebesacham_3D-min.png'
+import Babi from '@/public/logo/ethiopian_logos_babisbistro_3D-min.png'
+import Capital from '@/public/logo/ethiopian_logos_capitalhotel_3D-min.png'
+import Deliver from '@/public/logo/ethiopian_logos_delier addis_3D-min.png'
+import Entoto from '@/public/logo/ethiopian_logos_entotopark_3D-min.png'
+import EtFitness from '@/public/logo/ethiopian_logos_ethiofitnessadnutriton_3D-min.png'
+import Kestedemena from '@/public/logo/ethiopian_logos_kesetedemena_3D-min.png'
+import Monarch from '@/public/logo/ethiopian_logos_monarch_3D-min.png'
+import Century from '@/public/logo/ethiopian_logos_centurymall_3D-min.png'
 
 
 const LogoSlider = () => {
@@ -26,7 +25,6 @@ const LogoSlider = () => {
               <div className={styles.logo_slide}><Image src={Monarch} fill style={{objectFit:'contain'}} alt=''/></div>
               <div className={styles.logo_slide}><Image src={Capital} fill style={{objectFit:'contain'}} alt=''/></div>
               <div className={styles.logo_slide}><Image src={Entoto} fill style={{objectFit:'contain'}} alt=''/></div>
-              {/* <div className={styles.logo_slide}><Image src={Hayat} fill style={{objectFit:'contain'}} alt=''/></div> */}
         </div>
     </div>
   )

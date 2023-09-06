@@ -24,7 +24,7 @@
 .glass {
 position: relative;
 max-width: 400px;
-margin-top: 100px;
+margin-top: 150px;
 padding: 40px;
 border-radius: 10px;
 font-size: 20px;
@@ -40,7 +40,7 @@ box-shadow: inset -6px -6px 22px var(--glow),
 }
   }
 .header {
-margin-top: -100px;
+margin-top: -150px;
 font-family:cursive;
 color: var(--secondaryColor);
 justify-content: center;
@@ -74,13 +74,8 @@ text-align: center;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    flex-direction: column;
+    flex-direction: row-reverse;
     align-items: center;
-    border-bottom-width: 1px;
-    border-top-width: 1px;
-    border-color: var(--border1);
   }
   .payImgContainer {
     position: relative;
@@ -89,87 +84,4 @@ text-align: center;
     flex: 1;
   }
   
-
-/*FAQ Style*/
-.faq_canvas {
-  position: relative;
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  padding-bottom: 30px;
-  padding-top: 20px;
-  margin: auto;
-  flex-direction: column;
-  background-color: var(--transparent);
-}
-.faq_canvas2 {
-  @apply max-w-7xl w-full m-auto}
-.faq_tier {
-  position: relative;
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 30%;
-  gap: 40px;
-  padding: 10px;
-  padding-inline: 60px;
-  overflow-x: scroll;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  scroll-padding-inline: 10px;
-  align-items: baseline;
-  /* grid-template-columns: auto auto auto; */
-  justify-content: space-between;
-  padding-bottom: 40px;
-}
-@media only  screen  and (max-width: 768px){
-.faq_tier {
-  position: relative;
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 100%;
-  gap: 40px;
-  padding: 10px;
-  padding-inline: 30px;
-  overflow-x: scroll;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  scroll-padding-inline: 10px;
-  align-items: baseline;
-  /* grid-template-columns: auto auto auto; */
-  justify-content: space-between;
-  padding-bottom: 40px;
-}
-  }
-.faq_tier::-webkit-scrollbar{
-  width: 10px;
-
-  /* display: none; */
-}
-.faq_mode {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  scroll-snap-align: end;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.faq_card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: justify;
-  font-weight: 300;
-  align-items: center;
-  margin-top: 20px;
-  padding: 20px;
-  background-color: var(--card1);
-  background-clip: padding-box;
-  border-radius: 10px;
-  border-color: var(--border1);
-  border-width: 1px;
-  box-shadow: 11px 11px 22px var(--btn-shadow2),
-              -11px -11px 22px var(--btn-glow2);
-}
 

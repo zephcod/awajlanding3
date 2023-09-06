@@ -12,9 +12,9 @@ const Headline1 = () => {
             <h1 className={styles.title}>Getting Started</h1>
             <div className="relative flex flex-col p-4 gap-3 max-w-4xl mx-auto flex-1">
             <div className="relative">
-              <h3 className="p-1 font-semibold text-lg">
+              <h2 className="p-1 font-semibold text-lg">
                 Lorem ipsum dolor sit amet
-              </h3>
+              </h2>
               <p className="pb-2 text-md font-light">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
                 tincidunt a libero in finibus. Maecenas a nisl vitae ante rutrum
@@ -22,9 +22,9 @@ const Headline1 = () => {
               </p>
             </div>
             <div className="relative">
-              <h3 className="p-1 font-semibold text-lg">
+              <h2 className="p-1 font-semibold text-lg">
                 Lorem ipsum dolor sit amet
-              </h3>
+              </h2>
               <p className="pb-2 text-md font-light">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
                 tincidunt a libero in finibus. Maecenas a nisl vitae ante rutrum
@@ -32,9 +32,9 @@ const Headline1 = () => {
               </p>
             </div>
             <div className="relative">
-              <h3 className="p-1 font-semibold text-lg">
+              <h2 className="p-1 font-semibold text-lg">
                 Lorem ipsum dolor sit amet
-              </h3>
+              </h2>
               <p className="pb-2 text-md font-light">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
                 tincidunt a libero in finibus. Maecenas a nisl vitae ante rutrum
@@ -42,9 +42,9 @@ const Headline1 = () => {
               </p>
             </div>
             <div className="relative">
-              <h3 className="p-1 font-semibold text-lg">
+              <h2 className="p-1 font-semibold text-lg">
                 Lorem ipsum dolor sit amet
-              </h3>
+              </h2>
               <p className="pb-2 text-md font-light">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
                 tincidunt a libero in finibus. Maecenas a nisl vitae ante rutrum
@@ -69,9 +69,9 @@ const Headline1 = () => {
             <h1 className={styles.title}>Why choose Us?</h1>
             <div className="relative flex flex-col p-4 gap-3 max-w-4xl mx-auto flex-1">
             <div className="relative">
-              <h3 className="p-1 font-semibold text-lg">
+              <h2 className="p-1 font-semibold text-lg">
                 Lorem ipsum dolor sit amet
-              </h3>
+              </h2>
               <p className="pb-2 text-md font-light">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
                 tincidunt a libero in finibus. Maecenas a nisl vitae ante rutrum
@@ -79,9 +79,9 @@ const Headline1 = () => {
               </p>
             </div>
             <div className="relative">
-              <h3 className="p-1 font-semibold text-lg">
+              <h2 className="p-1 font-semibold text-lg">
                 Lorem ipsum dolor sit amet
-              </h3>
+              </h2>
               <p className="pb-2 text-md font-light">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
                 tincidunt a libero in finibus. Maecenas a nisl vitae ante rutrum
@@ -89,9 +89,9 @@ const Headline1 = () => {
               </p>
             </div>
             <div className="relative">
-              <h3 className="p-1 font-semibold text-lg">
+              <h2 className="p-1 font-semibold text-lg">
                 Lorem ipsum dolor sit amet
-              </h3>
+              </h2>
               <p className="pb-2 text-md font-light">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
                 tincidunt a libero in finibus. Maecenas a nisl vitae ante rutrum
@@ -99,9 +99,9 @@ const Headline1 = () => {
               </p>
             </div>
             <div className="relative">
-              <h3 className="p-1 font-semibold text-lg">
+              <h2 className="p-1 font-semibold text-lg">
                 Lorem ipsum dolor sit amet
-              </h3>
+              </h2>
               <p className="pb-2 text-md font-light">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
                 tincidunt a libero in finibus. Maecenas a nisl vitae ante rutrum

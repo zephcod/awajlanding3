@@ -47,9 +47,6 @@ export const carts = pgTable("carts", {
   paymentintentid: varchar("paymentintentid", { length: 191 }),
   clientsecret: varchar("clientsecret", { length: 191 }),
   items: json("items").$type<CartItem[] | null>().default(null),
-  // productid: integer("quantity").notNull().default(1),
-  // quantity: integer("quantity").notNull().default(1),
-  // subcategory: varchar("subcategory", { length: 191 }),
   createdat: timestamp("createdat").defaultNow(),
 })
 
@@ -69,24 +66,25 @@ export const emailPreferences = pgTable("email_preferences", {
 export type EmailPreference = InferModel<typeof emailPreferences>
 
 
-export const UsersTable = pgTable(
-  'users',
-  {
-    id: serial('id').primaryKey(),
-    name: text('name').notNull(),
-    email: text('email').notNull(),
-    image: text('image').notNull(),
-    createdAt: timestamp('createdAt').defaultNow().notNull(),
-  },
-  (users) => {
-    return {
-      uniqueIdx: uniqueIndex('unique_idx').on(users.email),
-    }
-  }
-)
+export const userApiLimit = pgTable("api_limit", {
+  id: serial("id").primaryKey(),
+  clientid: varchar("clientid", { length: 191 }),
+  count: integer("count").notNull().default(0),
+  createdAt: timestamp("createdat").defaultNow(),
+})
 
-export type User = InferModel<typeof UsersTable>
-export type NewUser = InferModel<typeof UsersTable, 'insert'>
+export type UserApiLimit = InferModel<typeof userApiLimit>
+
+
+export const faqsTable = pgTable( 'faqs', {
+    id: serial('id').primaryKey(),
+    question: varchar('question', { length: 191 }).notNull(),
+    answer: varchar('answer', { length: 191 }).notNull(),
+    tags: json("tags").$type<String[]>().default(['all']),
+    createdAt: timestamp('createdat').defaultNow().notNull(),
+  })
+
+export type Faq = InferModel<typeof faqsTable>
 
 
 export const payments = pgTable("payments", {

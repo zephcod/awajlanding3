@@ -14,7 +14,7 @@ const links = {
 }
 
 export const siteConfig = {
-  name: "Awaj",
+  name: "Awaj AI",
   description:
     "All in one digital advertisng platform with everything included to boost your ad campaigns.",
   url: "https://gennbi.com",
@@ -30,15 +30,15 @@ export const siteConfig = {
           items: [],
         },
         {
-          title: "One-time Orders",
-          href: "/pricing/one-time-order",
-          description: "Check from our list one-time orders.",
+          title: "Awaj Mela",
+          href: "/pricing/awaj-mela",
+          description: "Top up your Awaj Mela here.",
           items: [],
         },
         {
-          title: "Build a Campaign",
-          href: "/build_campaign",
-          description: "Build your own custom campaign.",
+          title: "Check Deals",
+          href: "/pricing/deals",
+          description: "Check recent deals from awaj.",
           items: [],
         },
       ],
@@ -61,41 +61,82 @@ export const siteConfig = {
       ],
     })),
     {
+      title: "AI Hub",
+      items: [
+        {
+          title: "Gallery",
+          href: "/ai/gallery",
+          description: "Subscription plans and pricings",
+          items: [],
+        },
+        {
+          title: "Prompts",
+          href: "/ai/prompts",
+          description: "Check from our list one-time orders.",
+          items: [],
+        },
+        {
+          title: "Image Generation",
+          href: "/ai/image/text-to-image",
+          description: "Build your own custom campaign.",
+          items: [],
+        },
+        {
+          title: "Conversations",
+          href: "/ai/conversations",
+          description: "Subscription plans and pricings",
+          items: [],
+        },
+        {
+          title: "Audio Generation",
+          href: "/ai/audio",
+          description: "Check from our list one-time orders.",
+          items: [],
+        },
+        {
+          title: "Video Generation",
+          href: "/ai/video",
+          description: "Build your own custom campaign.",
+          items: [],
+        },
+      ],
+    },
+    {
       title: "Resources",
       items: [
         {
           title: "Downloads",
-          href: "/downloads",
+          href: "/resources/downloads",
           description: "Subscription plans and pricings",
           items: [],
         },
         {
           title: "Getting started",
-          href: "/getting_started",
+          href: "/resources/getting_started",
           description: "Check from our list one-time orders.",
           items: [],
         },
         {
           title: "Giveaways",
-          href: "/giveaways",
+          href: "/resources/giveaways",
           description: "Build your own custom campaign.",
           items: [],
         },
         {
           title: "Case studies",
-          href: "/awaj_cases",
+          href: "/resources/awaj_cases",
           description: "Subscription plans and pricings",
           items: [],
         },
         {
           title: "Content hub",
-          href: "/content_hub",
+          href: "/resources/content_hub",
           description: "Check from our list one-time orders.",
           items: [],
         },
         {
           title: "Awaj tools",
-          href: "/tools",
+          href: "/resources/tools",
           description: "Build your own custom campaign.",
           items: [],
         },

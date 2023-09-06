@@ -15,12 +15,11 @@ export default function Main() {
           <Hero/>
         </div>
       <Headline1/>
-      <h2 className="pt-24 mb-1 text-2xl font-semibold tracking-tighter text-center lg:text-7xl md:text-6xl">
+      <h2 className="pt-24 mb-1 text-4xl font-extrabold leading-[1.15] lg:text-6xl;">
         Check our main services.
       </h2>
       <p className="mx-auto text-xl text-center font-normal leading-relaxed p-4 lg:w-2/3">
-        Here is our collection of free to use templates made with Next.js &
-        styled with Tailwind CSS.
+        Here are awaj`&apos;`s four featured services categorized in our core digital marketing principles.
       </p>
       <ServiceCarousel/>
       <InRoundButton url="/pricing/deals" text="Check Deals">

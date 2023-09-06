@@ -16,6 +16,7 @@ export const env = createEnv({
     UPLOADTHING_SECRET: z.string("sk_live_630074e7a117be444d0929d1e3d42d3de2f0c02f810cdcff870f4b0047a49bcb"),
     UPLOADTHING_APP_ID: z.string("pjkq008pqs"),
     
+    CHAPA_SECRET:z.string("CHASECK_TEST-BHcbAIPojwydRGTqJTwUfbgqL8pRCCrm"),
     POSTGRES_URL: z.string("postgres://default:6pkql7TQhEYi@ep-withered-poetry-08252282-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb"),
     // POSTGRES_PRISMA_URL: z.string("postgres://default:6pkql7TQhEYi@ep-withered-poetry-08252282-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb?pgbouncer=true&connect_timeout=15"),
     // POSTGRES_URL_NON_POOLING: z.string("postgres://default:6pkql7TQhEYi@ep-withered-poetry-08252282.us-east-1.postgres.vercel-storage.com:5432/verceldb"),
@@ -31,7 +32,7 @@ export const env = createEnv({
    * `NEXT_PUBLIC_`.
    */
   client: {
-    NEXT_PUBLIC_APP_URL: z.string().url('/'),
+    NEXT_PUBLIC_APP_URL: z.string().url('http://localhost:3000'),
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string('pk_test_aG9seS1jYWltYW4tNTcuY2xlcmsuYWNjb3VudHMuZGV2JA'),
 
   },
@@ -60,6 +61,9 @@ export const env = createEnv({
     EMAIL_FROM_ADDRESS: process.env.EMAIL_FROM_ADDRESS,
     UPLOADTHING_SECRET: process.env.UPLOADTHING_SECRET,
     UPLOADTHING_APP_ID: process.env.UPLOADTHING_APP_ID,
+
+    CHAPA_SECRET:process.env.CHAPA_SECRET,
+
     STRIPE_API_KEY: process.env.STRIPE_API_KEY,
     STRIPE_WEBHOOK_SECRET: process.env.STRIPE_WEBHOOK_SECRET,
     STRIPE_STD_MONTHLY_PRICE_ID: process.env.STRIPE_STD_MONTHLY_PRICE_ID,

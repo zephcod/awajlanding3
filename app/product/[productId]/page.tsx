@@ -1,4 +1,3 @@
-import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { db } from "@/db"
@@ -6,7 +5,7 @@ import { solutions, stores } from "@/db/schema"
 import { env } from "@/env.mjs"
 import { and, desc, eq, not } from "drizzle-orm"
 
-import { formatPrice, toTitleCase } from "@/app/utils/utils"
+import { formatPrice, toTitleCase, unslugify } from "@/app/utils/utils"
 import {
   Accordion,
   AccordionContent,
@@ -19,16 +18,31 @@ import { Breadcrumbs } from "@/components/pagers/breadcrumbs"
 import { ProductCard } from "@/components/product_card"
 import { ProductImageCarousel } from "@/components/product-image-carousel"
 import { Shell } from "@/components/shells/shell"
+import type { Metadata, ResolvingMetadata } from 'next'
 
-export const metadata: Metadata = {
-  metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
-  title: "Product",
-  description: "Product description",
-}
 
 interface ProductPageProps {
   params: {
     productId: string
+  }
+}
+
+ 
+export async function generateMetadata(
+  {params}: ProductPageProps,
+  parent?: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  const productId = Number(params.productId)
+ 
+  const product = await db.query.solutions.findFirst({
+    where: eq(solutions.id, productId),
+  })
+ 
+ 
+  return {
+    title: product?.name,
+    description: product?.description
   }
 }
 
@@ -74,7 +88,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             href: "/categories/solutions",
           },
           {
-            title: toTitleCase(product.subcategory),
+            title: unslugify(toTitleCase(product.subcategory)),
             href: `/categories/solutions?subcategory=${product.subcategory}`,
           },
           {
@@ -99,12 +113,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
               {formatPrice(product.price)}
             </p>
             {store ? (
-              <Link
-                href={`/products?store_ids=${store.id}`}
-                className="line-clamp-1 inline-block text-base text-muted-foreground hover:underline"
-              >
-                {store.name}
-              </Link>
+              <p>{store.name}</p>
+              // <Link
+              //   href={`/products?store_ids=${store.id}`}
+              //   className="line-clamp-1 inline-block text-base text-muted-foreground hover:underline"
+              // >
+              //   {store.name}
+              // </Link>
             ) : null}
           </div>
           <Separator className="my-1.5" />

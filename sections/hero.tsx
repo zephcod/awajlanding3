@@ -4,6 +4,7 @@ import Image from "next/image";
 import Awaj from "@/public/awaj_hero1.png";
 import styles from '@/sections/page.module.css'
 import Rocket from '@/public/character/awaj_hero.webp'
+import Tree from '@/public/character/tree.svg'
 import Statue5 from '@/public/character/awaj_ethio_lion.png'
 import Statue4 from '@/public/landmark/4.png'
 import Statue3 from '@/public/landmark/3.png'
@@ -52,9 +53,9 @@ const Hero = () => {
             <BubbleBg/>
             <div className="mountain"></div>
             <div className="hill"></div>
-            <div className="tree"></div>
-            <div className="tree"></div>
-            <div className="tree"></div>
+            <div className="tree"><Image src={Tree.src} width={300} height={300}alt=''/></div>
+            <div className="tree"><Image src={Tree.src} width={300} height={300}alt=''/></div>
+            <div className="tree"><Image src={Tree.src} width={300} height={300}alt=''/></div>
             {/* <div className='statue1'>
                 <Image src={Statue1.src} width={500} height={300}alt=''/></div>
             <div className='statue2'>

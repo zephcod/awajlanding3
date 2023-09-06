@@ -1,14 +1,13 @@
 import Footer from '@/components/Footer'
-import { ClerkProvider, currentUser } from "@clerk/nextjs"
+import { ClerkProvider} from "@clerk/nextjs"
 import '@/styles/globals.css'
 import { Providers } from '@/components/providers'
 import { Toaster } from "@/components/UI/toaster"
 import NewHeader from '@/components/layouts/new_header'
+import { ModalProvider } from '@/components/ai/modal-provider'
 
-
-
+ 
 export default async function RootLayout({children,}:{children: React.ReactNode}) {
-  // const user = await currentUser()
 
   return (
     <ClerkProvider>
@@ -16,9 +15,12 @@ export default async function RootLayout({children,}:{children: React.ReactNode}
         <body>
             <Providers attribute="class" defaultTheme="system" enableSystem>
             <div className='allparent'>
+              {/* <div>Bluetin</div> */}
               <NewHeader/>
+              <main className="flex-1">
+                <ModalProvider/>
                 {children}
-              <Footer />
+                </main>
             </div>
             </Providers>
             <Toaster />

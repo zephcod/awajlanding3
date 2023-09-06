@@ -61,6 +61,7 @@ import {
     type LucideProps,
   } from "lucide-react"
   import { BsTiktok, BsFillMegaphoneFill, BsFillRocketTakeoffFill } from 'react-icons/bs'
+  import {AwajLogoCircle} from '@/components/UI/svgicon'
   export type Icon = LucideIcon
   
   export const Icons = {
@@ -196,6 +197,9 @@ import {
     ),
     awajlogo: ({ ...props }: LucideProps) => (
       <BsFillRocketTakeoffFill/>
+    ),
+    awajlogocircle: ({ ...props }: LucideProps) => (
+      <AwajLogoCircle/>
     ),
   }
   

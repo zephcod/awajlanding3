@@ -1,13 +1,9 @@
-import LoadingRouteUI from '@/components/loading/loading_route'
-import React from 'react'
-
-
-const Influencers = () => {
-  return (
-    <div>
-        <LoadingRouteUI/>
-    </div>
-  )
+import { currentUser } from '@clerk/nextjs';
+ 
+export default async function Page() {
+const user = await currentUser();
+ 
+if (!user) return <div>Not logged in</div>;
+ 
+return <div>Hello {user.emailAddresses[0].emailAddress}</div>;
 }
-
-export default Influencers

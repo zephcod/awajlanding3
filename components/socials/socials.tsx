@@ -43,9 +43,9 @@ const social_item = [
     },
     {
       id:"7",
-      alt:"Awaj Ad Google Account",
+      alt:"Awaj Ad Linked In Account",
       url:"/about",
-      img:"/social/svg/Googel_icon.svg"
+      img:"/social/svg/Linkedin_icon.svg"
     },
     {
       id:"8",

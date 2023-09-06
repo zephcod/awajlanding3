@@ -3,7 +3,7 @@ import { type FileWithPath } from "react-dropzone"
 import { type z } from "zod"
 
 import { type userPrivateMetadataSchema } from "@/lib/validations/auth"
-import type { cartItemSchema, checkoutItemSchema } from "@/lib/validations/cart"
+import type { cartItemSchema, checkoutItemSchema, faqItemSchema } from "@/lib/validations/cart"
 import { type Icons } from "@/components/UI/icons"
 
 export interface NavItem {
@@ -69,6 +69,8 @@ export type CartItem = z.infer<typeof cartItemSchema>
 
 export type CheckoutItem = z.infer<typeof checkoutItemSchema>
 
+export type FaqItem = z.infer<typeof faqItemSchema>
+
 export interface CartLineItem
   extends Pick<
     Product,
@@ -93,4 +95,11 @@ export interface SubscriptionPlan {
   stripePriceId: string
   price: number
   isCanceled?: boolean
+}
+
+export interface Faqs {
+  id: number
+  question: string
+  answer: string
+  // tags: String[] 
 }

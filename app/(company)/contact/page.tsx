@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 import Image from "next/image";
 import Button from "@/components/button/button";
 import Character_contact from "@/public/character/contact.webp";
-import Faqs from "@/sections/faqs";
+// import Faqs from "@/components/faq/faqs";
 
 export const metadata = {
   title: "Awaj Ad Contact Page",
@@ -40,7 +40,7 @@ const Contact = () => {
         </div>
       </div>
       </div>
-      <Faqs/>
+      {/* <Faqs/> */}
     </div>
   );
 };

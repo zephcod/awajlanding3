@@ -108,7 +108,7 @@ function FooterList1() {
       <a key={card.id} href={card.url}
       className="p-1 flex items-start  hover:text-orange-300 tr04">
         <div className="ml-1">
-          <p className="text-sm font-light">
+          <p className="text-sm font-light py-1 md:py-0">
             {card.title}
           </p>
         </div>
@@ -125,7 +125,7 @@ function FooterList2() {
       <a key={card.id} href={card.url}
       className="p-1 flex items-start  hover:text-orange-300 tr04">
         <div className="ml-1">
-          <p className="text-sm font-light">
+          <p className="text-sm font-light py-1 md:py-0">
             {card.title}
           </p>
         </div>
@@ -142,7 +142,7 @@ function FooterList3() {
       <a key={card.id} href={card.url}
       className="p-1 flex items-start  hover:text-orange-300 tr04">
         <div className="ml-1">
-          <p className="text-sm font-light">
+          <p className="text-sm font-light py-1 md:py-0">
             {card.title}
           </p>
         </div>

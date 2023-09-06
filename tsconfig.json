@@ -36,6 +36,6 @@
     ".contentlayer/generated",
     "lib/seed.ts", 
     "drizzle.config.ts" 
-  ],
+, "lib/chapa.js", "app/api/chapa/route.ts"  ],
   "exclude": ["node_modules"]
 }

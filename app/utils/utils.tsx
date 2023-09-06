@@ -37,7 +37,7 @@ export function formatPrice(
   return new Intl.NumberFormat('am-ET', {
     style: "currency",
     currency: 'ETB',
-    notation,
+    notation: 'compact',
   }).format(Number(price))
 }
 

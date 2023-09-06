@@ -1,5 +1,10 @@
-import { solutions } from "@/db/schema"
 import * as z from "zod"
+
+export const faqItemSchema = z.object({
+  value: z.string().default(''),
+  label: z.string().default(''),
+  // productSubcategory: z.string().optional().nullable(),
+})
 
 export const cartItemSchema = z.object({
   productId: z.number().default(0),

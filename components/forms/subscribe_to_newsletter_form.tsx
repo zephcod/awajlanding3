@@ -22,23 +22,19 @@ import { Icons } from "@/components/UI/icons"
 type Inputs = z.infer<typeof emailSchema>
 
 export function SubscribeToNewsletterForm() {
-  const [isPending, startTransition] = React.useTransition()
+  const [loading, setLoading] = React.useState(false);
 
   // react-hook-form
   const form = useForm<Inputs>({
     resolver: zodResolver(emailSchema),
-    defaultValues: {
-      email: "",
-    },
   })
 
   async function onSubmit(data: Inputs) {
     console.log(data)
-
+    setLoading(true)
       const response = await fetch("/api/subscribers", {
         method: "POST",
         headers:{"Content-Type":"application/json",},
-        // body: JSON.stringify({email})
         body: JSON.stringify({
           email: data.email,
           // This token is used as a search param in the email preferences page to identify the subscriber.
@@ -49,23 +45,28 @@ export function SubscribeToNewsletterForm() {
 
       if (response.status === 409) {
         toast.error("You are already subscribed to our newsletter.")
+        setLoading(false);
       }
 
       if (response.status === 422) {
         toast.error("Inavlid input.")
+        setLoading(false);
       }
 
       if (response.status === 429) {
         toast.error("The daily email limit has been reached.")
+        setLoading(false);
       }
 
       if (response.status === 500) {
         toast.error("Something went wrong. Please try again later.")
+        setLoading(false);
       }
 
       if (response.ok) {
         toast.success("You have been subscribed to our newsletter.")
         form.reset()
+        setLoading(false);
       }
   }
 
@@ -93,9 +94,9 @@ export function SubscribeToNewsletterForm() {
                 className="absolute right-[5.2px] top-[5.5px] z-20 h-7 w-7"
                 variant="outline"
                 size="icon"
-                disabled={isPending}
+                disabled={loading}
               >
-                {isPending ? (
+                {loading ? (
                   <Icons.spinner
                     className="h-3 w-3 animate-spin"
                     aria-hidden="true"

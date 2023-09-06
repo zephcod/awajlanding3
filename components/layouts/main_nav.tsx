@@ -30,7 +30,7 @@ export function MainNav({ items }: MainNavProps) {
         href="/"
         className="hidden items-center space-x-2 lg:flex"
       >
-        <Icons.awajlogo className="h-6 w-6" aria-hidden="true" />
+        <Icons.awajlogocircle className="h-6 w-6" aria-hidden="true" />
         <span className="hidden font-bold lg:inline-block">
         {siteConfig.name}
         </span>
@@ -48,11 +48,11 @@ export function MainNav({ items }: MainNavProps) {
                     <NavigationMenuLink asChild>
                       <Link
                         aria-label="Home"
-                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-amber-100 dark:bg-slate-800 from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                        href="/pricing/deals">
-                        <Icons.awajlogo className="h-6 w-6" aria-hidden="true" />
+                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-accent p-6 no-underline outline-none focus:shadow-md"
+                        href="/pricing/build-campaign">
+                        <Icons.megaphone className="h-6 w-6" aria-hidden="true" />
                         <div className="mb-2 mt-4 text-lg font-medium">
-                          Check Deals
+                          Build a Campaign
                         </div>
                         <p className="text-sm leading-tight text-muted-foreground">
                           {siteConfig.description}

@@ -68,7 +68,7 @@ export function AddToCartForm({ productId }: AddToCartFromProps) {
                 <Input
                   type="number"
                   inputMode="numeric"
-                  min={0}
+                  min={1}
                   {...field}
                   onChange={(e) => {
                     const value = e.target.value

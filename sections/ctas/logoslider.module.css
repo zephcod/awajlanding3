@@ -9,7 +9,7 @@
 }
 .logo_slider{
     background-color: var(--transparent);
-    height: 100px;
+    height: 150px;
     width: 75vw;
     position: relative;
     display: flex;
@@ -27,8 +27,8 @@
   .logo_slide {
     display: block;
     position: absolute;
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
     animation: slidelogo 27s 0s linear infinite;
     }
     .logo_slide:nth-child(2) { transform: translateX(300px); animation-delay: -3s; 
@@ -64,6 +64,6 @@
     transform: translateX(2700px);
   }
   to {
-    transform: translateX(-75px);
+    transform: translateX(-175px);
   }
   }
