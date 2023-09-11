@@ -9,6 +9,9 @@ import {
 } from '@/app/api/faqsApi/faqApi'
 import { Button } from '../UI/button';
 import { Icons } from '../UI/icons';
+import { absoluteUrl } from "@/app/utils/utils";
+
+const faqEndpoint = absoluteUrl("/api/faq");
 
 
 const FaqCard = () => {
@@ -18,7 +21,7 @@ const FaqCard = () => {
         error,
         data: _faq,
         mutate,
-    } = useSWR(`http://localhost:3000/api/faq?limit=${limit}`, fetcher)
+    } = useSWR(`${faqEndpoint}?limit=${limit}`, fetcher)
 
     let content
     if (isLoading) {
