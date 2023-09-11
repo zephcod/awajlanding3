@@ -32,7 +32,7 @@ export const env = createEnv({
    * `NEXT_PUBLIC_`.
    */
   client: {
-    NEXT_PUBLIC_APP_URL: z.string().url('http://localhost:3000'),
+    NEXT_PUBLIC_APP_URL: z.string().url(process.env.NEXT_PUBLIC_APP_URL),
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string('pk_test_aG9seS1jYWltYW4tNTcuY2xlcmsuYWNjb3VudHMuZGV2JA'),
 
   },
