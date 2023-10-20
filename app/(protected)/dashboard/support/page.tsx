@@ -1,7 +1,4 @@
 import type { Metadata } from "next"
-import { redirect } from "next/navigation"
-import { env } from "@/env.mjs"
-import { currentUser } from "@clerk/nextjs"
 
 import { Header } from "@/components/header"
 import { Shell } from "@/components/shells/shell"
@@ -14,12 +11,6 @@ export const metadata: Metadata = {
 }
 
 export default async function PurchasesPage() {
-  const user = await currentUser()
-
-  if (!user) {
-    redirect("/signin")
-  }
-
   return (
     <Shell variant="sidebar" className="m-auto mt-0">
       <Header

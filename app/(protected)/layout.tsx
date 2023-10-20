@@ -4,13 +4,13 @@ import { useRouter } from 'next/navigation'
 import useAuth from '@/hooks/use_auth'
 
 const Layout = ({ children }: { children: ReactNode }) =>{
-    const router = useRouter()
-    const {authStatus} = useAuth()
+    // const router = useRouter()
+    // const {authStatus} = useAuth()
 
-    if (!authStatus) {
-        router.push('/signin')
-        return<></>
-    }
+    // if (!authStatus) {
+    //     router.push('/signin')
+    //     return<></>
+    // }
   return children
 }
 

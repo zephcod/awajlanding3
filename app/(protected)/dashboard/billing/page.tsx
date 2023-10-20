@@ -1,12 +1,8 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { redirect } from "next/navigation"
-import { env } from "@/env.mjs"
-import { currentUser } from "@clerk/nextjs"
 
 import { storeSubscriptionPlans } from "@/config/subscriptions"
-import { getUserSubscriptionPlan } from "@/lib/subscription"
-import { cn, formatDate, formatPrice } from "@/app/utils/utils"
+import { cn, formatPrice } from "@/app/utils/utils"
 import { buttonVariants } from "@/components/UI/button"
 import {
   Card,
@@ -28,17 +24,6 @@ export const metadata: Metadata = {
 }
 
 export default async function BillingPage() {
-  const user = await currentUser()
-
-  if (!user) {
-    redirect("/signin")
-  }
-
-  const email =
-    user.emailAddresses?.find((e) => e.id === user.primaryEmailAddressId)
-      ?.emailAddress ?? ""
-
-  const subscriptionPlan = await getUserSubscriptionPlan(user.id)
 
   return (
     <Shell variant="sidebar" as="div">
@@ -53,21 +38,6 @@ export default async function BillingPage() {
         className="space-y-5"
       >
         <h2 className="text-xl font-semibold sm:text-2xl">Billing info</h2>
-        <Card className="grid gap-4 p-6">
-          <h3 className="text-lg font-semibold sm:text-xl">
-            {subscriptionPlan?.name}
-          </h3>
-          <p className="text-sm text-muted-foreground">
-            {!subscriptionPlan.isSubscribed
-              ? "Upgrade to create more stores and products."
-              : subscriptionPlan.isCanceled
-              ? "Your plan will be canceled on "
-              : "Your plan renews on "}
-            {subscriptionPlan?.stripeCurrentPeriodEnd
-              ? `${formatDate(subscriptionPlan.stripeCurrentPeriodEnd)}.`
-              : null}
-          </p>
-        </Card>
       </section>
       <section
         id="subscription-plans"
