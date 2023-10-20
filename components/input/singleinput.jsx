@@ -4,7 +4,7 @@ import styles from '@/components/input/input.module.css'
 import {RiMailSendLine} from 'react-icons/ri'
 import Button from '../button/button'
 import Outline from '../button/outline'
-import { BsCheck } from 'react-icons/bs'
+import { BsCheck, BsRocketTakeoffFill } from 'react-icons/bs'
 import { CgSpinner } from 'react-icons/cg'
 // import { setTimeout } from 'timers/promises'
 
@@ -42,7 +42,7 @@ const handleSubmit = async (e) =>{
   return (
     <div className={styles.mainContainer}>
       <form className={styles.form}>
-          <input type="email" placeholder="abera@example.com" 
+          <input type="email" placeholder="Get suggestions from our AI ..." 
           className={styles.input}
           // name='email'
           value={email}
@@ -52,7 +52,7 @@ const handleSubmit = async (e) =>{
           />
           <button className={styles.btn}
             onClick={handleSubmit}>
-            {check === 2 ? <BsCheck/> :check === 1 ? <CgSpinner/> :< RiMailSendLine /> }
+            {check === 2 ? <BsCheck/> :check === 1 ? <CgSpinner/> :< BsRocketTakeoffFill /> }
           </button>
       </form>
       {err&&"something went wrong"}

@@ -1,8 +1,8 @@
 import React from 'react'
+import styles from '@/app/resources/downloads/page.module.css'
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { CiWarning } from "react-icons/ci";
-import Hands from '@/public/character/download.png'
+import Hands from '@/public/download-5893.png'
 import Link from 'next/link';
 import { buttonVariants } from '@/components/UI/button';
 import { Icons } from '@/components/UI/icons';
@@ -20,22 +20,44 @@ const Downloads = () => {
   return (
     <>
     <div className='flex justify-center items-center flex-col w-full mx-auto text-center gap-2 px-6'>
-      <h1 className='text-3xl font-extrabold leading-[1.15] lg:text-4xl'>
-          Awaj - everywhere.
+      <h1 className="py-6 text-3xl text-center text-muted-foreground font-bold leading-[1.15] lg:text-4xl">
+        Download Awaj AI
       </h1>
-      <p className='py-4 text-sm font-light lg:text-base max-w-2xl'>
-          Whether you`&apos;`re in the office or you`&apos;`re out and about - 
-          Awaj is ready whenever, and wherever, you are! Install Awaj AI across all of your compatible systems
-            to create emails, get notifications, and move your marketing forward.
-      </p>
-      <Image
-          className='rounded-2xl my-6'
-          alt={'page under construction'}
-          width={680}
-          height={485}
-          src={Hands.src}
-          />
-      <div className='flex flex-col p-4 md:p-8 items-center text-center rounded-lg bg-accent w-full md:w-1/2 mx-auto '>
+      <div className={styles.headline1_canvas}>
+        <div className={'flex flex-col md:flex-row justify-evenly max-w-4xl items-center'}>
+          <Image src={Hands} alt='awaj case studies' width={600}/>
+          <div className='text-base text-muted-foreground text-start'>
+            <p className='text-xl md:text-2xl md:font-bold font-semibold'>
+            Awaj - Everywhere!
+            </p><br/> 
+            <p>Whether you&apos;re in the office or you&apos;re out and about - 
+                Awaj is ready whenever, and wherever, you are!</p>
+            <br />
+            <p>Install Awaj AI across all of your compatible systems
+            to gain full access to our tools, get notifications, and move your marketing and sales forward.</p>
+            <div className='mt-8 flex flex-col items-center text-center text-muted-foreground'>
+              <div className="border-border border-t-2 border-dashed h-8 w-full"></div>
+              <p>
+              Don&apos;t have an account? 
+              </p>
+                <div className='mt-4'>
+                  <Link href="/resources/how_it_works">
+                      <div
+                      className={buttonVariants({
+                          variant:'outline',
+                          size: "default",
+                      })}
+                      >
+                      Register Here 🡥
+                      <span className="sr-only">See how it works</span>
+                      </div>
+                  </Link>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className='flex flex-col mt-8 p-4 md:p-8 items-center text-center rounded-lg bg-accent w-full md:w-1/2 mx-auto '>
           <h2 className='text-lg text-center font-bold leading-[1.15] lg:text-2xl py-6'>
               Choose platform
           </h2>

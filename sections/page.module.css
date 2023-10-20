@@ -2,28 +2,27 @@
 .container {
   position: absolute;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
-  gap:12px;
-  top: 68px;
-  left: 10%;
-  right: 10%;
-  margin: auto 0;
-  justify-content: space-between;
+  top: 14px;
+  width: 100%;
+  margin: auto;
+  justify-content:space-around;
   padding: 24px;
   z-index: 10;
-  align-items:baseline;
+  align-items: last baseline;
   overflow: hidden;
 }
 @media only  screen  and (max-width: 768px){
 .container {
-  left: 5%;
-  right: 5%;
+  justify-content: flex-end;
+  flex-direction: column;
 }
   }
 .glass {
+  display: flex;
+  flex-direction: column;
 position: relative;
-max-width: 400px;
+max-width: 520px;
 margin-top: 150px;
 padding: 40px;
 border-radius: 10px;
@@ -36,36 +35,33 @@ box-shadow: inset -6px -6px 22px var(--glow),
 }
 @media only  screen  and (max-width: 768px){
 .glass {
+  margin-top: 0px;
   padding: 15px;
 }
   }
 .header {
-margin-top: -150px;
-font-family:cursive;
 color: var(--secondaryColor);
 justify-content: center;
 text-align: center;
   @apply 
-  text-4xl 
-  font-semibold
-  leading-[1.5] 
-  md:text-5xl;
+  hidden md:flex
+  mt-0 md:-mt-40;
 }
 
 .subtitle {
-  @apply my-1
-  text-2xl
-  font-light
-  text-center
-  max-w-lg;
+  @apply my-0 md:my-1
+  font-semibold
+  leading-[1.5] 
+  text-xl md:text-3xl
+  text-muted-foreground
+  text-center;
 }
 
 .desc {
   @apply
   text-base
-  font-light
-  hidden
-  md:flex
+  text-muted-foreground
+  text-center
   max-w-lg;
 }
   /*Payment Option Style*/
@@ -84,4 +80,22 @@ text-align: center;
     flex: 1;
   }
   
-
+/*Stat Style*/
+.statcanvas {
+  position: relative;
+  display: flex;
+  background-color: var(--shadow);
+  color: var(--accent1);
+  gap: 6px;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  margin: 10px;
+  border-width: 1px;
+  border-color: var(--card1);
+  box-shadow: inset 12px 12px 12px var(--shadow),
+              inset -0px -0px 0px var(--glow),
+              0px 0px 0px var(--shadow),
+              -10px -10px 10px var(--glow);
+  border-radius: 15px;
+}

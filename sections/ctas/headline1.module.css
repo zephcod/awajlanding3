@@ -22,6 +22,8 @@
     background-color: var(--card1);
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
+    border-color: var(--btn-glow2);
+    border-width: 2px;
     backdrop-filter: saturate(130%) blur(5px) !important;
     background-color: var(--transparent-glass) !important;
     box-shadow: inset -2px -2px 22px var(--glow),
@@ -38,13 +40,15 @@
     position: relative;
     width: 75vw;
     margin: auto;
-    padding: 64px;
+    padding: 48px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 50px;
+    gap: 24px;
     justify-content: space-between;
     background-color: var(--card1);
+    border-color: var(--btn-glow2);
+    border-width: 2px;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     backdrop-filter: saturate(130%) blur(5px) !important;
@@ -59,12 +63,6 @@
         padding: 12px;
     }
         }
-  .imgContainer {
-    position: relative;
-    display: flex;
-    padding: 64px;
-    flex: 1;
-  }
 
   .headline_col {
     flex: 2;
@@ -72,9 +70,5 @@
     padding: 12px;
     margin: auto;
   }
-  .title {
-    font-size: 60px;
-    margin-bottom: 48px;
-    text-align: center;
-  }
+
  

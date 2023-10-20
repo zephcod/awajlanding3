@@ -13,7 +13,7 @@ export default function Faqs () {
             <div className={styles.faq_card2}>
             {FaqCard()}
             </div>
-            <Link href={'/faqs'} className="relative group rounded-full flex items-center justify-center mx-auto text-primary-foreground dark:text-secondary text-sm font-light pt-6 px-6 transition-all">
+            <Link href={'/help_center'} className="relative group rounded-full flex items-center justify-center mx-auto text-primary-foreground dark:text-secondary text-sm font-light pt-6 px-6 transition-all">
                 <p>Check more on Help Center...</p>
             <ExpandingArrow/>
             </Link>

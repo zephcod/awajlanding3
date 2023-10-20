@@ -16,14 +16,18 @@ export const env = createEnv({
     UPLOADTHING_SECRET: z.string("sk_live_630074e7a117be444d0929d1e3d42d3de2f0c02f810cdcff870f4b0047a49bcb"),
     UPLOADTHING_APP_ID: z.string("pjkq008pqs"),
     
-    CHAPA_SECRET:z.string("CHASECK_TEST-BHcbAIPojwydRGTqJTwUfbgqL8pRCCrm"),
+    CHAPA_SECRET:z.string(process.env.CHAPA_SECRET),
     POSTGRES_URL: z.string("postgres://default:6pkql7TQhEYi@ep-withered-poetry-08252282-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb"),
-    // POSTGRES_PRISMA_URL: z.string("postgres://default:6pkql7TQhEYi@ep-withered-poetry-08252282-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb?pgbouncer=true&connect_timeout=15"),
-    // POSTGRES_URL_NON_POOLING: z.string("postgres://default:6pkql7TQhEYi@ep-withered-poetry-08252282.us-east-1.postgres.vercel-storage.com:5432/verceldb"),
-    // POSTGRES_USER: z.string("default"),
-    // POSTGRES_HOST: z.string("ep-withered-poetry-08252282-pooler.us-east-1.postgres.vercel-storage.com"),
-    // POSTGRES_PASSWORD: z.string("6pkql7TQhEYi"),
-    // POSTGRES_DATABASE: z.string("verceldb"),
+    
+    APPWRITE_ENDPOINT:z.string(process.env.APPWRITE_ENDPOINT),
+    APPWRITE_PROJECT:z.string(process.env.APPWRITE_PROJECT),
+    APPWRITE_DATABASE:z.string(process.env.APPWRITE_DATABASE),
+
+    APPWRITE_COLLECTION_USER:z.string(process.env.APPWRITE_COLLECTION_USER),
+    APPWRITE_COLLECTION_SOLUTIONS:z.string(process.env.APPWRITE_COLLECTION_SOLUTIONS),
+    APPWRITE_COLLECTION_CAMPAIGNS:z.string(process.env.APPWRITE_COLLECTION_CAMPAIGNS),
+
+    APPWRITE_BUCKET_IMAGE:z.string(process.env.APPWRITE_BUCKET_IMAGE),
   },
 
   /**
@@ -35,6 +39,16 @@ export const env = createEnv({
     NEXT_PUBLIC_APP_URL: z.string().url(process.env.NEXT_PUBLIC_APP_URL),
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string('pk_test_aG9seS1jYWltYW4tNTcuY2xlcmsuYWNjb3VudHMuZGV2JA'),
 
+    APPWRITE_P_ENDPOINT:z.string('https://cloud.appwrite.io/v1'),
+    APPWRITE_P_PROJECT:z.string('6504c902cef3dc9b138c'),
+    APPWRITE_P_DATABASE:z.string('650a05f49ac5d9e273b8'),
+
+    APPWRITE_P_COLLECTION_USER:z.string('650a062ace779e21c647'),
+    APPWRITE_P_COLLECTION_SOLUTIONS:z.string('650c8281e11da97327c9'),
+    APPWRITE_P_COLLECTION_CAMPAIGNS:z.string('650e36335fababaad21d'),
+
+    APPWRITE_P_BUCKET_IMAGE:z.string('650d2f3abd9c8148bda2'),
+
   },
 
   /**
@@ -43,7 +57,6 @@ export const env = createEnv({
    */
   runtimeEnv: {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
-    // NEXT_PUBLIC_APP_URL: 'http://localhost:3000',
     DATABASE_URL: process.env.DATABASE_URL,
     NODE_ENV: process.env.NODE_ENV,
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
@@ -64,10 +77,25 @@ export const env = createEnv({
 
     CHAPA_SECRET:process.env.CHAPA_SECRET,
 
-    STRIPE_API_KEY: process.env.STRIPE_API_KEY,
-    STRIPE_WEBHOOK_SECRET: process.env.STRIPE_WEBHOOK_SECRET,
-    STRIPE_STD_MONTHLY_PRICE_ID: process.env.STRIPE_STD_MONTHLY_PRICE_ID,
-    STRIPE_PRO_MONTHLY_PRICE_ID: process.env.STRIPE_PRO_MONTHLY_PRICE_ID,
+    APPWRITE_ENDPOINT:process.env.APPWRITE_ENDPOINT,
+    APPWRITE_PROJECT:process.env.APPWRITE_PROJECT,
+    APPWRITE_DATABASE:process.env.APPWRITE_DATABASE,
+
+    APPWRITE_COLLECTION_USER:process.env.APPWRITE_COLLECTION_USER,
+    APPWRITE_COLLECTION_SOLUTIONS:process.env.APPWRITE_COLLECTION_SOLUTIONS,
+    APPWRITE_COLLECTION_CAMPAIGNS:process.env.APPWRITE_COLLECTION_CAMPAIGNS,
+
+    APPWRITE_BUCKET_IMAGE:process.env.APPWRITE_BUCKET_IMAGE,
+
+    APPWRITE_P_ENDPOINT:'https://cloud.appwrite.io/v1',
+    APPWRITE_P_PROJECT:'6504c902cef3dc9b138c',
+    APPWRITE_P_DATABASE:'650a05f49ac5d9e273b8',
+
+    APPWRITE_P_COLLECTION_USER:'650a062ace779e21c647',
+    APPWRITE_P_COLLECTION_SOLUTIONS:'650c8281e11da97327c9',
+    APPWRITE_P_COLLECTION_CAMPAIGNS:'650e36335fababaad21d',
+
+    APPWRITE_P_BUCKET_IMAGE:'650d2f3abd9c8148bda2',
 
   },
   /**

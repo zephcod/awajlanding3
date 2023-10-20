@@ -1,14 +1,11 @@
 "use client"
-
 import * as React from "react"
 import { useRouter } from "next/navigation"
-import { useSignIn } from "@clerk/nextjs"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 import type { z } from "zod"
 
-import { catchClerkError } from "@/app/utils/utils"
 import { resetPasswordSchema } from "@/lib/validations/auth"
 import { Button } from "@/components/UI/button"
 import {
@@ -19,15 +16,19 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/UI/form"
-import { Input } from "@/components/UI/input"
 import { Icons } from "@/components/UI/icons"
 import { PasswordInput } from "@/components/password_input"
+import appwriteAuthService from "@/db/appwrite_auth"
+import { absoluteUrl } from "@/app/utils/utils"
 
 type Inputs = z.infer<typeof resetPasswordSchema>
-
-export function ResetPasswordStep2Form() {
+interface ResetProps {
+  user:string
+  sec:string
+}
+export function ResetPasswordStep2Form({user,sec}:ResetProps){
   const router = useRouter()
-  const { isLoaded, signIn, setActive } = useSignIn()
+  const loginUrl = absoluteUrl("/signin");
   const [isPending, startTransition] = React.useTransition()
 
   // react-hook-form
@@ -36,34 +37,23 @@ export function ResetPasswordStep2Form() {
     defaultValues: {
       password: "",
       confirmPassword: "",
-      code: "",
     },
   })
 
   function onSubmit(data: Inputs) {
-    if (!isLoaded) return
-
     startTransition(async () => {
       try {
-        const attemptFirstFactor = await signIn.attemptFirstFactor({
-          strategy: "reset_password_email_code",
-          code: data.code,
-          password: data.password,
-        })
-
-        if (attemptFirstFactor.status === "needs_second_factor") {
-          // TODO: implement 2FA (requires clerk pro plan)
-        } else if (attemptFirstFactor.status === "complete") {
-          await setActive({
-            session: attemptFirstFactor.createdSessionId,
-          })
-          router.push(`${window.location.origin}/`)
-          toast.success("Password reset successfully.")
-        } else {
-          console.error(attemptFirstFactor)
+        if (user && sec) {
+          await appwriteAuthService.resetPasswordSecond(user,sec,data.password,data.confirmPassword)
+          toast.message("Password Updated:", {
+            description: 'Please reach support if there is any issue with your account',
+           })
+           router.push(loginUrl)
         }
       } catch (err) {
-        catchClerkError(err)
+        toast.message("Error occured:", {
+          description: `${err}`,
+         })
       }
     })
   }
@@ -80,7 +70,7 @@ export function ResetPasswordStep2Form() {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Password</FormLabel>
+              <FormLabel>New Password</FormLabel>
               <FormControl>
                 <PasswordInput placeholder="*********" {...field} />
               </FormControl>
@@ -96,26 +86,6 @@ export function ResetPasswordStep2Form() {
               <FormLabel>Confirm Password</FormLabel>
               <FormControl>
                 <PasswordInput placeholder="*********" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="code"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Code</FormLabel>
-              <FormControl>
-                <Input
-                  placeholder="169420"
-                  {...field}
-                  onChange={(e) => {
-                    e.target.value = e.target.value.trim()
-                    field.onChange(e)
-                  }}
-                />
               </FormControl>
               <FormMessage />
             </FormItem>

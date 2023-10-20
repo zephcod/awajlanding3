@@ -9,19 +9,21 @@ import { Button } from '../UI/button'
 import { Icons } from '../UI/icons'
 import { useRouter } from 'next/navigation'
 import { useProModal } from "@/hooks/use-pro-modal";
+import { Badge } from '../UI/badge'
+import { Input } from '../UI/input'
 
 const MelaCard = () => {
     const [loading, setLoading] = React.useState(false);
-    const [silverMela, setPriceFix] = React.useState<[number]>([100])
-    const priceFormat = Number(silverMela)
-    const silverMelaPrice = (priceFormat*0.2)
+    const [silverMela, setSilverMela] = React.useState<[number]>([20])
+    const silverMelaFormat = Number(silverMela)
+    const silverMelaPrice = (silverMelaFormat*5)
     const proModal = useProModal();
     proModal.isOpen = true;
 
     const onBuy = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`/api/chapa?amount=${priceFormat}&prod=silverMela-${silverMela[0]}`);
+        const response = await axios.get(`/api/chapa?amount=${silverMelaPrice}&prod=silverMela-${silverMela[0]}`);
   
         window.location.href = response.data.url;
       } catch (error:any) {
@@ -40,29 +42,44 @@ const MelaCard = () => {
   return (
     <>
       <div className='bg-accent rounded-2xl ring-2 ring-accent'>
-        <div className='flex flex-col gap-4 p-4 relative'>
-          <p className="text-center py-1 font-extralight text-lg">
-          {formatPrice(priceFormat)}
-          </p>
-          
-          <Slider
-            variant="default"
-            aria-label="Enterprise package slider"
-            thickness="thin"
-            name="456"
-            defaultValue={[100]}
-            min={50}
-            max={2000}
-            step={50}
-            value={silverMela}
-            onValueChange={(
-              value: typeof silverMela
-              ) => {
-                setPriceFix(value)
-              }}
-              />
-          <p className="text-center py-1 font-extralight text-lg">Mela: {silverMelaPrice}</p>
-        </div>
+      <div className='flex flex-col gap-4 p-4 relative'>
+                <div className="flex flex-row justify-center gap-2">
+                  <p> Silver Mela </p>
+                  <Badge>+{silverMela[0]}</Badge>
+                </div>
+                <Slider
+                  variant="default"
+                  aria-label="Enterprise package slider"
+                  thickness="thin"
+                  name="456"
+                  defaultValue={[20]}
+                  min={10}
+                  max={400}
+                  step={10}
+                  value={silverMela}
+                  onValueChange={(
+                    value: typeof silverMela
+                    ) => {
+                    setSilverMela(value)
+                  }}
+                />
+                <div className="flex flex-row items-center gap-2 px-6">
+                    <p className="text-center font-extralight text-base">Mela: </p>
+                    <Input
+                    type="number"
+                    inputMode="numeric"
+                    defaultValue={silverMela[0]}
+                    value={silverMela[0]}
+                    min={10}
+                    step={10}
+                    max={400}
+                    onChange={(e) => {
+                      const value = Number(e.target.value)
+                      setSilverMela([value])
+                    }} />
+                </div>
+                <p> {formatPrice(silverMelaPrice)} </p>
+              </div>
         <div className='flex flex-col bg-card rounded-2xl w-full'>
             <div className='block font-light text-sm m-auto p-4'>
                 <div className='p-1 flex flex-row items-center gap-2'>
@@ -84,12 +101,13 @@ const MelaCard = () => {
         </div>
       </div>
         <Button className='mt-4' disabled={loading} onClick={onBuy}>
-                      {loading && (
-                      <Icons.spinner
-                      className="mr-2 h-4 w-4 animate-spin"
-                      aria-hidden="true"
-                      />
-                      )} Buy Mela</Button>
+          {loading && (
+          <Icons.spinner
+          className="mr-2 h-4 w-4 animate-spin"
+          aria-hidden="true"
+          />
+          )} Buy Mela
+        </Button>
        </>
   )
 }

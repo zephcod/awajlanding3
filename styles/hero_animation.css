@@ -109,10 +109,12 @@
     position: absolute;
     bottom: 100px;
     width: 25px;
+    rotate: -20deg;
+    transform: translateY(-15px);
     box-shadow:
-      -30px 28px 0 1.5px #fff,
-       -35px 18px 0 1.5px #fff,
-       -25px 08px 0 1.5px #fff;
+      -30px 28px 0 1.5px #b6b6b6,
+       -35px 18px 0 1.5px #b6b6b6,
+       -25px 08px 0 1.5px #b6b6b6;
   }
   .awaj {
     position: absolute;
@@ -138,7 +140,7 @@
   .statue4  { animation: statue4 30s -20s linear infinite; }
   .statue5  { animation: statue5 30s -25s linear infinite; }
   .truck  { animation: truck 4s   0.30s ease-in-out infinite; }
-  .truck:before { animation: wind 1.5s   0.000s ease infinite; }
+  .truck:before { animation: wind 4s   0.70s ease-in-out infinite; }
 
   .awaj:nth-child(2)  { animation: awaj 10s 1s ease-in-out infinite; }
   .awaj:nth-child(3)  { animation: awaj2 10s 2s ease-in-out infinite; }

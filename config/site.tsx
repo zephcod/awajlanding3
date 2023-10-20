@@ -32,7 +32,7 @@ export const siteConfig = {
         {
           title: "Awaj Mela",
           href: "/pricing/awaj-mela",
-          description: "Top up your Awaj Mela here.",
+          description: "Top up your Awaj Mela coins here.",
           items: [],
         },
         {
@@ -61,7 +61,7 @@ export const siteConfig = {
       ],
     })),
     {
-      title: "AI Hub",
+      title: "AI",
       items: [
         {
           title: "Gallery",

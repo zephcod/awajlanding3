@@ -3,8 +3,8 @@ import Main from "../../components/Main";
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Awaj Ad',
-  description: 'Awaj Advertising Agency',
+  title: 'Awaj AI',
+  description: 'Awaj AI Digital Marketing and Advertising Agency',
 }
 
 

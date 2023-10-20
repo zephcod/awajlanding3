@@ -15,8 +15,8 @@
 
 .card_list::-webkit-scrollbar {
     display: none;
-    /* width: 5px; */
-    /* height: 5px; */
+    width: 15px;
+    height: 15px;
 }
 .card_list::-webkit-scrollbar-thumb {
     background: var(--card);

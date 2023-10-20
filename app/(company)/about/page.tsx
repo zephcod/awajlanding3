@@ -2,14 +2,14 @@ import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import Button from "@/components/button/button";
-import Character_bg from "@/public/character/megaphone.jpg";
+import Banner from "@/public/character/2077.png";
 
 const About = () => {
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
         <Image
-          src={Character_bg}
+          src={Banner}
           fill={true}
           alt=""
           className={styles.img}

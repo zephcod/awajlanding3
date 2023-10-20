@@ -47,10 +47,10 @@ export function MainNav({ items }: MainNavProps) {
                   <li className="row-span-3">
                     <NavigationMenuLink asChild>
                       <Link
-                        aria-label="Home"
-                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-accent p-6 no-underline outline-none focus:shadow-md"
+                        aria-label="Build a campaign"
+                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-[url('/character/megafono.png')] p-6 no-underline outline-none focus:shadow-md"
                         href="/pricing/build-campaign">
-                        <Icons.megaphone className="h-6 w-6" aria-hidden="true" />
+                        <Icons.presentation className="h-6 w-6" aria-hidden="true" />
                         <div className="mb-2 mt-4 text-lg font-medium">
                           Build a Campaign
                         </div>

@@ -23,7 +23,7 @@ export default function Subscriptions(){
           <div key={props.id} className={styles.canvas}>
             <div className= {styles.card}>
               <div className={styles.banner}>
-                <p className='text-center p-2'>
+                <p className='text-center p-1'>
                   {props.title}
                 </p>
                 <p className={selectMonthly===true?'price_title':'price_title2'}>
@@ -64,13 +64,13 @@ export default function Subscriptions(){
   
     return (
       <section>
-        <div className={styles.toggler} onClick={() => {
+        <div className={selectMonthly === true ?'toggler':'toggler2'} onClick={() => {
             setSelectMonthly((prev) => !prev);
             }}>
-          <div className={styles.icon}>Annualy</div>
-          <div className={styles.icon}>Monthly</div>
+          <div className='p-3 text-sm text-card font-semibold'>Annually</div>
+          <div className='p-3 text-sm text-muted-foreground font-semibold'>Monthly</div>
           <div
-            className={selectMonthly===true?'ball2':'ball1'}
+            className={'ball2'}
             style={selectMonthly === true ? { left: "2px" } : { right: "2px" }}/>
         </div><br/>
         <div className={styles.tiercard}>

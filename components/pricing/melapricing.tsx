@@ -31,8 +31,13 @@ export default function MelaPricing(){
         const response = await axios.get(`/api/chapa?amount=${silverMelaPrice}&prod=silverMela-${silverMela[0]}`);
   
         window.location.href = response.data.url;
-      } catch (error) {
-        toast.error("Network error - please try again.");
+      } catch (error:any) {
+        if (error.message === 'Request failed with status code 401') {
+          toast.error('You do not have an account please sign up first');
+          window.location.href = '/signup';
+        } else {
+          toast.error(JSON.stringify(error.message));
+        }
       } finally {
         setLoading(false);
       }
@@ -44,8 +49,13 @@ export default function MelaPricing(){
         const response = await axios.get(`/api/chapa?amount=${goldMelaPrice}&prod=goldMela-${goldMela[0]}`);
   
         window.location.href = response.data.url;
-      } catch (error) {
-        toast.error("Network error - please try again.");
+      } catch (error:any) {
+        if (error.message === 'Request failed with status code 401') {
+          toast.error('You do not have an account please sign up first');
+          window.location.href = '/signup';
+        } else {
+          toast.error(JSON.stringify(error.message));
+        }
       } finally {
         setLoading2(false);
       }

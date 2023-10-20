@@ -1,8 +1,5 @@
 import { type Metadata } from "next"
 import Link from "next/link"
-import { redirect } from "next/navigation"
-// import { env } from "@/env"
-import { currentUser } from "@clerk/nextjs"
 
 import {
   Card,
@@ -23,16 +20,14 @@ export const metadata: Metadata = {
 }
 
 export default async function SignInPage() {
-  const user = await currentUser()
-  if (user) redirect("/")
 
   return (
     <Shell className="max-w-lg h-screen relative my-auto p-6 pt-20 md:pt-0">
       <Card>
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl">Sign in</CardTitle>
+          <CardTitle className="text-2xl">Log In</CardTitle>
           <CardDescription>
-            Choose your preferred sign in method
+            Choose your preferred log in method
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4">
@@ -57,17 +52,17 @@ export default async function SignInPage() {
             <Link
               aria-label="Sign up"
               href="/signup"
-              className="text-primary underline-offset-4 transition-colors hover:underline"
+              className="underline-offset-4 text-card-foreground transition-colors hover:underline"
             >
-              Sign up
+              Register 🡥
             </Link>
           </div>
           <Link
             aria-label="Reset password"
-            href="/signin/reset-password"
-            className="text-sm text-primary underline-offset-4 transition-colors hover:underline"
+            href="/signin/reset_password"
+            className="text-sm text-card-foreground underline-offset-4 transition-colors hover:underline"
           >
-            Reset password
+            Forgot password 🡥
           </Link>
         </CardFooter>
       </Card>

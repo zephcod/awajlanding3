@@ -1,6 +1,5 @@
-import { type Metadata } from "next"
-import { env } from "@/env.mjs"
-
+'use client'
+import { useSearchParams } from "next/navigation"
 import {
   Card,
   CardContent,
@@ -11,15 +10,18 @@ import {
 import { ResetPasswordStep2Form } from "@/components/forms/reset_password_form_step2"
 import { Shell } from "@/components/shells/shell"
 
-export const metadata: Metadata = {
-  // metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
-  title: "Reset Password",
-  description: "Enter your email to reset your password",
-}
 
 export default function ResetPasswordStep2Page() {
+
+  const urlParams = useSearchParams()
+  const userId = urlParams.get('userId')
+  const secret = urlParams.get('secret')
+  let ver = false
+
+
+
   return (
-    <Shell className="max-w-lg relative my-auto p-4">
+    <Shell className="max-w-lg h-screen relative my-auto p-4">
       <Card>
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl">Reset password</CardTitle>
@@ -28,7 +30,7 @@ export default function ResetPasswordStep2Page() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <ResetPasswordStep2Form />
+          <ResetPasswordStep2Form user={userId??""} sec={secret??""} />
         </CardContent>
       </Card>
     </Shell>

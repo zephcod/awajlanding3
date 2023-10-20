@@ -14,8 +14,8 @@ const RoundButton: FunctionComponent<ButtonProps> = ({children,url,text}) => {
     <Link href={url}>
     <button className={styles.round}>
         {children}
+    <span><p className='pb-1'>{text}</p></span>
     </button>
-    <p className={styles.tag}>{text}</p>
     </Link>
     </div>
   )

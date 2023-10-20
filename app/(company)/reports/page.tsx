@@ -1,12 +1,19 @@
-import { db }from '@/db';
-import { emailPreferences, solutions, faqsTable, stores } from '@/db/schema';
+'use client'
+import appwriteAuthService from '@/db/appwrite_auth';
+import React, {useEffect, useState} from 'react'
 
-import React from 'react'
-
-async function Home () {
+const Home = () => {
+  const [user, setUser] = useState(false)
   
- const users = await db.select().from(faqsTable)
- const res = JSON.stringify(users);
+  useEffect(()=>{
+    (async () => {
+      const ustat = await appwriteAuthService.isLoggedIn()
+      setUser(ustat)
+    })()
+  },[])
+
+ const res = JSON.stringify(user);
+ if(!user) return<div>loading...</div>
   return (
     <div className='pt-14 items-center text-center'>{res}</div>
   )

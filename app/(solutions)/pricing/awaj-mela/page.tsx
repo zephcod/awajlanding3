@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import styles from '@/components/pricing/page.module.css'
 import PopularOrders from '@/components/pricing/popular_orders'
 import MelaPricing from '@/components/pricing/melapricing'
+import PaymentOptions from '@/sections/payment_options'
 
 export const metadata: Metadata = {
   title: 'Awaj Mela',
@@ -25,6 +26,7 @@ const AwajAiCoins = () => {
         <MelaPricing/>
       </div>
       <PopularOrders/>
+      <PaymentOptions/>
   </section>
   )
 }

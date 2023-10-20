@@ -2,13 +2,14 @@
 
 import * as React from "react"
 import { useRouter } from "next/navigation"
-import { useSignUp } from "@clerk/nextjs"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 import type { z } from "zod"
 
-import { catchClerkError } from "@/app/utils/utils"
+
+import appwriteAuthService from "@/db/appwrite_auth"
+import useAuth from "@/hooks/use_auth"
 import { authSchema } from "@/lib/validations/auth"
 import { Button } from "@/components/UI/button"
 import {
@@ -27,39 +28,35 @@ type Inputs = z.infer<typeof authSchema>
 
 export function SignUpForm() {
   const router = useRouter()
-  const { isLoaded, signUp } = useSignUp()
   const [isPending, startTransition] = React.useTransition()
+  const {setAuthStatus} = useAuth()
+
 
   // react-hook-form
   const form = useForm<Inputs>({
     resolver: zodResolver(authSchema),
     defaultValues: {
       email: "",
+      phone: '',
       password: "",
     },
   })
 
   async function onSubmit(data: Inputs) {
-    if (!isLoaded) return
 
     startTransition(async () => {
       try {
-        await signUp.create({
-          emailAddress: data.email,
-          password: data.password,
-        })
-
-        // Send email verification code
-        await signUp.prepareEmailAddressVerification({
-          strategy: "email_code",
-        })
-
-        router.push("/signup/verify-email")
-        toast.message("Check your email", {
-          description: "We sent you a 6-digit verification code.",
+        await appwriteAuthService.createUserAccount({email: data.email, password: data.password})
+        await appwriteAuthService.updatePhone({phone:data.phone,pass:data.password})
+        setAuthStatus(true)
+        router.push("/signup/verify")
+        toast.message("Account created successfully", {
+          description: "Please verify your account on the next page",
         })
       } catch (err) {
-        catchClerkError(err)
+        toast.message("Error occured:", {
+          description: `${err}`,
+         })
       }
     })
   }
@@ -77,7 +74,20 @@ export function SignUpForm() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="rodneymullen180@gmail.com" {...field} />
+                <Input placeholder="abera180@gmail.com" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="phone"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Phone</FormLabel>
+              <FormControl>
+                <Input placeholder="+251912345678" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -103,7 +113,7 @@ export function SignUpForm() {
               aria-hidden="true"
             />
           )}
-          Continue
+          Register
           <span className="sr-only">Continue to email verification page</span>
         </Button>
       </form>

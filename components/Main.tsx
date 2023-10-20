@@ -7,6 +7,8 @@ import PaymentOptions from "@/sections/payment_options";
 import ValueProp from "@/sections/value_proposition";
 import styles from '@/components/page.module.css'
 import Headline1 from "@/sections/ctas/headline1";
+import Stats from "@/sections/stats";
+import { QuickCampaign } from "./pricing/quick_campaign";
 
 export default function Main() {
   return (
@@ -15,20 +17,22 @@ export default function Main() {
           <Hero/>
         </div>
       <Headline1/>
-      <h2 className="pt-24 mb-1 text-4xl font-extrabold leading-[1.15] lg:text-6xl;">
+      <h2 className="pt-24 mb-1 text-3xl text-center text-muted-foreground font-bold leading-[1.15] lg:text-4xl">
         Check our main services.
       </h2>
-      <p className="mx-auto text-xl text-center font-normal leading-relaxed p-4 lg:w-2/3">
-        Here are awaj`&apos;`s four featured services categorized in our core digital marketing principles.
+      <p className="mx-auto text-lg md:text-xl text-muted-foreground text-center font-normal leading-relaxed p-4 lg:w-2/3">
+        Here are awaj&apos;s four featured services categorized in our core digital marketing principles.
       </p>
       <ServiceCarousel/>
+      <div className="h-8"></div>
       <InRoundButton url="/pricing/deals" text="Check Deals">
         <span><BsRocketTakeoffFill/></span>
       </InRoundButton>
+      <Stats/>
       <ValueProp/>
       <PaymentOptions/>
       <br/>
-      <CtaHeadline/>
+      <div className="w-full"><QuickCampaign/></div>
     </section>
   );
 }

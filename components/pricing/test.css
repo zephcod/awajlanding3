@@ -20,12 +20,15 @@
     border-radius: 30px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-self: center;
+    justify-content: center;
     padding: 4px;
+    margin-inline: auto;
     margin-bottom: 6px;
     position: relative;
     cursor: pointer;
     border-color: var(--card1);
+    background: var(--accent2);
     box-shadow: inset 8px 8px 8px var(--shadow),
                 inset -2px -2px 2px var(--glow),
                 1px 1px 1px var(--shadow),
@@ -54,4 +57,24 @@
     box-shadow: inset 8px 8px 8px var(--shadow),
                 inset -2px -2px 2px var(--glow),
                 1px 1px 1px var(--shadow);
+  }
+  .toggler{
+    width: 160px;
+    height: 40px;
+    border-width: .5px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    padding: 4px;
+    margin-inline: auto;
+    margin-bottom: 6px;
+    position: relative;
+    cursor: pointer;
+    border-color: var(--card1);
+    box-shadow: inset 8px 8px 8px var(--shadow),
+                inset -2px -2px 2px var(--glow),
+                1px 1px 1px var(--shadow),
+                -2px -2px 2px var(--glow);
   }

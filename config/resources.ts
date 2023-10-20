@@ -1,10 +1,7 @@
 import { LucideIcon,
-  MessageSquare, 
+  BookUp2, 
   GalleryThumbnails,
-  Aperture,
-  Headphones,
-  VideoIcon,
-  Code } from "lucide-react";
+  LineChart,} from "lucide-react";
 
 export type Item = {
   name: string;
@@ -41,7 +38,7 @@ export const demos: { title: string; icon: LucideIcon; items: Item[] }[] = [
   },
   {
     title: 'Case Studes',
-    icon: GalleryThumbnails,
+    icon: LineChart,
     items: [
       {
         name: 'Awaj Case Studies',
@@ -58,7 +55,7 @@ export const demos: { title: string; icon: LucideIcon; items: Item[] }[] = [
   },
   {
     title: 'Content Hub',
-    icon: GalleryThumbnails,
+    icon: BookUp2,
     items: [
       {
         name: 'Gallery',

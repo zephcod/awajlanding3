@@ -1,8 +1,5 @@
 import { type Metadata } from "next"
 import Link from "next/link"
-import { redirect } from "next/navigation"
-import { env } from "@/env.mjs"
-import { currentUser } from "@clerk/nextjs"
 
 import {
   Card,
@@ -23,14 +20,11 @@ export const metadata: Metadata = {
 }
 
 export default async function SignUpPage() {
-  const user = await currentUser()
-  if (user) redirect("/")
-
   return (
     <Shell className="max-w-lg h-screen relative my-auto p-6 pt-20 md:pt-0">
       <Card>
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl">Sign up</CardTitle>
+          <CardTitle className="text-2xl">Register</CardTitle>
           <CardDescription>
             Choose your preferred sign up method
           </CardDescription>
@@ -55,9 +49,9 @@ export default async function SignUpPage() {
             <Link
               aria-label="Sign in"
               href="/signin"
-              className="text-primary underline-offset-4 transition-colors hover:underline"
+              className=" text-card-foreground underline-offset-4 transition-colors hover:underline"
             >
-              Sign in
+              Login 🡥 
             </Link>
           </div>
         </CardFooter>

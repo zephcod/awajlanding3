@@ -2,13 +2,14 @@
 
 import * as React from "react"
 import { useRouter } from "next/navigation"
-import { useSignIn } from "@clerk/nextjs"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import type { z } from "zod"
 
+import appwriteAuthService from "@/db/appwrite_auth"
+import useAuth from "@/hooks/use_auth"
 import { catchClerkError } from "@/app/utils/utils"
-import { authSchema } from "@/lib/validations/auth"
+import { loginSchema } from "@/lib/validations/auth"
 import { Button } from "@/components/UI/button"
 import {
   Form,
@@ -21,17 +22,18 @@ import {
 import { Input } from "@/components/UI/input"
 import { Icons } from "@/components/UI/icons"
 import { PasswordInput } from "@/components/password_input"
+import { toast } from "sonner"
 
-type Inputs = z.infer<typeof authSchema>
+type Inputs = z.infer<typeof loginSchema>
 
 export function SignInForm() {
   const router = useRouter()
-  const { isLoaded, signIn, setActive } = useSignIn()
   const [isPending, startTransition] = React.useTransition()
+  const {setAuthStatus} = useAuth()
 
   // react-hook-form
   const form = useForm<Inputs>({
-    resolver: zodResolver(authSchema),
+    resolver: zodResolver(loginSchema),
     defaultValues: {
       email: "",
       password: "",
@@ -39,25 +41,20 @@ export function SignInForm() {
   })
 
   async function onSubmit(data: Inputs) {
-    if (!isLoaded) return
-
     startTransition(async () => {
       try {
-        const result = await signIn.create({
-          identifier: data.email,
+        const session = await appwriteAuthService.login({
+          email: data.email,
           password: data.password,
         })
-
-        if (result.status === "complete") {
-          await setActive({ session: result.createdSessionId })
-
-          router.push(`${window.location.origin}/`)
-        } else {
-          /*Investigate why the login hasn't completed */
-          console.log(result)
+        if (session) {
+          setAuthStatus(true)
+          router.back()
         }
       } catch (err) {
-        catchClerkError(err)
+        toast.message("Error occured while logging in", {
+          description: `${err}`,
+        })
       }
     })
   }
@@ -75,7 +72,7 @@ export function SignInForm() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="rodneymullen180@gmail.com" {...field} />
+                <Input placeholder="abera180@gmail.com" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -101,7 +98,7 @@ export function SignInForm() {
               aria-hidden="true"
             />
           )}
-          Sign in
+          Get in there!
           <span className="sr-only">Sign in</span>
         </Button>
       </form>

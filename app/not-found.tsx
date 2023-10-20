@@ -1,9 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
-import NotImage from '@/public/character/404.png'
+import NotImage from '@/public/character/3834.png'
 import Link from 'next/link';
 import { buttonVariants } from '@/components/UI/button';
-import { Icons } from '@/components/UI/icons';
 
 export default function NotFound ()  {
   return (
@@ -12,9 +11,9 @@ export default function NotFound ()  {
           404 | Not Found
       </h1>
       <p className='py-4 text-sm font-light lg:text-base max-w-2xl'>
-      We`&apos;`re sorry, but the page you requested could not be found. This might be due to a typo in the URL, 
+      We&apos;re sorry, but the page you requested could not be found. This might be due to a typo in the URL, 
       a broken link, or an outdated bookmark. Please check the address and try again, 
-      or use the navigation menu to find what you`&apos;`re looking for.
+      or use the navigation menu to find what you&apos;re looking for.
       </p>
       <Image
           className='rounded-2xl my-6'

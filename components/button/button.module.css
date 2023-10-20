@@ -55,20 +55,21 @@
 
   .round {
     position: relative;
-    height: 7rem;
-    width: 7rem;
+    height: 4rem;
+    width: 10rem;
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-width: 4px;
+    border-width: 1px;
     border-color: var(--btn-border);
     background: var(--btn-bg);
     box-shadow: inset 2px 2px 0px var(--btn-glow),
                 inset -2px -2px 0px var(--btn-shadow);
-    border-radius: 50%;
+    border-radius: 20px;
     outline: none;
-    color: var(--accent1);
+    color: var(--primaryColor);
+    font-weight: 300;
     transition: .5s;
     
   }
@@ -82,27 +83,26 @@
   .round span{
     position: relative;
     margin: auto;
-    font-size: 3rem;
+    font-size: 1.2rem;
     
   }
   .round::before {
     position: absolute;
     content: '';
-    height: 7.25rem;
-    width: 7.25rem;
+    height: 4.25rem;
+    width: 10.25rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     border-width: 4px;
     border-color: var(--btn-border2);
     background: var(--btn-bg2);
-    box-shadow: 11px 11px 22px var(--btn-shadow2),
+    box-shadow: 5px 5px 15px var(--btn-shadow2),
                 -11px -11px 22px var(--btn-glow2);
     border-radius: inherit;
     z-index: -1;
   }
   .tag{
-    margin-top: 24px;
     color: var(--accent1);
   }
   .tag:hover{
@@ -223,20 +223,21 @@
       flex-direction: column;
       align-items: center;
       justify-items: stretch;
-      border-width: 4px;
+      border-width: 1px;
       border-color: var(--btn-border);
-      background: var(--btn-bg-color);
+      background: var(--btn-bg);
       box-shadow: inset 2px 2px 0px var(--btn-glow),
                   inset -2px -2px 0px var(--btn-shadow);
       border-radius: 20px;
       outline: none;
-      color: var(--accent1);
+      color: var(--primaryColor);
+      font-weight: 300;
       transition: .5s;
       
     }
     .color_btn:hover {
-      color: var(--primaryColor);
-      background: var(--btn-bg-color);
+      color: var(--accent2);
+      background: var(--btn-bg);
       box-shadow: inset 1px 1px 1px var(--btn-glow),
                   inset -2px -2px 0px var(--btn-shadow);
       
@@ -258,7 +259,7 @@
       border-width: 4px;
       border-color: var(--btn-border2);
       background: var(--btn-bg2);
-      box-shadow: 11px 11px 22px var(--btn-shadow2),
+      box-shadow: 5px 5px 15px var(--btn-shadow2),
                   -11px -11px 22px var(--btn-glow2);
       border-radius: inherit;
       z-index: -1;

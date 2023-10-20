@@ -13,11 +13,15 @@ import Statue1 from '@/public/landmark/1.png'
 import BubbleBg from '@/components/UI/bubble_bg';
 import Link from 'next/link';
 import { buttonVariants } from '@/components/UI/button';
+import CtaHeadline from './ctas/cta_headline';
+import ColorButton from '@/components/button/color_btn';
+import RoundButton from '@/components/button/round';
 
 const Hero = () => {
   return (
         <div className="loop-wrapper">
             <div className={styles.container}>
+                <div className='hidden md:flex'><CtaHeadline/></div>
                 <div className={styles.glass}>
                     <div className={styles.header}>
                     <Image src={Awaj} width={200} height={200}  alt='Social Media Awaj Ad'/>
@@ -35,19 +39,11 @@ const Hero = () => {
                         and social media advertising.
                         </p>
                     </div>
-                </div>
-                <div>
-                <Link href="/pricing/deals">
-                <div
-                  className={buttonVariants({
-                    variant:'outline',
-                    size: "default",
-                  })}
-                >
-                  Check Deals
-                  <span className="sr-only">Check Deals</span>
-                </div>
-              </Link>
+                    <div className='h-4 border-border border-dashed border-b-2 mb-8'></div>
+                    <div className='relative flex flex-col md:flex-row justify-evenly gap-4'>
+                        <ColorButton text='Check Deals' url='/pricing/deals'></ColorButton>
+                        <RoundButton url='/resources/tour' text='Take a tour'></RoundButton>
+                    </div>
                 </div>
             </div>
             <BubbleBg/>

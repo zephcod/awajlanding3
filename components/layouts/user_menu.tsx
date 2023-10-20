@@ -1,4 +1,5 @@
 'use client'
+import React, {useEffect, useState} from "react"
 import Link from "next/link"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/UI/avatar"
 import { Button, buttonVariants } from "@/components/UI/button"
@@ -13,24 +14,26 @@ import {
   DropdownMenuTrigger,
 } from "@/components/UI/dropdown_menu"
 
-import { useUser } from "@clerk/nextjs";
 import { Icons } from "@/components/UI/icons"
 import '@/styles/globals.css'
-import { LogOutDropmenu } from "../auth/logout-dropdown"
+import useAuth from "@/hooks/use_auth"
+import appwriteDBService from "@/db/appwrite_db"
+import { AwajUser } from "@/lib/validations/user"
 
 const UserMenu = () => {
-    
-const { isLoaded, isSignedIn, user } = useUser();
+  const {authStatus} = useAuth();
+  const [user, setUser] = useState<AwajUser|null>(null)
+  
+  useEffect(()=>{
+    (async () => {
+      const iuser = await appwriteDBService.getUser()
+      setUser(iuser)
+    })()
+  },[])
 
-if (!isLoaded || !isSignedIn) {
+if (!authStatus) {
   return null;
 }
-const initials = `${user?.firstName?.charAt(0) ?? ""} ${
-  user?.lastName?.charAt(0) ?? ""
-}`
-const email =
-  user?.emailAddresses?.find((e) => e.id === user.primaryEmailAddressId)
-    ?.emailAddress ?? ""
   return (
     <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -39,30 +42,28 @@ const email =
                     className="relative h-8 w-8 rounded-full"
                   >
                     <Avatar className="h-8 w-8">
+                      {user?.profilePic?
                       <AvatarImage
-                        src={user.imageUrl}
-                        alt={user.username ?? ""}
-                      />
-                      <AvatarFallback>{initials}</AvatarFallback>
+                        src={user.profilePic}
+                        alt={user.name}
+                      />:<></>}
+                      <AvatarFallback><Icons.user2/></AvatarFallback>
                     </Avatar>
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56" align="end" forceMount>
                   <DropdownMenuLabel className="font-normal">
                     <div className="flex flex-col space-y-1">
-                      <p className="text-sm font-medium leading-none">
-                        {user.firstName} {user.lastName}
+                      <p className="text-sm leading-none text-muted-foreground">
+                        {user?.email?<span>{user.email}</span>:<></>}
                       </p>
-                      <p className="text-xs leading-none text-muted-foreground">
-                      </p>
-                        {email}
                     </div>
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuGroup>
                     <DropdownMenuItem asChild>
                       <Link href="/dashboard/main">
-                        <Icons.terminal
+                        <Icons.gauge
                           className="mr-2 h-4 w-4"
                           aria-hidden="true"
                         />
@@ -72,7 +73,7 @@ const email =
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
                       <Link href="/dashboard/account">
-                        <Icons.user
+                        <Icons.user2
                           className="mr-2 h-4 w-4"
                           aria-hidden="true"
                         />
@@ -100,6 +101,7 @@ const email =
                         <DropdownMenuShortcut></DropdownMenuShortcut>
                       </Link>
                     </DropdownMenuItem>
+                  <DropdownMenuSeparator />
                     <DropdownMenuItem asChild disabled>
                       <Link href="/dashboard/settings">
                         <Icons.settings
@@ -111,10 +113,6 @@ const email =
                       </Link>
                     </DropdownMenuItem>
                   </DropdownMenuGroup>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem asChild>
-                    <LogOutDropmenu/>
-                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
   )

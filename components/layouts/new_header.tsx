@@ -1,4 +1,5 @@
-import { auth } from '@clerk/nextjs';
+'use client'
+import useAuth from "@/hooks/use_auth"
 import Link from "next/link"
 import { dashboardConfig } from "@/config/dashboard"
 import { siteConfig } from "@/config/site"
@@ -12,7 +13,7 @@ import React from 'react'
 import UserMenu from './user_menu';
 
 const NewHeader = () => {
-    const { userId } = auth();
+    const {authStatus} = useAuth();
   
     return (
     <header className="sticky clearNav top-0 z-30 w-full">
@@ -25,8 +26,10 @@ const NewHeader = () => {
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-2">
             <ThemeToggle/>
-            <CartSheet />
-            {userId ? (<UserMenu/>) : (
+            {/* <CartSheet /> */}
+            {authStatus ? 
+            (<UserMenu/>)
+             : (
               <Link href="/signin">
                 <div
                   className={buttonVariants({

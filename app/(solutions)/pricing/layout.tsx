@@ -1,6 +1,4 @@
-import Footer from '@/components/Footer'
 import Faqs from '@/components/faq/faqs'
-import PaymentOptions from '@/sections/payment_options'
 import React, { ReactNode } from 'react'
 
 const PriceLayout = ({ children }: { children: ReactNode }) => {
@@ -9,7 +7,6 @@ const PriceLayout = ({ children }: { children: ReactNode }) => {
         <div>
         {children}
         </div>
-        <PaymentOptions/>
         <Faqs/>
     </div>
   )
