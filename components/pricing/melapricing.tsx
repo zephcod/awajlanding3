@@ -68,9 +68,10 @@ export default function MelaPricing(){
               <div className='flex flex-col gap-4 p-4 relative'>
                 <div className="flex flex-row justify-center gap-2">
                   <p> Silver Mela </p>
-                  <Badge>+{silverMela[0]}</Badge>
+                  <Badge variant='accent'>+{silverMela[0]}</Badge>
                 </div>
                 <Slider
+                  color="accent"
                   variant="default"
                   aria-label="Enterprise package slider"
                   thickness="thin"
@@ -120,13 +121,13 @@ export default function MelaPricing(){
                   <BsCheck/><p>No expiry date</p>
                 </div>
               </div>
-              <Button className="m-4"disabled={loading} onClick={onSilverBuy}>
+              <Button variant='accent' className="m-4"disabled={loading} onClick={onSilverBuy}>
                       {loading && (
                       <Icons.spinner
                       className="mr-2 h-4 w-4 animate-spin"
                       aria-hidden="true"
                       />
-                      )} Buy Mela</Button>
+                      )} Buy Silver Mela</Button>
             </div>
           </div>
           <div className={styles.canvas}>
@@ -191,7 +192,7 @@ export default function MelaPricing(){
                       className="mr-2 h-4 w-4 animate-spin"
                       aria-hidden="true"
                       />
-                      )} Buy Mela</Button>
+                      )} Buy Gold Mela</Button>
             </div>
           </div>
     </section>

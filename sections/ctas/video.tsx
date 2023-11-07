@@ -32,7 +32,6 @@ const Embed = () => {
             priority
             className="rounded-2xl"
           />
-          {/* <img id="play-button" className={style.play} src="http://addplaybuttontoimage.way4info.net/Images/Icons/7.png" alt="play button" /> */}
           <Image
             id="play-button"
             src={Youtube}

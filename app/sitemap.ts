@@ -7,7 +7,7 @@ import { getProductsAction } from "@/app/_actions/product"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const productsTransaction = await getProductsAction({
-    limit: 10,
+    limit: 50,
     offset: 0,
     sort: "createdAt.desc",
   })
@@ -32,40 +32,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .flat()
 
   const posts = allPosts.map((post) => ({
-    url: `${siteConfig.url}/blog/${post.slug}`,
+    url: `${siteConfig.url}${post.slug}`,
     lastModified: new Date().toISOString(),
   }))
 
   const routes = [
     "",
-    "/solutions",
-    "/build_campaign",
     "/pricing",
-    "/one-time-order",
+    "/pricing/build-campaign",
+    "/pricing/awaj-mela",
+    "/pricing/deals",
+
     "/blog",
     "/contact",
-    "/categories",
     "/help_center",
-    "/downloads",
-    "/getting_started",
-    "/tools",
-    "/awaj_cases",
-    "/how_it_works",
-    "/content_hub",
-    "/giveaways",
-    "/product",
-    "/build-a-board",
-    "/email-preferences",
     "/about",
     "/influencers",
-    "/faqs",
-    "/reports",
     "/team",
-    "/contact",
-    "/career",
-    "/terms",
-    "/pricing",
-    "/privacy",
+
+    "/resources/downloads",
+    "/resources/getting_started",
+    "/resources/tools",
+    "/resources/giveaways",
+    "/resources/awaj_case_studies",
+    "/resources/how_it_works",
+    "/resources/content_hub",
   ].map((route) => ({
     url: `${siteConfig.url}${route}`,
     lastModified: new Date().toISOString(),

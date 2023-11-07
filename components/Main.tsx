@@ -24,7 +24,7 @@ export default function Main() {
         Here are awaj&apos;s four featured services categorized in our core digital marketing principles.
       </p>
       <ServiceCarousel/>
-      <div className="h-8"></div>
+      <div className="h-12"></div>
       <InRoundButton url="/pricing/deals" text="Check Deals">
         <span><BsRocketTakeoffFill/></span>
       </InRoundButton>
@@ -32,7 +32,9 @@ export default function Main() {
       <ValueProp/>
       <PaymentOptions/>
       <br/>
-      <div className="w-full"><QuickCampaign/></div>
+      <section id='quick' className="w-full">
+      <QuickCampaign/>
+      </section>
     </section>
   );
 }

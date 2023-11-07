@@ -45,7 +45,7 @@ const MelaCard = () => {
       <div className='flex flex-col gap-4 p-4 relative'>
                 <div className="flex flex-row justify-center gap-2">
                   <p> Silver Mela </p>
-                  <Badge>+{silverMela[0]}</Badge>
+                  <Badge variant='outline'>+{silverMela[0]}</Badge>
                 </div>
                 <Slider
                   variant="default"

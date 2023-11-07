@@ -7,6 +7,8 @@ import LogoSlider from './logoslider';
 import Link from 'next/link';
 import Embed from './video';
 import Testimonial from './testimoninal';
+import ScrollLink from '@/components/UI/scroll_link';
+import { buttonVariants } from '@/components/UI/button';
 
 const Headline1 = () => {
   return (
@@ -20,7 +22,7 @@ const Headline1 = () => {
               height={800}
               className='rounded-md '
               />
-          <div className='relative flex flex-col items-center gap-8'>
+          <div className='relative flex flex-col items-center justify-evenly gap-10'>
             <h2 className='text-center text-xl lg:text-3xl font-light leading-[1.15] w-fit'>
                "We help you {' '}
                <span className='font-bold text-primary'>Captivate & Nurture</span> your clients
@@ -28,72 +30,96 @@ const Headline1 = () => {
                <span className='font-bold text-primary'>Offer & Sales</span>{' '}strategy"
             </h2>
             <Embed/>
-            <Testimonial/>
+            <div className='mt-6 flex flex-col items-center text-center text-muted-foreground'>
+              <h2 className='text-2xl md:text-3xl md:font-bold font-semibold mb-2'>
+                Interested in working with us?
+              </h2>
+              <p>
+              Take your business to 💡 the next level with Awaj AI&apos;s bundled deals. 
+              </p>
+                <div className='mt-8 relative flex flex-col md:flex-row gap-6 items-center'>
+                  <ScrollLink href={'#quick'}>
+                  Get a quick review 👇
+                  </ScrollLink>
+                  <Link href="/resources/awaj_case_studies">
+                      <div
+                      className={buttonVariants({
+                          variant:'outline',
+                          size: "default",
+                      })}
+                      >
+                      Check case studies 🡥
+                      <span className="sr-only">Check case studies</span>
+                      </div>
+                  </Link>
+                </div>
+              </div>
           </div>
       </div>
       <LogoSlider/>
         <div className={styles.headline2_canvas}>
           <div className={styles.headline_col}>
-            <div className="relative flex flex-col p-4 gap-3 max-w-4xl mx-auto flex-1">
-              <div className='ring-1 ring-accent bg-card opacity-70 rounded-md shadow-md p-4 items-center flex flex-col'>
+            <div className="relative flex flex-col p-4 gap-3 max-w-4xl mx-auto flex-1 text-center">
+              <div className='ring-1 ring-accent bg-card opacity-70 rounded-md shadow-md p-4 items-center flex flex-col '>
                 <h2 className="p-1 font-semibold text-lg">
-                  Average 6.7X ROAS
+                  7.2X <br/> Average ROAS 
                 </h2>
-                <p className="pb-2 text-md font-light">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                <p className="py-2 border-t-2 border-dashed text-md font-light">
+                 An average of 7-folds &apos;return on ad spent&apos; across all our campaigns.
                 </p>
               </div>
               <div className='ring-1 ring-accent bg-card opacity-70 rounded-md shadow-md p-4 items-center flex flex-col'>
                 <h2 className="p-1 font-semibold text-lg">
-                Robust Templates
+                300+ <br/>Templates
                 </h2>
-                <p className="pb-2 text-md font-light">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                <p className="py-2 border-t-2 border-dashed text-md font-light">
+                  More than 300 refined and robust templates for all specific campaign schemes.
                 </p>
               </div>
               <div className='ring-1 ring-accent bg-card opacity-70 rounded-md shadow-md p-4 items-center flex flex-col'>
                 <h2 className="p-1 font-semibold text-lg">
-                Flexible Packages
+                12M+ <br/>Online Reach
                 </h2>
-                <p className="pb-2 text-md font-light">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                <p className="py-2 border-t-2 border-dashed text-md font-light">
+                  Demographics dolor sit amet, consectetur adipiscing elit. Maecenas
                 </p>
               </div>
             </div>
           </div>
-          <div className='relative flex-2'>
+          <div className='relative flex flex-col items-center flex-shrink'>
             <Image
               src={ROI}
               alt=""
-              width={600}
+              width={500}
               height={400}
-              className='rounded-md'
+              className='rounded-2xl'
               />
+            <Testimonial/>
           </div>
           <div className={styles.headline_col}>
-            <div className="relative flex flex-col p-4 gap-3 max-w-4xl mx-auto flex-1">
+            <div className="relative flex flex-col p-4 gap-3 max-w-4xl mx-auto flex-1  text-center">
               <div className='ring-1 ring-accent bg-card opacity-70 rounded-md shadow-md p-4 items-center flex flex-col'>
-                <h2 className="p-1 font-semibold text-lg">
-                  Marketing AI Models
+                <h2 className="p-1 font-semibold text-lg ">
+                  70+<br/>Pro AI Models
                 </h2>
-                <p className="pb-2 text-md font-light">
+                <p className="py-2 border-t-2 border-dashed text-md font-light">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
                 </p>
               </div>
               <div className='ring-1 ring-accent bg-card opacity-70 rounded-md shadow-md p-4 items-center flex flex-col'>
                 <h2 className="p-1 font-semibold text-lg">
-                Vast Ditigal Resources
+                15K+ <br/>Ditigal Resources
                 </h2>
-                <p className="pb-2 text-md font-light">
+                <p className="py-2 border-t-2 border-dashed text-md font-light">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
                 </p>
               </div>
               <div className='ring-1 ring-accent bg-card opacity-70 rounded-md shadow-md p-4 items-center flex flex-col'>
                 <h2 className="p-1 font-semibold text-lg">
-                Result 6
+                100+ <br/> Channels
                 </h2>
-                <p className="pb-2 text-md font-light">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                <p className="py-2 border-t-2 border-dashed text-md font-light">
+                  You will get access to more than 100 channels, consectetur adipiscing elit. Maecenas
                 </p>
               </div>
             </div>

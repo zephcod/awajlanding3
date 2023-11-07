@@ -36,12 +36,12 @@
     border-radius: 50%;
     height: 20px;
     box-shadow: 
-      0 0 0 50px #999286,
-      -90px 0 0 50px #999286,
-      -20px 0 0 20px #999286,
-      250px 0 0 50px #999286,
-      290px 0 0 50px #999286,
-      620px 0 0 50px #999286;
+      0 0 0 50px #70926c,
+      /* -190px 0 0 50px #587e5c, */
+      -120px 0 0 20px #60966d,
+      /* 250px 0 0 50px #57815e, */
+      600px 0 0 50px #5b7251,
+      1020px 0 0 50px #5c7a5b;
     animation: hill 16s 8s linear infinite;
   }
   .tree, .tree:nth-child(2), .tree:nth-child(3) {

@@ -5,19 +5,13 @@ import { slugify } from "@/app/utils/utils"
 
 export type SiteConfig = typeof siteConfig
 
-const links = {
-  twitter: "https://twitter.com/sadmann17",
-  github: "https://github.com/sadmann7/skateshop",
-  githubAccount: "https://github.com/sadmann7",
-  discord: "https://discord.com/users/sadmann7",
-  calDotCom: "https://cal.com/sadmann7",
-}
+
 
 export const siteConfig = {
   name: "Awaj AI",
   description:
-    "All in one digital advertisng platform with everything included to boost your ad campaigns.",
-  url: "https://gennbi.com",
+    "All in one digital marketing and sales platform with everything included to boost your ad campaigns.",
+  url: "https://awajai.com",
   ogImage: 'https://gennbi.com/src/under-construction-01.svg',
   mainNav: [
     {
@@ -66,37 +60,37 @@ export const siteConfig = {
         {
           title: "Gallery",
           href: "/ai/gallery",
-          description: "Subscription plans and pricings",
+          description: "Selected generative results.",
           items: [],
         },
         {
           title: "Prompts",
           href: "/ai/prompts",
-          description: "Check from our list one-time orders.",
+          description: "Browse prompt lab and collections.",
           items: [],
         },
         {
           title: "Image Generation",
           href: "/ai/image/text-to-image",
-          description: "Build your own custom campaign.",
+          description: "Generate AI Images.",
           items: [],
         },
         {
-          title: "Conversations",
+          title: "Text Generation",
           href: "/ai/conversations",
-          description: "Subscription plans and pricings",
+          description: "Compose AI Texts",
           items: [],
         },
         {
           title: "Audio Generation",
           href: "/ai/audio",
-          description: "Check from our list one-time orders.",
+          description: "Generate AI Audios.",
           items: [],
         },
         {
-          title: "Video Generation",
-          href: "/ai/video",
-          description: "Build your own custom campaign.",
+          title: "Expert AI",
+          href: "/ai/expert",
+          description: "Conversations with expert AI characters.",
           items: [],
         },
       ],
@@ -107,37 +101,37 @@ export const siteConfig = {
         {
           title: "Downloads",
           href: "/resources/downloads",
-          description: "Subscription plans and pricings",
+          description: "Awaj AI applications and plugins.",
           items: [],
         },
         {
           title: "Getting started",
           href: "/resources/getting_started",
-          description: "Check from our list one-time orders.",
-          items: [],
-        },
-        {
-          title: "Giveaways",
-          href: "/resources/giveaways",
-          description: "Build your own custom campaign.",
+          description: "Instructions to get you up and running.",
           items: [],
         },
         {
           title: "Case studies",
-          href: "/resources/awaj_cases",
-          description: "Subscription plans and pricings",
+          href: "/resources/awaj_case_studies",
+          description: "Case studies on selected projects.", 
           items: [],
         },
         {
-          title: "Content hub",
+          title: "Content Hub",
           href: "/resources/content_hub",
-          description: "Check from our list one-time orders.",
+          description: "Collection of free giveaway contents.",
           items: [],
         },
         {
-          title: "Awaj tools",
-          href: "/resources/tools",
-          description: "Build your own custom campaign.",
+          title: "Overview Tour",
+          href: "/resources/overview",
+          description: "Quick tour of the Awaj AI software.",
+          items: [],
+        },
+        {
+          title: "Learning Hub",
+          href: "/resources/giveaways",
+          description: "Collection of Awaj learning materials.",
           items: [],
         },
       ],
@@ -148,163 +142,53 @@ export const siteConfig = {
         {
           title: "About us",
           href: "/about",
-          description: "Subscription plans and pricings",
+          description: "Get to know Awaj AI.",
           items: [],
         },
         {
           title: "Help center",
           href: "/help_center",
-          description: "Check from our list one-time orders.",
+          description: "Get answers from our support team.",
           items: [],
         },
         {
           title: "For influencers",
           href: "/influencers",
-          description: "Build your own custom campaign.",
+          description: "Opportunities for creators & influencers.",
           items: [],
         },
         {
           title: "Team",
           href: "/team",
-          description: "Subscription plans and pricings",
+          description: "Teams and carrer openings",
           items: [],
         },
-        {
-          title: "Insight reports",
-          href: "/reports",
-          description: "Check from our list one-time orders.",
-          items: [],
-        },
-        {
-          title: "FAQs",
-          href: "/faqs",
-          description: "Build your own custom campaign.",
-          items: [],
-        },
+        // {
+        //   title: "Insight reports",
+        //   href: "/reports",
+        //   description: "Check from our list one-time orders.",
+        //   items: [],
+        // },
+        // {
+        //   title: "FAQs",
+        //   href: "/faqs",
+        //   description: "Build your own custom campaign.",
+        //   items: [],
+        // },
         {
           title: "Blog",
           href: "/blog",
-          description: "Check from our list one-time orders.",
+          description: "Check the latest from Awaj AI.",
           items: [],
         },
         {
           title: "Contact",
           href: "/contact",
-          description: "Build your own custom campaign.",
+          description: "Contact us, we are open 24/7.",
           items: [],
         },
       ],
     },
   ] satisfies MainNavItem[],
-  links,
 
-//
-
-  footerNav: [
-    {
-      title: "Credits",
-      items: [
-        {
-          title: "OneStopShop",
-          href: "https://onestopshop.jackblatch.com",
-          external: true,
-        },
-        {
-          title: "Acme Corp",
-          href: "https://acme-corp.jumr.dev",
-          external: true,
-        },
-        {
-          title: "craft.mxkaske.dev",
-          href: "https://craft.mxkaske.dev",
-          external: true,
-        },
-        {
-          title: "Taxonomy",
-          href: "https://tx.shadcn.com/",
-          external: true,
-        },
-        {
-          title: "shadcn/ui",
-          href: "https://ui.shadcn.com",
-          external: true,
-        },
-      ],
-    },
-    {
-      title: "Help",
-      items: [
-        {
-          title: "About",
-          href: "/about",
-          external: false,
-        },
-        {
-          title: "Contact",
-          href: "/contact",
-          external: false,
-        },
-        {
-          title: "Terms",
-          href: "/terms",
-          external: false,
-        },
-        {
-          title: "Privacy",
-          href: "/privacy",
-          external: false,
-        },
-      ],
-    },
-    {
-      title: "Social",
-      items: [
-        {
-          title: "Twitter",
-          href: links.twitter,
-          external: true,
-        },
-        {
-          title: "GitHub",
-          href: links.githubAccount,
-          external: true,
-        },
-        {
-          title: "Discord",
-          href: links.discord,
-          external: true,
-        },
-        {
-          title: "cal.com",
-          href: links.calDotCom,
-          external: true,
-        },
-      ],
-    },
-    {
-      title: "Lofi",
-      items: [
-        {
-          title: "beats to study to",
-          href: "https://www.youtube.com/watch?v=jfKfPfyJRdk",
-          external: true,
-        },
-        {
-          title: "beats to chill to",
-          href: "https://www.youtube.com/watch?v=rUxyKA_-grg",
-          external: true,
-        },
-        {
-          title: "a fresh start",
-          href: "https://www.youtube.com/watch?v=rwionZbOryo",
-          external: true,
-        },
-        {
-          title: "coffee to go",
-          href: "https://www.youtube.com/watch?v=2gliGzb2_1I",
-          external: true,
-        },
-      ],
-    },
-  ] satisfies FooterItem[],
 }

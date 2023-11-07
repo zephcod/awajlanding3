@@ -42,7 +42,7 @@ const Deals = () => {
     <div className='w-full'>
       <div className={styles.container}>
         <h1 className="py-4 text-3xl text-center text-muted-foreground font-bold leading-[1.15] lg:text-4xl">
-          The simplest way to utilize digital marketing! 
+          Digital Marketing Simplified!
         </h1>
         <div className={'flex flex-col md:flex-row mb-6 max-w-4xl items-center'}>
           <div className={styles.headline1_canvas}>
@@ -57,7 +57,7 @@ const Deals = () => {
             <p>The offers include everything needed to create and manage a successful online campaign with guaranteed results. </p>
           </div>
           </div>
-          <Image src={Content} alt='' width={400}/>
+          <Image src={Content} alt='awaj ai bundled deals' placeholder='blur' width={400}/>
         </div>
         <DealsPage/>
         <div className='h-8'></div>
@@ -87,7 +87,7 @@ const Deals = () => {
             <div className="hidden md:flex border-border border-l-2 h-56 w-2"></div>
             <div className="flex md:hidden border-border border-b-2 h-6 w-56"></div>
             <div className='flex w-64 md:w-96 flex-col rounded-lg bg-card shadow-md  items-center gap-4 justify-evenly'>
-            <Image src={Avatar} alt='' width={100} className=' mt-4 rounded-full'/>
+            <Image src={Avatar} alt='' width={100} placeholder='blur' className=' mt-4 rounded-full'/>
               <p className='px-4 md:px-8 mb-2'>
               Additionally, a dedicated account manager will guide you through the campaign and answer any questions you might have along the campaign. 
               </p>
@@ -95,17 +95,18 @@ const Deals = () => {
           </div>
           <ThirdParty/>
         </div>
-        <div className='mt-12 flex flex-col items-center text-center text-muted-foreground'>
+        <PaymentOptions/>
+        <div className='mt-8 flex flex-col items-center text-center text-muted-foreground'>
           <div className="border-border border-t-2 border-dashed h-10 w-full"></div>
           <h2 className='text-2xl md:text-3xl md:font-bold font-semibold mb-2'>
-            Don&apos;t miss this opportunity 👇
+            Don&apos;t miss this opportunity
           </h2>
           <p>
           Take your business to the next level with Awaj AI&apos;s bundled deals. 
           </p>
             <div className='mt-8 relative flex flex-col md:flex-row gap-10 items-center'>
               <ScrollLink href={'#quick'}>
-              Get a free review
+              Get a quick review 👇
               </ScrollLink>
               <Link href="/resources/how_it_works">
                   <div
@@ -119,10 +120,9 @@ const Deals = () => {
                   </div>
               </Link>
             </div>
-          <div className="border-border border-b-2 border-dashed h-12 w-full"></div>
+          <div className="h-14 w-full"></div>
         </div>
       </div>
-      <PaymentOptions/>
       <section id='quick'>
       <QuickCampaign/>
       </section>

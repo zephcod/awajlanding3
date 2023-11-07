@@ -1,5 +1,6 @@
 import { LucideIcon,
-  BookUp2, 
+  Presentation, 
+  BookMarked,
   GalleryThumbnails,
   LineChart,} from "lucide-react";
 
@@ -20,42 +21,64 @@ export const demos: { title: string; icon: LucideIcon; items: Item[] }[] = [
         description: 'Create UI that is shared across routes',
       },
       {
+        name: 'Downloads',
+        slug: 'resources/downloads',
+        description: 'Render multiple pages in the same layout',
+      },
+      {
         name: 'How it works',
         slug: 'resources/how_it_works',
         description: 'Organize routes without affecting URL paths',
       },
       {
-        name: 'Overview',
+        name: 'Overview Tour',
         slug: 'resources/overview',
-        description: 'Render multiple pages in the same layout',
-      },
-      {
-        name: 'Downloads',
-        slug: 'resources/downloads',
         description: 'Render multiple pages in the same layout',
       },
     ],
   },
   {
-    title: 'Case Studes',
+    title: 'Case Studies',
     icon: LineChart,
     items: [
       {
         name: 'Awaj Case Studies',
-        slug: 'resources/awaj_cases',
+        slug: 'resources/awaj_case_studies',
         description:
           'Create meaningful Loading UI for specific parts of an app',
       },
       {
-        name: 'Other Case Studies',
-        slug: 'resources/other_cases',
+        name: 'Awaj Gallery',
+        slug: 'resources/awaj_gallery',
         description: 'Create Error UI for specific parts of an app',
       },
     ],
   },
   {
-    title: 'Content Hub',
-    icon: BookUp2,
+    title: 'Learning Hub',
+    icon: BookMarked,
+    items: [
+      {
+        name: 'Advertising',
+        slug: 'resources/learning/advertising',
+        description:
+          'Streaming data fetching from the server with React Suspense',
+      },
+      {
+        name: 'Content',
+        slug: 'resources/learning/content',
+        description: 'Generate static pages',
+      },
+      {
+        name: 'Social Media',
+        slug: 'resources/learning/social-media',
+        description: 'Server-render pages',
+      },
+    ],
+  },
+  {
+    title: 'Awaj Contents',
+    icon: Presentation,
     items: [
       {
         name: 'Gallery',

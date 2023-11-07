@@ -1,5 +1,6 @@
 import { type Product } from "@/db/schema"
 import type { Option } from "@/types"
+import Rocket from '@/public/character/awaj_hero.webp'
 
 export const sortOptions = [
   { label: "Date: Old to new", value: "createdAt.asc" },
@@ -25,46 +26,46 @@ export const productCategories = [
     image: "/images/skateboard-one.webp",
     subcategories: [
       {
-        title: "Kick starter",
-        description: "The board itself.",
-        image: "/images/deck-one.webp",
-        slug: "kick_starter",
+        title: "Starter Pack",
+        description: "Digital marketing essentials.",
+        image: Rocket.src,
+        slug: "starter_pack",
       },
-      {
-        title: "SEO ranking",
-        description: "The wheels that go on the board.",
-        image: "/images/wheel-one.webp",
-        slug: "seo_ranking",
-      },
-      {
-        title: "Influencers",
-        description: "The trucks that go on the board.",
-        image: "/images/truck-one.webp",
-        slug: "influencers",
-      },
-      {
-        title: "Marketing intelligence",
-        description: "The bearings that go in the wheels.",
-        image: "/images/bearing-one.webp",
-        slug: "marketing_intelligence",
-      },
+      // {
+      //   title: "SEO ranking",
+      //   description: "The wheels that go on the board.",
+      //   image: "/images/wheel-one.webp",
+      //   slug: "seo_ranking",
+      // },
+      // {
+      //   title: "Influencers",
+      //   description: "The trucks that go on the board.",
+      //   image: "/images/truck-one.webp",
+      //   slug: "influencers",
+      // },
       {
         title: "Content management",
-        description: "The griptape that goes on the board.",
+        description: "Strategize, create and manage content.",
         image: "/images/griptape-one.webp",
         slug: "content_management",
       },
       {
         title: "Social media",
-        description: "The hardware that goes on the board.",
+        description: "Grow, monitor and analyze social media.",
         image: "/images/hardware-one.webp",
         slug: "social_media",
       },
       {
-        title: "Digital ads",
-        description: "The tools that go with the board.",
+        title: "Paid ads",
+        description: "Plan, research and run paid ads.",
         image: "/images/tool-one.webp",
         slug: "digital_ads",
+      },
+      {
+        title: "Marketing & Sales",
+        description: "Get customers and analyze preferences.",
+        image: "/images/bearing-one.webp",
+        slug: "marketing_intelligence",
       },
     ],
   },

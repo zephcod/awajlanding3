@@ -157,7 +157,7 @@ function FooterList3() {
 export default function Footer() {
   return (
     <footer className={styles.section}>
-      <div className={styles.container}>
+      <div className={styles.container} id='footer'>
         <div className={styles.footcta}>
           <div className='relative flex flex-col items-center justify-center'>
             <Image

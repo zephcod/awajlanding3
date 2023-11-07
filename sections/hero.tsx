@@ -1,7 +1,7 @@
 import React from 'react'
 import '@/styles/hero_animation.css'
-import Image from "next/image";
-import Awaj from "@/public/awaj_hero1.png";
+import Image from "next/image"
+import Awaj from "@/public/awaj_hero1.png"
 import styles from '@/sections/page.module.css'
 import Rocket from '@/public/character/awaj_hero.webp'
 import Tree from '@/public/character/tree.svg'
@@ -29,20 +29,40 @@ const Hero = () => {
                     <br/>
                     <div className={styles.subtitle}>
                         <h2>
-                        Boost your online presence!
+                        🏆 Win digital marketing!
                         </h2>
                     </div>
-                    <br/>
                     <div className={styles.desc}>
                         <p >
-                        Grow your revenue 10X by leveraging Awaj's digital marketing tools for content marketing 
-                        and social media advertising.
+                        Claim your market share online and get tangible results.
                         </p>
                     </div>
                     <div className='h-4 border-border border-dashed border-b-2 mb-8'></div>
-                    <div className='relative flex flex-col md:flex-row justify-evenly gap-4'>
+                    <div className='flex md:hidden flex-col gap-4 items-center'>
+                        <Link href={'/pricing/deals'}>
+                            <div className={buttonVariants({
+                                variant:'default',
+                                size: "default",
+                            })}
+                            >
+                            Check Deals
+                            <span className="sr-only">Check deals</span>
+                            </div>
+                        </Link>
+                        <Link href={'/pricing/deals'}>
+                            <div className={buttonVariants({
+                                variant:'outline',
+                                size: "default",
+                            })}
+                            >
+                            Take a Tour 🡥
+                            <span className="sr-only">Take a tour</span>
+                            </div>
+                        </Link>
+                    </div>
+                    <div className='relative hidden md:flex flex-col md:flex-row justify-evenly gap-4'>
                         <ColorButton text='Check Deals' url='/pricing/deals'></ColorButton>
-                        <RoundButton url='/resources/tour' text='Take a tour'></RoundButton>
+                        <RoundButton url='/resources/tour' text='Take a Tour 🡥'></RoundButton>
                     </div>
                 </div>
             </div>
@@ -55,8 +75,8 @@ const Hero = () => {
             {/* <div className='statue1'>
                 <Image src={Statue1.src} width={500} height={300}alt=''/></div>
             <div className='statue2'>
-                <Image src={Statue3.src} width={100} height={150}alt=''/></div>
-            <div className='statue3'>
+                <Image src={Statue3.src} width={100} height={150}alt=''/></div> */}
+            {/* <div className='statue3'>
                 <Image src={Statue2.src} width={500} height={300}alt=''/></div>
             <div className='statue4'>
                 <Image src={Statue4.src} width={125} height={125}alt=''/></div>

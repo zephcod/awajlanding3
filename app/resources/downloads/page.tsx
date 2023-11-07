@@ -25,7 +25,7 @@ const Downloads = () => {
       </h1>
       <div className={styles.headline1_canvas}>
         <div className={'flex flex-col md:flex-row justify-evenly max-w-4xl items-center'}>
-          <Image src={Hands} alt='awaj case studies' width={600}/>
+          <Image src={Hands} alt='awaj case studies' placeholder='blur' width={600}/>
           <div className='text-base text-muted-foreground text-start'>
             <p className='text-xl md:text-2xl md:font-bold font-semibold'>
             Awaj - Everywhere!

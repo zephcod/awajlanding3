@@ -62,7 +62,7 @@ export function QuickCampaign() {
 
   return (
     <div className="flex flex-col items-center mt-16 md:mt-32 mx-auto bg-card w-full text-muted-foreground">
-        <Image src={HolderAstro} alt="awaj ai astro-holding card" height={200} className="-mt-[97px] md:-mt-[168px]"/>
+        <Image src={HolderAstro} alt="awaj ai astro-holding card" height={200} className="-mt-[105px] md:-mt-[168px]"/>
         <div className="flex flex-col p-4 items-center">
         <h3 className="pt-4 text-2xl text-center font-bold leading-[1.15] lg:text-3xl">
             Build a quick campaign
