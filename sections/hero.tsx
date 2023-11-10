@@ -9,7 +9,7 @@ import Statue5 from '@/public/character/awaj_ethio_lion.png'
 import Statue4 from '@/public/landmark/4.png'
 import Statue3 from '@/public/landmark/3.png'
 import Statue2 from '@/public/landmark/2.png'
-import Statue1 from '@/public/landmark/1.png'
+import Statue1 from '@/public/landmark/ethiopian_landmark.png'
 import BubbleBg from '@/components/UI/bubble_bg';
 import Link from 'next/link';
 import { buttonVariants } from '@/components/UI/button';
@@ -67,15 +67,13 @@ const Hero = () => {
                 </div>
             </div>
             <BubbleBg/>
-            <div className="mountain"></div>
+            {/* <div className="mountain"></div> */}
+            <div className='statue1'><Image src={Statue1.src} objectFit={'100vw'} width={3400} height={400} alt=''/></div>
+            <div className='statue2'><Image src={Statue1.src} objectFit={'100vw'} width={3400} height={400}alt=''/></div>
             <div className="hill"></div>
             <div className="tree"><Image src={Tree.src} width={300} height={300}alt=''/></div>
             <div className="tree"><Image src={Tree.src} width={300} height={300}alt=''/></div>
             <div className="tree"><Image src={Tree.src} width={300} height={300}alt=''/></div>
-            {/* <div className='statue1'>
-                <Image src={Statue1.src} width={500} height={300}alt=''/></div>
-            <div className='statue2'>
-                <Image src={Statue3.src} width={100} height={150}alt=''/></div> */}
             {/* <div className='statue3'>
                 <Image src={Statue2.src} width={500} height={300}alt=''/></div>
             <div className='statue4'>

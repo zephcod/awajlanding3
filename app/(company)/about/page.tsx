@@ -2,7 +2,14 @@ import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import Button from "@/components/button/button";
-import Banner from "@/public/character/2077.png";
+import Banner from "@/public/character/awaj_about_banner.jpg";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'About Awaj AI',
+  description: 'Assorted digital resources from Awaj AI, the agency, and related platforms',
+}
+
 
 const About = () => {
   return (
@@ -11,7 +18,7 @@ const About = () => {
         <Image
           src={Banner}
           fill={true}
-          alt=""
+          alt="About Awaj AI - Creative Banner"
           className={styles.img}
         />
         <div className={styles.imgText}>

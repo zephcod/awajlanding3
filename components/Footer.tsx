@@ -1,8 +1,9 @@
 import styles from '@/components/page.module.css'
-import Image from 'next/image';
-import logo from 'public/awaj_logo.png';
 import Socials from './socials/socials';
 import { SubscribeToNewsletterForm } from './forms/subscribe_to_newsletter_form';
+import Link from 'next/link';
+import { Icons } from './UI/icons';
+import { siteConfig } from '@/config/site';
 
 const col1 = [
   {
@@ -13,7 +14,7 @@ const col1 = [
   {
     id:"2",
     title:"Careers",
-    url:"/career",
+    url:"/team",
   },
   {
     id:"3",
@@ -39,33 +40,33 @@ const col1 = [
 const col2 = [
   {
     id:"1",
-    title:"Reports",
-    url:"/reports",
+    title:"Downloads",
+    url:"/resources/downloads",
   },
   {
     id:"2",
-    title:"Success Stories",
-    url:"/success_stories",
+    title:"Case Studies",
+    url:"/resources/awaj_case_studies",
   },
   {
     id:"3",
-    title:"How It Works",
-    url:"/how_it_works",
+    title:"Gallery",
+    url:"/resources/awaj_gallery",
   },
   {
     id:"4",
     title:"Content Marketing",
-    url:"/content_marketing",
+    url:"/resources/learning/content",
   },
   {
     id:"5",
     title:"Social Media Ad",
-    url:"social_media",
+    url:"/resources/learning/social-media",
   },
   {
     id:"6",
-    title:"AI Tools",
-    url:"/ai_tools",
+    title:"Awaj AI Tools",
+    url:"/resources/tools",
   }
 ];
 const col3 = [
@@ -76,13 +77,13 @@ const col3 = [
   },
   {
     id:"2",
-    title:"Downloads",
-    url:"/downloads",
+    title:"Overview",
+    url:"/overview",
   },
   {
     id:"3",
-    title:"FAQs",
-    url:"/faqs",
+    title:"How It Works",
+    url:"/resources/how_it_works",
   },
   {
     id:"4",
@@ -160,14 +161,18 @@ export default function Footer() {
       <div className={styles.container} id='footer'>
         <div className={styles.footcta}>
           <div className='relative flex flex-col items-center justify-center'>
-            <Image
-              src={logo.src}
-              alt="awaj ad logo"
-              width={200}
-              height={35}
-              className="object-contain"/>
+            <Link
+              aria-label="Home"
+              href="/"
+              className="hidden items-center space-x-2 lg:flex"
+            >
+              <Icons.awajlogocircle className="h-6 w-8" aria-hidden="true" />
+              <span className="hidden font-bold lg:inline-block">
+              {siteConfig.name}
+              </span>
+            </Link>
             <p className='text-sm font-light py-2 '>
-              ©2023 Awaj - Ace Digital PLC. All rights reserved.
+              ©2023 Awaj - Ace Digital Advert PLC. All rights reserved.
             </p>
           </div>
           <div className='flex flex-col justify-between items-center gap-2'>
@@ -191,7 +196,7 @@ export default function Footer() {
             </ul>
           </li>
           <li className="space-y-5 row-span-2">
-            <h2 className="text-lg tracking-wide">Platform</h2>
+            <h2 className="text-lg tracking-wide">Resources</h2>
             <ul className="space-y-4">
               <FooterList2/>
             </ul>

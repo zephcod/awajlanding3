@@ -51,11 +51,13 @@
     bottom: 0;
   }
   .statue1 {
+    width: 1700px;
     position: absolute;
     bottom: -10px;
     left: 0;
   }
   .statue2 {
+    width: 1700px;
     position: absolute;
     bottom: -10px;
     left: 0;
@@ -134,8 +136,8 @@
   .tree:nth-child(2)  { animation: tree2 3s 0.150s linear infinite; }
   .tree:nth-child(3)  { animation: tree3 9s 0.050s linear infinite; }
 
-  .statue1  { animation: statue1 30s -5s linear infinite; }
-  .statue2  { animation: statue2 30s -10s linear infinite; }
+  .statue1  { animation: statue1 30s 0s linear infinite; }
+  .statue2  { animation: statue1 30s -15s linear infinite; }
   .statue3  { animation: statue3 30s -15s linear infinite; }
   .statue4  { animation: statue4 30s -20s linear infinite; }
   .statue5  { animation: statue5 30s -25s linear infinite; }
@@ -165,14 +167,14 @@
 
 
   @keyframes statue1 {
-    0%   { transform: translate(2350px); }
+    0%   { transform: translate(1700px); }
     50% {}
-    100% { transform: translate(-1500px); }
+    100% { transform: translate(-1700px); }
   }
   @keyframes statue2 {
-    0%   { transform: translate(2350px); }
+    0%   { transform: translate(0px); }
     50% {}
-    100% { transform: translate(-1500px); }
+    100% { transform: translate(-3500px); }
   }
   @keyframes statue3 {
     0%   { transform: translate(2350px); }

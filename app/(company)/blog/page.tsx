@@ -12,7 +12,7 @@ import { Shell } from "@/components/shells/shell"
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
-  title: "Blog",
+  title: "Awaj AI Blog",
   description: "Explore the latest news and updates from the community",
 }
 
@@ -48,7 +48,9 @@ function BlogCard (post:Post) {
             {post.title}
           </h2>
           <p className="line-clamp-2 text-muted-foreground">
-            {post.description}
+            {/* {post.description} */}
+            Awaj AI - all in one digital marketing and sales involves creating and distributing content that engages 
+            and attracts potential customers, as well as measuring and optimizing the performance of the campaigns. 
           </p>
           {post.date ? (
             <p className="text-sm text-muted-foreground">

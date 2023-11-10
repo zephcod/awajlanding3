@@ -7,7 +7,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
     x={0}
     y={0}
     style={{
-      fill: 'ButtonText',
+      // fill: 'ButtonText',
       // enableBackground: "new 0 0 720 720",
     }}
     viewBox="0 0 720 720"

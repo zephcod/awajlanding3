@@ -1,14 +1,14 @@
 import React from 'react'
 import Image from "next/image";
 import Funnel from "@/public/funnel-01.png";
-import ROI from "@/public/character/awaj-roi.png";
+import ROI from "@/public/character/6_hand.png";
 import styles from '@/sections/ctas/headline1.module.css'
 import LogoSlider from './logoslider';
 import Link from 'next/link';
 import Embed from './video';
 import Testimonial from './testimoninal';
-import ScrollLink from '@/components/UI/scroll_link';
-import { buttonVariants } from '@/components/UI/button';
+import ScrollLink from '@/components/UI/scroll_link'
+import { buttonVariants } from '@/components/UI/button'
 
 const Headline1 = () => {
   return (
