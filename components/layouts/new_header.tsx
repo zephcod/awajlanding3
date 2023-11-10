@@ -37,8 +37,8 @@ const NewHeader = () => {
                     size: "sm",
                   })}
                 >
-                  Sign In
-                  <span className="sr-only">Sign In</span>
+                  Get Started
+                  <span className="sr-only">Get started</span>
                 </div>
               </Link>
             )}

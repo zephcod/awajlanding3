@@ -73,7 +73,7 @@ const Headline1 = () => {
                 300+ <br/>Templates
                 </h2>
                 <p className="py-2 border-t-2 border-dashed text-md font-light">
-                  More than 300 refined and robust templates for all specific campaign schemes.
+                More than 300 refined templates for all specific campaign schemes.
                 </p>
               </div>
               <div className='ring-1 ring-accent bg-card opacity-70 rounded-md shadow-md p-4 items-center flex flex-col'>
@@ -81,7 +81,7 @@ const Headline1 = () => {
                 12M+ <br/>Online Reach
                 </h2>
                 <p className="py-2 border-t-2 border-dashed text-md font-light">
-                  Demographics dolor sit amet, consectetur adipiscing elit. Maecenas
+                Assorted reach of more than 12 million audience in Ethiopia and UAE.
                 </p>
               </div>
             </div>
@@ -103,23 +103,23 @@ const Headline1 = () => {
                   70+<br/>Pro AI Models
                 </h2>
                 <p className="py-2 border-t-2 border-dashed text-md font-light">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                Professionally AI models customized for marketing & sales tasks.
                 </p>
               </div>
               <div className='ring-1 ring-accent bg-card opacity-70 rounded-md shadow-md p-4 items-center flex flex-col'>
                 <h2 className="p-1 font-semibold text-lg">
-                15K+ <br/>Ditigal Resources
+                15K+ <br/>Digital Resources
                 </h2>
                 <p className="py-2 border-t-2 border-dashed text-md font-light">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                Variety of essential digital assets for impressions & engagement.
                 </p>
               </div>
               <div className='ring-1 ring-accent bg-card opacity-70 rounded-md shadow-md p-4 items-center flex flex-col'>
                 <h2 className="p-1 font-semibold text-lg">
-                100+ <br/> Channels
+                100+ <br/> Partners
                 </h2>
                 <p className="py-2 border-t-2 border-dashed text-md font-light">
-                  You will get access to more than 100 channels, consectetur adipiscing elit. Maecenas
+                Get exclusive access to more than 100 partner channels and platforms.
                 </p>
               </div>
             </div>

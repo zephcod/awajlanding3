@@ -98,7 +98,7 @@ export function SignInForm() {
               aria-hidden="true"
             />
           )}
-          Get in there!
+          Sign In
           <span className="sr-only">Sign in</span>
         </Button>
       </form>

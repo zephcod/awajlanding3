@@ -174,7 +174,6 @@ export default async function PostPage({ params }: PostPageProps) {
           <span className="sr-only">See all posts</span>
         </Link>
       </div>
-      <Subscribe/>
     </Shell>
   )
 }

@@ -1,16 +1,16 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import LoadingRouteUI from '@/components/loading/loading_route';
+import UnderConstruction from '@/components/under_construction';
 
 export const metadata: Metadata = {
-  title: 'AI Tools',
-  description: 'Awaj Ad AI Tools',
+  title: 'Awaj AI Tools',
+  description: 'Awaj AI tools and solutions for digital marketing and sales.',
 }
 
 
 const AI_Tools = () => {
   return (
-    <LoadingRouteUI/>
+    <UnderConstruction title={'Awaj Tools'} date={'9:00am GMT 3/12/23'}/>
   )
 }
 

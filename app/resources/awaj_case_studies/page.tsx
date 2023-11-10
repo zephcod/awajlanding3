@@ -134,9 +134,9 @@ const Cases = () => {
         <div className={'flex flex-col md:flex-row justify-evenly max-w-4xl items-center'}>
           <Image src={Content} alt='awaj case studies' placeholder='blur' width={600}/>
           <div className='text-base text-muted-foreground text-start'>
-            <p className='text-xl md:text-2xl md:font-bold font-semibold'>
+            <h2 className='text-xl md:text-2xl md:font-bold font-semibold'>
             Learn from the smarts!
-            </p><br/> 
+            </h2><br/> 
             <p>Our clients are making a mark in their market share, standing out and getting ahead of the competition. 
             </p>
             <br />
@@ -173,7 +173,7 @@ const Cases = () => {
               <div className='flex flex-col gap-4 items-center text-muted-foreground'>
                 <Image src={ind.url} alt={ind.industry} className='mt-6' height={200}/>
                 <div className='bg-card flex ring-border ring-inset ring-1 rounded-xl flex-col items-center p-4 gap-4'>
-                  <p className='font-bold text-xl md:text-2xl'>{ind.industry}</p>
+                  <h3 className='font-bold text-xl md:text-2xl'>{ind.industry}</h3>
                   <p className='text-justify px-3'>{ind.desc}</p>
                   <div className='flex flex-rox items-center justify-start'>
                     <p>See Projects{' '}</p> 

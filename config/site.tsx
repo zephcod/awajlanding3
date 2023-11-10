@@ -154,7 +154,7 @@ export const siteConfig = {
         {
           title: "For influencers",
           href: "/influencers",
-          description: "Opportunities for creators & influencers.",
+          description: "Opportunity for creators & influencers.",
           items: [],
         },
         {

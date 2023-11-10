@@ -38,7 +38,7 @@ const Hero = () => {
                         </p>
                     </div>
                     <div className='h-4 border-border border-dashed border-b-2 mb-8'></div>
-                    <div className='flex md:hidden flex-col gap-4 items-center'>
+                    <div className='flex md:hidden flex-row gap-4 justify-center items-center'>
                         <Link href={'/pricing/deals'}>
                             <div className={buttonVariants({
                                 variant:'default',

@@ -30,7 +30,7 @@ export function MainNav({ items }: MainNavProps) {
         href="/"
         className="hidden items-center space-x-2 lg:flex"
       >
-        <Icons.awajlogocircle className="h-6 w-6" aria-hidden="true" />
+        <Icons.awajlogocircle className="h-6 w-8" aria-hidden="true" />
         <span className="hidden font-bold lg:inline-block">
         {siteConfig.name}
         </span>

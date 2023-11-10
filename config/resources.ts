@@ -81,14 +81,14 @@ export const demos: { title: string; icon: LucideIcon; items: Item[] }[] = [
     icon: Presentation,
     items: [
       {
-        name: 'Gallery',
-        slug: 'resources/gallery',
+        name: 'Content Hub',
+        slug: 'resources/content',
         description:
           'Streaming data fetching from the server with React Suspense',
       },
       {
         name: 'Awaj Tools',
-        slug: 'resources/awaj_tools',
+        slug: 'resources/tools',
         description: 'Generate static pages',
       },
       {

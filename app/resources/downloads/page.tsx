@@ -11,7 +11,7 @@ import Faqs from '@/components/faq/faqs';
 
 export const metadata: Metadata = {
   title: 'Awaj AI Downloads',
-  description: 'Awaj AI Advertising Agency Downloads',
+  description: 'Awaj AI software and related platforms downloads',
 }
 
 

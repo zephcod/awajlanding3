@@ -66,7 +66,7 @@ export default function BlogPage() {
   return (
     <Shell className="md:pb-10 mt-14">
       <Header
-        title="Blog"
+        title="Awaj Blog"
         description="Explore the latest news and updates from the community"
       />
       <Separator className="mb-2.5" />
