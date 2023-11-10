@@ -1,0 +1,29 @@
+.container{
+  width: 42px;
+  height: 24px;
+  border-width: .5px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px;
+  position: relative;
+  cursor: pointer;
+  border-color: var(--card1);
+  box-shadow: inset 8px 8px 8px var(--shadow),
+              inset -2px -2px 2px var(--glow),
+              1px 1px 1px var(--shadow),
+              -2px -2px 2px var(--glow);
+}
+
+.icon{
+  font-size: 10px;
+}
+
+.ball{
+  width: 15px;
+  height: 15px;
+  background-color: #ec9727;
+  border-radius: 50%;
+  position: absolute;
+}
