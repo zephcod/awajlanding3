@@ -21,12 +21,11 @@ const Hero = () => {
   return (
         <div className="loop-wrapper">
             <div className={styles.container}>
-                <div className='hidden md:flex'><CtaHeadline/></div>
                 <div className={styles.glass}>
-                    <div className={styles.header}>
+                    {/* <div className={styles.header}>
                     <Image src={Awaj} width={200} height={200}  alt='Social Media Awaj Ad'/>
                     </div>
-                    <br/>
+                    <br/> */}
                     <div className={styles.subtitle}>
                         <h2>
                         🏆 Win digital marketing!
@@ -49,7 +48,7 @@ const Hero = () => {
                             <span className="sr-only">Check deals</span>
                             </div>
                         </Link>
-                        <Link href={'/pricing/deals'}>
+                        <Link href={'/resources/overview'}>
                             <div className={buttonVariants({
                                 variant:'outline',
                                 size: "default",
@@ -62,19 +61,20 @@ const Hero = () => {
                     </div>
                     <div className='relative hidden md:flex flex-col md:flex-row justify-evenly gap-4'>
                         <ColorButton text='Check Deals' url='/pricing/deals'></ColorButton>
-                        <RoundButton url='/resources/tour' text='Take a Tour 🡥'></RoundButton>
+                        <RoundButton url='/resources/overview' text='Take a Tour 🡥'></RoundButton>
                     </div>
                 </div>
+                <div className='hidden md:flex'><CtaHeadline/></div>
             </div>
             <BubbleBg/>
             {/* <div className="mountain"></div> */}
             <div className='statue1'><Image src={Statue1.src} objectFit={'100vw'} width={3400} height={400} alt=''/></div>
             <div className='statue2'><Image src={Statue1.src} objectFit={'100vw'} width={3400} height={400}alt=''/></div>
             <div className="hill"></div>
+            {/* <div className="tree"><Image src={Tree.src} width={300} height={300}alt=''/></div>
             <div className="tree"><Image src={Tree.src} width={300} height={300}alt=''/></div>
             <div className="tree"><Image src={Tree.src} width={300} height={300}alt=''/></div>
-            <div className="tree"><Image src={Tree.src} width={300} height={300}alt=''/></div>
-            {/* <div className='statue3'>
+            <div className='statue3'>
                 <Image src={Statue2.src} width={500} height={300}alt=''/></div>
             <div className='statue4'>
                 <Image src={Statue4.src} width={125} height={125}alt=''/></div>

@@ -16,9 +16,13 @@
 
 .imgText {
   position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
   bottom: -48px;
   right: 100px;
   left: 100px;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
@@ -42,11 +46,6 @@
   gap: 30px;
 }
 
-.desc {
-  font-size: 18px;
-  font-weight: 300;
-  text-align: justify;
-}
 @keyframes fadeIn {
   from   { transform: rotate(-.2deg); opacity: 0;}
   

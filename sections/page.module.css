@@ -24,7 +24,7 @@
 position: relative;
 max-width: 520px;
 margin-top: 150px;
-padding: 40px;
+padding: 30px;
 border-radius: 10px;
 font-size: 20px;
 backdrop-filter: saturate(130%) blur(8px) !important;
@@ -49,7 +49,7 @@ text-align: center;
 }
 
 .subtitle {
-  @apply my-2 md:my-4
+  @apply my-2 md:my-3
   font-semibold
   leading-[1.5] 
   text-xl md:text-3xl

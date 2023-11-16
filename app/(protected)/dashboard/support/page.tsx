@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 
 import { Header } from "@/components/header"
 import { Shell } from "@/components/shells/shell"
-import { DemoReportAnIssue } from "@/components/report-issue"
+import { ReportAnIssue } from "@/components/report-issue"
 
 export const metadata: Metadata = {
 //   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
@@ -19,7 +19,7 @@ export default async function PurchasesPage() {
         size="sm"
       />
       <div>
-        <DemoReportAnIssue/>
+        <ReportAnIssue/>
       </div>
     </Shell>
   )

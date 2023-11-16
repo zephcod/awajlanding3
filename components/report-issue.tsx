@@ -20,7 +20,7 @@ import {
 } from "@/components/UI/select"
 import { Textarea } from "@/components/UI/textarea"
 
-export function DemoReportAnIssue() {
+export function ReportAnIssue() {
   return (
     <Card>
       <CardHeader>

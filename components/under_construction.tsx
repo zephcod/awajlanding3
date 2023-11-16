@@ -23,7 +23,8 @@ const UnderConstruction = ({title, date}:UCProps) => {
             This page is currently under review please check us back after {date}. <br />
             We apologize for any inconvenience this may cause. If you need anything, we are always available to chat.
           </p>
-          <Image
+            <Image
+              className='z-20'
               sizes={'lg'}
               alt={'page under construction'}
               objectFit={'fit'}
@@ -31,7 +32,7 @@ const UnderConstruction = ({title, date}:UCProps) => {
               height={640}
               src={Under}
             />
-            <div className='my-8'>
+            <div className='my-8 relative'>
                 <h2 className='text-lg font-bold leading-[1.15] lg:text-2xl pt-6 pb-4'> Need further assistance?</h2>
                 <Link href={'/help_center'}>
                     <div

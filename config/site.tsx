@@ -12,7 +12,7 @@ export const siteConfig = {
   description:
     "All in one digital marketing and sales platform with everything included to boost your ad campaigns.",
   url: "https://awajai.com",
-  ogImage: 'https://gennbi.com/src/under-construction-01.svg',
+  ogImage: 'https://awajai.com/public/results.jpg',
   mainNav: [
     {
       title: "Pricing",
@@ -30,7 +30,7 @@ export const siteConfig = {
           items: [],
         },
         {
-          title: "Check Deals",
+          title: "Bundled Deals",
           href: "/pricing/deals",
           description: "Check recent deals from awaj.",
           items: [],
@@ -54,47 +54,47 @@ export const siteConfig = {
         })),
       ],
     })),
-    {
-      title: "AI",
-      items: [
-        {
-          title: "Gallery",
-          href: "/ai/gallery",
-          description: "Selected generative results.",
-          items: [],
-        },
-        {
-          title: "Prompts",
-          href: "/ai/prompts",
-          description: "Browse prompt lab and collections.",
-          items: [],
-        },
-        {
-          title: "Image Generation",
-          href: "/ai/image/text-to-image",
-          description: "Generate AI Images.",
-          items: [],
-        },
-        {
-          title: "Text Generation",
-          href: "/ai/conversations",
-          description: "Compose AI Texts",
-          items: [],
-        },
-        {
-          title: "Audio Generation",
-          href: "/ai/audio",
-          description: "Generate AI Audios.",
-          items: [],
-        },
-        {
-          title: "Expert AI",
-          href: "/ai/expert",
-          description: "Conversations with expert AI characters.",
-          items: [],
-        },
-      ],
-    },
+    // {
+    //   title: "AI",
+    //   items: [
+    //     {
+    //       title: "Gallery",
+    //       href: "/ai/gallery",
+    //       description: "Selected generative results.",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "Prompts",
+    //       href: "/ai/prompts",
+    //       description: "Browse prompt lab and collections.",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "Image Generation",
+    //       href: "/ai/image/text-to-image",
+    //       description: "Generate AI Images.",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "Text Generation",
+    //       href: "/ai/conversations",
+    //       description: "Compose AI Texts",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "Audio Generation",
+    //       href: "/ai/audio",
+    //       description: "Generate AI Audios.",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "Expert AI",
+    //       href: "/ai/expert",
+    //       description: "Conversations with expert AI characters.",
+    //       items: [],
+    //     },
+    //   ],
+    // },
     {
       title: "Resources",
       items: [
@@ -118,7 +118,7 @@ export const siteConfig = {
         },
         {
           title: "Content Hub",
-          href: "/resources/content_hub",
+          href: "/resources/content",
           description: "Collection of free giveaway contents.",
           items: [],
         },
@@ -130,7 +130,7 @@ export const siteConfig = {
         },
         {
           title: "Learning Hub",
-          href: "/resources/giveaways",
+          href: "/resources/learning/content",
           description: "Collection of Awaj learning materials.",
           items: [],
         },
@@ -158,7 +158,7 @@ export const siteConfig = {
           items: [],
         },
         {
-          title: "Team",
+          title: "Career",
           href: "/team",
           description: "Teams and carrer openings",
           items: [],

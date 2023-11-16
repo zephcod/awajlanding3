@@ -13,19 +13,19 @@ const Stats = () => {
         </div>
         <div className='flex flex-col md:flex-row gap-6 mx-auto max-w-4xl py-4'>
             <div className={styles.statcanvas}>
-                <Icons.hearthand className='h-14 w-14 '/>
-                <p className='text-2xl font-semibold mt-6'> 12M+ </p>
-                <p className='text-xl font-light px-8'> Marketing Reach </p>
-            </div>
-            <div className={styles.statcanvas}>
                 <Icons.pen className='h-14 w-14 '/>
                 <p className='text-2xl font-semibold mt-6'> 40+ </p>
                 <p className='text-xl font-light px-8'> Tools & Solutions </p>
             </div>
             <div className={styles.statcanvas}>
+                <Icons.hearthand className='h-14 w-14 '/>
+                <p className='text-2xl font-semibold mt-6'> 12M+ </p>
+                <p className='text-xl font-light px-8'> Marketing Reach </p>
+            </div>
+            <div className={styles.statcanvas}>
                 <Icons.rocket className='h-14 w-14 '/>
                 <p className='text-2xl font-semibold mt-6'> 700+ </p>
-                <p className='text-xl font-light px-8'> Successful Campaigns </p>
+                <p className='text-xl font-light px-8'> Winner Campaigns </p>
             </div>
         </div>
         <ScrollLinkGhost href={'#footer'}>

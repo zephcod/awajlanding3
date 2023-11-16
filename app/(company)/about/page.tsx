@@ -1,13 +1,19 @@
-import React from "react";
-import styles from "./page.module.css";
-import Image from "next/image";
-import Button from "@/components/button/button";
-import Banner from "@/public/character/awaj_about_banner.jpg";
-import { Metadata } from "next";
+import React from "react"
+import styles from "./page.module.css"
+import Image from "next/image"
+import Banner from "@/public/character/about_banner.png"
+import { Metadata } from "next"
+import Content from "@/public/character/1882.png"
+import Mission1 from "@/public/casestudy/hand_bulb.png"
+import Mission2 from "@/public/casestudy/technology.png"
+import Faqs from "@/components/faq/faqs"
+import Stats from "@/sections/stats"
+import { Separator } from "@/components/UI/separator"
+import ContactUs from "@/sections/ctas/contact"
 
 export const metadata: Metadata = {
   title: 'About Awaj AI',
-  description: 'Assorted digital resources from Awaj AI, the agency, and related platforms',
+  description: 'Information and summary about Awaj AI, the agency, and related platforms',
 }
 
 
@@ -28,42 +34,60 @@ const About = () => {
           </h2>
         </div>
       </div>
-      <div className='flex flex-col md:flex-row max-w-7xl m-auto p-8 gap-16'>
-        <div className={styles.item}>
-          <h1 className={styles.title}>Who Are We?</h1>
-          <p className={styles.desc}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-            quae dolor, optio voluptatibus magnam iure esse tempora beatae. A
-            suscipit eos. Animi quibusdam cum omnis officiis voluptatum quo ea
-            eveniet? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Ducimus quae dolor, optio voluptatibus magnam iure esse tempora
-            beatae, a suscipit eos. Animi quibusdam cum omnis officiis
-            <br />
-            <br />
-            voluptatum quo ea eveniet? Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Ducimus quae dolor, optio voluptatibus magnam iure
-            esse tempora beatae, a suscipit eos. Animi quibusdam cum omnis
-            officiis voluptatum quo ea eveniet?
-          </p>
+      <div className="max-w-3xl text-muted-foreground my-10 px-2 m-auto">
+        <h2 className="font-semibold text-3xl text-muted-foreground">What is Awaj AI?</h2>
+        <p className="mt-4 mb-2">
+          Awaj AI is a Customer Relationship Management (CRM) software. 
+          Awaj AI is comprised of tools that helps businesses manage their relationships with their customers and prospects. 
+          It allows them to captivate, nurture and organize their prospects, track interactions, automate workflows, generate reports, and more. 
+          Our CRM software is highly utilized by growing businesses to improve customer attraction, satisfaction, loyalty, retention, and revenue. 
+          The software can also help businesses streamline their sales, marketing, and advertisement processes, 
+          and optimize their performance and productivity.
+        </p>
+          <Image src={Content} width={700} height={500} alt='Awaj AI Case Studies Icon'/>
+          <br />
+        <h2 className="font-semibold text-3xl text-muted-foreground">Awaj the Agency.</h2>
+        <p className="mt-4 mb-10">
+        Awaj agency is a subsidiary entity based on the Awaj AI CRM and led by the core team to provide marketing and sales services to clients. 
+        We help businesses create and execute strategies to reach their target audience, increase brand awareness, generate leads, 
+        and drive sales. Our team offers various services, such as web design, SEO, social media marketing, content marketing, 
+        email marketing, PPC advertising, video marketing, and more.
+        </p>
+        <Separator/>
+        <h2 className="font-semibold text-center mt-12 text-3xl text-muted-foreground">Awaj AI is mission driven.</h2>
+      </div>
+      <div className='flex flex-col md:flex-row max-w-5xl px-2 m-auto gap-16'>
+        <div className='flex-1 flex flex-col gap-4 items-center'>
+          <Image src={Mission1} width={200} height={200} alt='Awaj AI Case Studies Icon'/>
+          <div>
+            <h2 className="font-semibold text-3xl text-muted-foreground">Optimization through innovation.</h2>
+            <p className='text-muted-foreground py-3'>
+              We believe in the power of innovation and entrepreneurship to transform the lives of millions of people in developing countries. 
+              We provide customer and prospect management solutions to small and medium enterprises (SMEs) across various sectors, 
+              helping them grow their businesses, reach new customers, and optimize their operations. 
+            </p>
+          </div>
+        <Separator/>
         </div>
-        <div className={styles.item}>
-          <h1 className={styles.title}>What We Do?</h1>
-          <p className={styles.desc}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-            quae dolor, optio voluptatibus magnam iure esse tempora beatae, a
-            suscipit eos. Animi quibusdam cum omnis officiis voluptatum quo ea
-            eveniet? Lorem ipsum dolor sit amet consectetur adipisicing elit. -
-            Creative Illustrations
-            <br />
-            <br /> - Dynamic Websites
-            <br />
-            <br /> - Fast and Handy
-            <br />
-            <br /> - Mobile Apps
-          </p>
-          <Button url="/contact" text="Contact" />
+        <div className='flex-1 flex flex-col gap-4 items-center'>
+          <Image src={Mission2} width={200} height={200} alt='Awaj AI Case Studies Icon'/>
+          <div>
+            <h2 className="font-semibold text-3xl text-muted-foreground">Marketing and sales for SMEs.</h2>
+            <p className='text-muted-foreground py-3'>
+              Our mission is to support the development of a vibrant and inclusive SME ecosystems, 
+              where entrepreneurs can access the tools, skills, and networks they need to succeed in the digital age. 
+              We are committed to delivering high-quality solutions, fostering long-term partnerships, 
+              and creating positive social impact through our work.
+            </p>
+          </div>
+        <Separator/>
         </div>
       </div>
+      <div className="h-12"></div>
+      <Stats/>
+      <ContactUs/>
+      <div className="h-16"></div>
+      <Faqs/>
     </div>
   );
 };

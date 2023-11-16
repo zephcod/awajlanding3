@@ -106,7 +106,7 @@ const Deals = () => {
           </p>
             <div className='mt-8 relative flex flex-col md:flex-row gap-10 items-center'>
               <ScrollLink href={'#quick'}>
-              Get a quick review 👇
+              Get a quick review 🡣
               </ScrollLink>
               <Link href="/resources/how_it_works">
                   <div

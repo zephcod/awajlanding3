@@ -3,8 +3,8 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RxDotFilled } from 'react-icons/rx';
-import Hawi from "@/public/profile/avatar2.png";
-import Stars from "@/public/character/five-stars-rating.png";
+import Profile from "@/public/profile/profile.svg";
+import { Separator } from '@/components/UI/separator';
 
 
 interface ToolTipProps {
@@ -22,34 +22,34 @@ interface ToolTipProps {
 function Testimonial() {
   const slides = [
     {
-      url: Hawi,
-      client:'Addis Alemayehu',
-      title:'CEO, Kazana Group',
-      testimonial:'Terewalu peace new...',
+      url: Profile,
+      client:'Bruk Daniel',
+      title:'Marketing Director, Impact International PLC',
+      testimonial:'Finding a CRM software that satisfied both our requirements and our clients expectations was something I never imagined available locally here in Addis Abeba. Great job Awaj Team, Keep up the good work!',
     },
     {
-      url: Hawi,
-      client:'Solomon Tech',
-      title:'CEO, Kazana Group',
-      testimonial:'Terewalu peace new...',
+      url: Profile,
+      client:'Mahlet Getachew',
+      title:'Owner, Mahi Beauty & Day Spa',
+      testimonial:'I was impressed by the platform and decided to use it for my customers. It helps me with all aspects of my business, from finding leads to closing deals. It has made a huge difference in my results. I highly appreciate their innovation and constant updates.',
     },
     {
-      url: Hawi,
+      url: Profile,
       client:'Rahel Atnafu',
-      title:'CEO, Kazana Group',
-      testimonial:'Terewalu peace new...',
+      title:'Freelancer, Digital Marketing',
+      testimonial:'I am very impressed by the quality and value of Awaj AI. They always anticipate my needs and deliver new features that exceed my expectations. They are very attentive to feedback and act on it promptly. This is very rare and admirable. I appreciate you guys, truly.',
     },
     {
-      url: Hawi,
-      client:'Gechene Zuri',
-      title:'CEO, Kazana Group',
-      testimonial:'Terewalu peace new...',
+      url: Profile,
+      client:'Anteneh Mekuriya',
+      title:'Creative Director, Proximal Studio',
+      testimonial:'This has been a transformative experience. Our entire business is now based on Awaj AI. We have no intention of switching back to our old ways. Where else can you get SMS, email, phone, social media, and web dev in one platform?',
     },
     {
-      url: Hawi,
-      client:'MC Sayamregn',
-      title:'CEO, Kazana Group',
-      testimonial:'Terewalu peace new...',
+      url: Profile,
+      client:'Mosisa Bekele',
+      title:'Owner, Mo Gymnasium',
+      testimonial:'My experience with the platform was amazing from the start...They showed genuine interest in my business and helped me achieve new heights. The technology is constantly evolving and improving. They are offering new services and features that I appreciate.',
     },
   ];
 
@@ -77,15 +77,16 @@ function Testimonial() {
         <div className='rounded-full p-2 bg-accent hover:bg-card opacity-50 text-muted-forground cursor-pointer'>
             <BsChevronCompactLeft onClick={prevSlide} size={30} />
         </div>
-        <div className='flex flex-col md:flex-row bg-card shadow-md rounded-lg mx-2'>
-            <div className='flex flex-col items-center p-4'>
-                <Image src={slides[currentIndex].url} alt='' width={68} className='mb-2 ring-2 ring-border shadow-md rounded-full'/>
+        <div className='flex flex-col md:flex-row bg-card shadow-md items-center rounded-lg mx-2 max-w-3xl '>
+            <Image src={slides[currentIndex].url} 
+            alt={slides[currentIndex].client} 
+            width={200} 
+            height={200} 
+            className='w-24 ring-2 m-4 ring-border rounded-full'/>
+            <div className='flex flex-col items-center justify-start bg-accent gap-1 p-4'>
                 <p>{slides[currentIndex].client}</p>
                 <p className='text-muted-foreground text-sm'>{slides[currentIndex].title}</p>
-            </div>
-            <div className='flex flex-col items-center justify-start bg-accent gap-2 p-4'>
-                <Image src={Stars} alt='' height={50} className='border-border border-b-2'/>
-                <p>Additionally, ve along the campaign. </p>
+                <Separator/>
                 <p className='text-muted-foreground'>{slides[currentIndex].testimonial}</p>
             </div>
         </div>

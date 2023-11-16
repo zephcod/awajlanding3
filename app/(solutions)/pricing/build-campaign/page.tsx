@@ -1,14 +1,16 @@
-import Neumorph_sliders from '@/components/UI/Neumorph_sliders'
-import PaymentOptions from '@/sections/payment_options'
+import UnderConstruction from '@/components/under_construction'
+import { Metadata } from 'next'
 import React from 'react'
+
+export const metadata: Metadata = {
+  title: 'Awaj AI Campaign Builder',
+  description: 'Assorted digital marketing and sales campaign builder from Awaj AI, the agency, and related platforms',
+}
+
 
 const Build_Campaign = () => {
   return (
-    <div>
-      <Neumorph_sliders/>
-      <h1>Build a Campaign</h1>
-      <PaymentOptions/>
-      </div>
+    <UnderConstruction title={'Build a Campaign'} date={'9:00am GMT 3/12/23'}/>
   )
 }
 

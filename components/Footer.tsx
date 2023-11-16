@@ -171,8 +171,8 @@ export default function Footer() {
               {siteConfig.name}
               </span>
             </Link>
-            <p className='text-sm font-light py-2 '>
-              ©2023 Awaj - Ace Digital Advert PLC. All rights reserved.
+            <p className='text-sm text-center font-light py-2 '>
+              ©2023 Ace Digital Advert PLC. All rights reserved.
             </p>
           </div>
           <div className='flex flex-col justify-between items-center gap-2'>
