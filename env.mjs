@@ -7,7 +7,6 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
-    DATABASE_URL: z.string('mongodb+srv://sofoniasmelesse:zPwqM3SNElgoIuWQ@cluster47.4x7suhs.mongodb.net/test?retryWrites=true&w=majority'),
     NODE_ENV: z.enum(["development", "test", "production"]),
     CLERK_SECRET_KEY: z.string('sk_test_RChscSwKLC1wixP2fYYpjZoHUWqb0QwyQZCIK0pY81'),
     RESEND_API_KEY: z.string("re_DezGELzD_6k9PMZrR4uNy8dDS3s44RjDH"),
