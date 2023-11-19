@@ -16,6 +16,7 @@ import { buttonVariants } from '@/components/UI/button';
 import CtaHeadline from './ctas/cta_headline';
 import ColorButton from '@/components/button/color_btn';
 import RoundButton from '@/components/button/round';
+import ScrollLink from '@/components/UI/scroll_link'
 
 const Hero = () => {
   return (
@@ -38,17 +39,8 @@ const Hero = () => {
                     </div>
                     <div className='h-4 border-border border-dashed border-b-2 mb-8'></div>
                     <div className='flex md:hidden flex-row gap-4 justify-center items-center'>
-                        <Link href={'/pricing/deals'}>
-                            <div className={buttonVariants({
-                                variant:'default',
-                                size: "default",
-                            })}
-                            >
-                            Check Deals
-                            <span className="sr-only">Check deals</span>
-                            </div>
-                        </Link>
-                        <Link href={'/resources/overview'}>
+                        <ScrollLink href={'#quick'}>Check Deals 🡣</ScrollLink>
+                        <Link href={'/resources/overview'} target='_blank'>
                             <div className={buttonVariants({
                                 variant:'outline',
                                 size: "default",
@@ -60,7 +52,7 @@ const Hero = () => {
                         </Link>
                     </div>
                     <div className='relative hidden md:flex flex-col md:flex-row justify-evenly gap-4'>
-                        <ColorButton text='Check Deals' url='/pricing/deals'></ColorButton>
+                        <ColorButton text='Check Deals 🡣' url='/pricing/deals'></ColorButton>
                         <RoundButton url='/resources/overview' text='Take a Tour 🡥'></RoundButton>
                     </div>
                 </div>

@@ -106,14 +106,14 @@ function FooterList1() {
   return (
     <li>
     {col1.map(card=>(
-      <a key={card.id} href={card.url}
+      <Link key={card.id} href={card.url} target='_blank'
       className="p-1 flex items-start  hover:text-orange-300 tr04">
         <div className="ml-1">
           <p className="text-sm font-light py-1 md:py-0">
             {card.title}
           </p>
         </div>
-      </a>
+      </Link>
     ))}
     </li>
   );
@@ -123,14 +123,14 @@ function FooterList2() {
   return (
     <li className={styles.tiercard}>
     {col2.map(card=>(
-      <a key={card.id} href={card.url}
+      <Link key={card.id} href={card.url} target='_blank'
       className="p-1 flex items-start  hover:text-orange-300 tr04">
         <div className="ml-1">
           <p className="text-sm font-light py-1 md:py-0">
             {card.title}
           </p>
         </div>
-      </a>
+      </Link>
     ))}
     </li>
   );
@@ -140,14 +140,14 @@ function FooterList3() {
   return (
     <li className={styles.tiercard}>
     {col3.map(card=>(
-      <a key={card.id} href={card.url}
+      <Link key={card.id} href={card.url} target='_blank'
       className="p-1 flex items-start  hover:text-orange-300 tr04">
         <div className="ml-1">
           <p className="text-sm font-light py-1 md:py-0">
             {card.title}
           </p>
         </div>
-      </a>
+      </Link>
     ))}
     </li>
   );

@@ -66,7 +66,7 @@ function SocialList({}: { children: ReactNode }) {
       <div className="flex flex-row mx-auto w-full items-center px-0 md:px-12">
       {social_item.map(card=>(
         <div className={styles.social} key={card.id} >
-        <Link href={card.url}>
+        <Link href={card.url} target='_blank'>
           <Image src={card.img} width={25} height={25} className={styles.icon} alt={card.alt}/>
         </Link>
         </div>
