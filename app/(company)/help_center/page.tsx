@@ -26,14 +26,36 @@ const Help = () => {
           className={styles.img}
         />
         <div className={styles.imgText}>
-          <Icons.construction/>
-          <p className="text-4xl text-center font-bold leading-[1.15] ">Help Search</p>
-          <Icons.construction/>
-          <p>Under review...</p>
+            <div className="flex flex-col gap-4 items-center m-auto">
+              <div className='ring-1 ring-accent bg-card opacity-90 rounded-md shadow-md p-4 items-center'>
+                <h2 className="font-semibold text-4xl m-auto text-center text-muted-foreground">We are here to help!</h2>
+                <p className="p-4 text-center text-muted-foreground max-w-2xl m-auto">
+                  Do you have a question, suggestion, partnerships ideas or just want to say hello? We love hearing from you. 
+                  Reach out! we&apos;ll get back to you promptly.
+                </p>
+              </div>
+              <div className="flex flex-col md:flex-row items-center justify-evenly w-full gap-2 text-muted-foreground">
+                <div className='ring-1 ring-accent bg-card opacity-90 rounded-md shadow-md p-4 items-center w-56'>
+                  <Link href={'/resources/getting_started'} className="flex flex-row gap-4 items-center">
+                    <Icons.book className="h-8 w-8"/>
+                    <p className="p-1 font-semibold text-lg ">
+                      Awaj AI<br/>Resources 🡥
+                    </p>
+                  </Link>
+                </div>
+                <div className='ring-1 ring-accent bg-card opacity-90 rounded-md shadow-md p-4 items-center w-56'>
+                <Link href={'/contact'} className="flex flex-row gap-4 items-center">
+                  <Icons.phone className="h-8 w-8"/>
+                    <p className="p-1 font-semibold text-lg ">
+                      Contact<br/>Us 🡥
+                    </p>
+                  </Link>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
-      <div className="bg-card w-full h-24"></div>
-      <div className='flex flex-col md:flex-row max-w-7xl m-auto p-8 gap-16'>
+      <div className='flex flex-col md:flex-row max-w-7xl m-auto mt-8 p-8 gap-16'>
         <div className={styles.item}>
           <h2 className="font-semibold text-3xl text-muted-foreground">Awaj AI Help Center</h2>
           <p className='text-muted-foreground'>

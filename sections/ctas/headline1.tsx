@@ -71,7 +71,7 @@ const Headline1 = () => {
                 12M+ <br/>Online Reach
                 </h2>
                 <p className="py-2 border-t-2 border-dashed text-md font-light">
-                Assorted reach of more than 12 million audience in Ethiopia and UAE.
+                Segmented reach of more than 12 million audience in Ethiopia and UAE.
                 </p>
               </div>
             </div>

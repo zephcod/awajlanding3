@@ -11,7 +11,7 @@ interface ButtonProps {
 const InRoundButton: FunctionComponent<ButtonProps> = ({children,url,text}) => {
   return (
     <div>
-    <Link href={url}>
+    <Link href={url} target='_blank'>
     <button className={styles.in_round}>
         {children}
     <p className='pb-1'>{text}</p>

@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import styles from "./page.module.css"
 import { Separator } from "@/components/UI/separator"
 import Image from "next/image"
-import Banner from "@/public/character/awaj_team_banner.png"
-import Content from "@/public/character/contatti.png"
+import Banner from "@/public/character/awaj_team_banner.jpg"
+import Content from "@/public/character/3995.png"
 import ETH from "@/public/logo/et.svg"
 import UAE from "@/public/logo/ae.svg"
 import Mission1 from "@/public/casestudy/hand_bulb.png"
@@ -13,20 +13,20 @@ import Stats from "@/sections/stats"
 import ContactUs from "@/sections/ctas/contact"
 import GlassFlash from '@/components/UI/flash_glass'
 import Aman from '@/public/profile/aman.jpg'
-import Ibsa from '@/public/profile/ibsa.png'
+import Ibsa from '@/public/profile/ibsaa.jpg'
 import Sof from '@/public/profile/sofi.jpg'
-import Leul from '@/public/profile/avatar2.png'
+import Leul from '@/public/profile/leul.png'
 import Nat from '@/public/profile/nati.png'
-import Eden from '@/public/profile/eden.png'
+import Eden from '@/public/profile/edu.jpg'
 import Nahom from '@/public/profile/nahom.png'
 import Maya from '@/public/profile/maya.png'
 import Samri from '@/public/profile/samri.png'
 import Kal from '@/public/profile/kal.png'
-import Ela from '@/public/profile/eal.png'
+import Ela from '@/public/profile/ela.png'
 import Abel from '@/public/profile/abel.png'
 
 export const metadata: Metadata = {
-  title: 'Awaj AI Teams and Career Opportunities',
+  title: 'Teams and Career Opportunities | Awaj AI ',
   description: 'Career opportunities and the team behind Awaj AI, the agency, and related platforms',
 }
 
@@ -41,67 +41,67 @@ const industries = [
     photo: Ibsa,
     title: 'COO',
     name:'Ibsaa Bekele',
-    desc:'An industry maven with a passion for disrupting the digital landscape.',
+    desc:'A strategy orchestrator, performance elevator and navigator of deals.',
   },
   {
     photo: Eden,
     title: 'CMO',
     name:'Eden Mulugeta',
-    desc:'An industry maven with a passion for disrupting the digital landscape.',
+    desc:'Marketing impact and growth mastermind taking brands to new heights.',
   },
   {
     photo: Sof,
     title: 'CTO',
     name:'Sofonias Melesse',
-    desc:'An industry maven with a passion for disrupting the digital landscape.',
+    desc:'A pioneer in digital innovations, shaping platforms for the digital era.',
   },
   {
     photo: Nat,
     title: 'Fullstack Dev',
     name:'Natnael Asefaw',
-    desc:'An industry maven with a passion for disrupting the digital landscape.',
+    desc:'Digital sucess builder from backend to frontend with seamless experiences.',
   },
   {
     photo: Leul,
     title: 'Data Scientist',
     name:'Luel Ashenafi',
-    desc:'An industry maven with a passion for disrupting the digital landscape.',
+    desc:'A guide to digital odyssey unveilling insights and powering strategies.',
   },
   {
     photo: Nahom,
     title: 'Creative Director',
     name:'Nahom Yohannes',
-    desc:'An industry maven with a passion for disrupting the digital landscape.',
+    desc:'A transformer of concepts into captivating visuals that speak louder than words.',
   },
   {
     photo: Maya,
     title: 'Social Media Guru',
     name:'Maya Mengstu',
-    desc:'An industry maven with a passion for disrupting the digital landscape.',
+    desc:'A digital guru, content curator, trend analyst and engagement strategist.',
   },
   {
     photo: Samri,
     title: 'Graphic Designer',
     name:'Samrawit Ashenafi',
-    desc:'An industry maven with a passion for disrupting the digital landscape.',
+    desc:'Elevator of ideas creating visual excellence with creativity and percision.',
   },
   {
     photo: Kal,
     title: 'Sales Manager',
     name:'Kalkidan Berihun',
-    desc:'An industry maven with a passion for disrupting the digital landscape.',
+    desc:'A Driver of success through prospect strategy, nurturing and streamlining sales.',
   },
   {
     photo: Ela,
     title: 'Video Editor',
     name:'Elias Dawit',
-    desc:'An industry maven with a passion for disrupting the digital landscape.',
+    desc:'A Visual maestro crafting impactful narratives into digital stories.',
   },
   {
     photo: Abel ,
     title: 'Photographer/Designer',
     name:'Abel Birhanu',
-    desc:'An industry maven with a passion for disrupting the digital landscape.',
+    desc:'A lens of creativity capturing and mastering brands and stories in pixels.',
   },
 ];
 
@@ -117,8 +117,8 @@ const Team = () => {
           className={styles.img}
         />
         <div className={styles.imgText}>
-          <h1 className="text-lg text-primary-foreground font-bold leading-[1.15] ">Digital Storytellers</h1>
-          <h2 className="text-md text-primary-foreground pt-2 font-semibold">
+          <h1 className="text-2xl text-secondary font-light leading-[1.15] ">Digital Storytellers</h1>
+          <h2 className="text-md text-secondary font-light pt-2">
             Handcrafting digital experiences
           </h2>
         </div>
@@ -136,10 +136,10 @@ const Team = () => {
           The algorithm that fuels Awaj AI took a great deal of commitment to reach where we are now, 
           and we are further evolving and iterating to deliver the best CRM tool for SMEs in developing countries.
         </p>
-          <Image src={Content} width={700} height={500} alt='Awaj AI Case Studies Icon'/>
+          <Image src={Content} width={700} height={500} alt='Awaj AI Team and Career'/>
           <br />
-        <h2 className="font-semibold text-3xl text-muted-foreground">Meet the Masters Behind Our Magic.</h2>
-        <p className="mt-4 mb-10">
+        <h2 className="font-semibold text-3xl text-muted-foreground text-center">Meet the Masters Behind Our Magic.</h2>
+        <p className="mt-4 mb-10 text-center">
         In the dynamic world of digital marketing, success is a result of innovation, strategy, and the relentless pursuit of excellence. 
         Get to know the wizards who make the magic happen at Awaj AI:
         </p>

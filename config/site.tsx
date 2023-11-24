@@ -184,7 +184,7 @@ export const siteConfig = {
         {
           title: "Contact",
           href: "/contact",
-          description: "Contact us, we are open 24/7.",
+          description: "Contact us, we are online 24/7.",
           items: [],
         },
       ],

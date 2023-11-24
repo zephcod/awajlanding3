@@ -5,6 +5,9 @@
     display:flex;
     justify-content:center;
     align-items:center;
+    @apply
+    rounded-2xl
+    bg-accent
 }
 @media only  screen  and (max-width: 768px){
     .video  {

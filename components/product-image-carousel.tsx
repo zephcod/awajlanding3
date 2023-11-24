@@ -124,7 +124,7 @@ export function ProductImageCarousel({
           <Button
             variant="outline"
             size="icon"
-            className="mr-0.5 aspect-square h-7 w-7 rounded-none sm:mr-2 sm:h-8 sm:w-8"
+            className="mr-0.5 aspect-square h-7 w-7 rounded-md sm:mr-2 sm:h-8 sm:w-8"
             disabled={prevBtnDisabled}
             onClick={scrollPrev}
           >
@@ -140,13 +140,13 @@ export function ProductImageCarousel({
               variant="outline"
               size="icon"
               className={cn(
-                "group relative aspect-square h-full w-full max-w-[100px] rounded-none shadow-sm hover:bg-transparent focus-visible:ring-foreground",
+                "group relative aspect-square h-full w-full max-w-[100px] rounded-md shadow-sm hover:bg-transparent focus-visible:ring-foreground",
                 i === selectedIndex && "ring-1 ring-foreground"
               )}
               onClick={() => scrollTo(i)}
               onKeyDown={handleKeyDown}
             >
-              <div className="absolute inset-0 z-10 bg-zinc-950/20 group-hover:bg-zinc-950/40" />
+              <div className="absolute inset-0 z-10" />
               <Image
                 src={image.url}
                 alt={image.name}
@@ -161,7 +161,7 @@ export function ProductImageCarousel({
           <Button
             variant="outline"
             size="icon"
-            className="ml-0.5 aspect-square h-7 w-7 rounded-none sm:ml-2 sm:h-8 sm:w-8"
+            className="ml-0.5 aspect-square h-7 w-7 rounded-md sm:ml-2 sm:h-8 sm:w-8"
             disabled={nextBtnDisabled}
             onClick={scrollNext}
           >

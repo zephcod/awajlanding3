@@ -9,6 +9,7 @@ import Stats from "@/sections/stats";
 import { QuickCampaign } from "./pricing/quick_campaign";
 import DownloadSection from "@/sections/ctas/downloads";
 import CasesSection from "@/sections/ctas/casestudies";
+import DealsSection from "@/sections/ctas/deals";
 
 export default function Main() {
   return (
@@ -25,9 +26,7 @@ export default function Main() {
       </h2>
       <ServiceCarousel/>
       <div className="h-12"></div>
-      <InRoundButton url="/pricing/deals" text="Check Deals">
-        <span><BsRocketTakeoffFill/></span>
-      </InRoundButton>
+      <DealsSection/>
       <Stats/>
       <ValueProp/>
       <DownloadSection/>

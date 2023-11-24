@@ -24,7 +24,7 @@ const ScrollLinkGhost = ({ children, ...props }: ScrollLinkProps) => {
   return (
     <Link scroll={false} {...props} onClick={handleScroll}>
         <div className={buttonVariants({
-                variant:'ghost',
+                variant:'invisible',
                 size: "default",
             })}
             >

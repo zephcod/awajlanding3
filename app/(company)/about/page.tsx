@@ -28,8 +28,8 @@ const About = () => {
           className={styles.img}
         />
         <div className={styles.imgText}>
-          <h1 className="text-lg text-primary-foreground font-bold leading-[1.15] ">Digital Storytellers</h1>
-          <h2 className="text-md text-primary-foreground pt-2 font-semibold">
+          <h1 className="text-lg text-secondary font-bold leading-[1.15] ">Digital Storytellers</h1>
+          <h2 className="text-md text-muted-foreground pt-2 font-semibold">
             Handcrafting digital experiences
           </h2>
         </div>
@@ -37,10 +37,10 @@ const About = () => {
       <div className="max-w-3xl text-muted-foreground my-10 px-2 m-auto">
         <h2 className="font-semibold text-3xl text-muted-foreground">What is Awaj AI?</h2>
         <p className="mt-4 mb-2">
-          Awaj AI is a Customer Relationship Management (CRM) software. 
+          Awaj AI is a Customer Relationship Management and Content Management System (CRM & CMS) software. 
           Awaj AI is comprised of tools that helps businesses manage their relationships with their customers and prospects. 
           It allows them to captivate, nurture and organize their prospects, track interactions, automate workflows, generate reports, and more. 
-          Our CRM software is highly utilized by growing businesses to improve customer attraction, satisfaction, loyalty, retention, and revenue. 
+          Our software is highly utilized by growing businesses to improve customer attraction, satisfaction, loyalty, retention, and revenue. 
           The software can also help businesses streamline their sales, marketing, and advertisement processes, 
           and optimize their performance and productivity.
         </p>
