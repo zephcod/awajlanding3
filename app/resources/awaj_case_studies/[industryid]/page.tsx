@@ -66,10 +66,10 @@ const Industry = ({ params }: IndustryPageProps) => {
                   <p>See how we help brands grow through effective digital marketing & sales strategies across several industries. </p>
                     <div className='mt-4 flex flex-col md:flex-row gap-4'>
                       <ScrollLink href={'#quick'}>
-                        Get a review for your {indu?.title} 🡣
+                        Get a review for your {indu?.title}
                       </ScrollLink>
                       <ScrollLink href={'#cases'}>
-                        {indu?.title} Campaign Success Stories 🡣
+                        {indu?.title} Campaign Success Stories
                       </ScrollLink>
                     </div>
                 </div>

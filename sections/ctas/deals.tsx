@@ -49,7 +49,7 @@ const DealsSection = () => {
                 <br />
                 <p className='px-4'>The offers include everything needed to create and manage a successful online campaign with guaranteed results. </p>
                 <div className='h-10'></div>
-                <InRoundButton url="/pricing/deals" text="Explore More 🡥">
+                <InRoundButton url="/pricing/deals" text="Explore More">
                     <span><BsRocketTakeoffFill/></span>
                 </InRoundButton>
             </div>

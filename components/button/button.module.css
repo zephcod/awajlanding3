@@ -59,8 +59,10 @@
     width: 10rem;
     margin: auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    gap: 4px;
+    justify-content: center;
     border-width: 1px;
     border-color: var(--btn-border);
     background: var(--btn-bg);
@@ -222,8 +224,10 @@
       width: 10rem;
       margin: auto;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      justify-content: center;
       align-items: center;
+      gap: 4px;
       border-width: 1px;
       border-color: var(--btn-border);
       background: var(--btn-bg);

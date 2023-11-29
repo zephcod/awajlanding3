@@ -2,6 +2,7 @@
 import React, {useState, useEffect} from "react"
 import '@/styles/globals.css'
 import { Providers as ThemeProvider } from '@/components/providers'
+import { Analytics } from '@vercel/analytics/react';
 import  Providers from '@/components/chat/chatproviders'
 import { AuthProvider } from '@/context/authContext'
 import { Toaster } from "@/components/UI/toaster"
@@ -38,6 +39,7 @@ export default function RootLayout({children,}:{children: React.ReactNode}) {
               </AuthProvider> 
               </ThemeProvider>
               <Toaster />
+              <Analytics />
           </body>
         </Providers>
       </html>

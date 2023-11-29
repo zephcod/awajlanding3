@@ -44,8 +44,16 @@ const About = () => {
           The software can also help businesses streamline their sales, marketing, and advertisement processes, 
           and optimize their performance and productivity.
         </p>
-          <Image src={Content} width={700} height={500} alt='Awaj AI Case Studies Icon'/>
-          <br />
+        <Image src={Content} width={700} height={500} alt='Awaj AI Case Studies Icon'/>
+        <br />
+        <h2 className="font-semibold text-3xl text-muted-foreground">Awaj AI Meda.</h2>
+        <p className="mt-4 mb-10">
+        Welcome to the forefront of AI exploration with Awaj AI, we've redefined the landscape for AI experimentation, 
+        offering a flexible, cost-effective approach to accessing cutting-edge technologies. 
+        Our platform serves as an expansive playground, providing developers, businesses, 
+        and researchers the freedom to explore the vast potential of AI without the constraints of traditional pricing models. 
+        With our Pay-As-You-Go model, you pay only for the resources you consume, enabling unlimited creativity and innovation at your fingertips.
+        </p>
         <h2 className="font-semibold text-3xl text-muted-foreground">Awaj the Agency.</h2>
         <p className="mt-4 mb-10">
         Awaj agency is a subsidiary entity based on the Awaj AI CRM and led by the core team to provide marketing and sales services to clients. 

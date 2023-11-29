@@ -29,7 +29,7 @@ const Stats = () => {
             </div>
         </div>
         <ScrollLinkGhost href={'#footer'}>
-        <p className='p-1 text-muted-foreground'>Subscribe to our socials / newsletter 🡣</p>
+        <p className='p-1 text-muted-foreground'>Subscribe to our socials / newsletter</p>
         </ScrollLinkGhost>
     </div>
   )

@@ -1,7 +1,6 @@
 'use client'
 import * as React from "react"
 import styles from './page.module.css'
-import Outline from '@/components/button/outline';
 import { BsCheck } from 'react-icons/bs';
 import '@/components/pricing/test.css'
 import { Slider } from "@/components/UI/slider";

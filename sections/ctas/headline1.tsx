@@ -36,11 +36,11 @@ const Headline1 = () => {
               track interactions, automate workflows, generate reports, and more...
               </p>
                 <div className='mt-8 relative flex flex-col md:flex-row gap-6 items-center'>
-                  <ScrollLink href={'#quick'}>
-                  Get a quick review 🡣
+                  <ScrollLink href={'#deals'}>
+                  Check bundled deals
                   </ScrollLink>
                   <ScrollLink href={'#case_sec'}>
-                  Check case studies 🡣
+                  Check case studies
                   </ScrollLink>
                 </div>
               </div>

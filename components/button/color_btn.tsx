@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import styles from '@/components/button/button.module.css'
-import ScrollLinkGhost from '../UI/scroll_link_ghost';
+import ScrollLinkBlank from '../UI/scroll_link_blank';
 
 interface ButtonProps {
   children?: any;
@@ -10,14 +10,12 @@ interface ButtonProps {
 
 const ColorButton: FunctionComponent<ButtonProps> = ({children,url,text}) => {
   return (
-    <div>
-      <ScrollLinkGhost href={url}>
+      <ScrollLinkBlank href={url}>
         <button className={styles.color_btn}>
+          <p className='text-lg'>{text}</p>
           {children}
-          <span><p className='pb-1'>{text}</p></span>
         </button>
-      </ScrollLinkGhost>
-    </div>
+      </ScrollLinkBlank>
   )
 }
 

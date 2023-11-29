@@ -27,7 +27,10 @@ const ValueProp = () => {
               <div className='flex flex-row gap-4 mb-2 items-center'>
                 <div className='bg-primary opacity-70 rounded-full shadow-lg'> <Icons.check className='bg-card m-2 rounded-full p-1 shadow-md'/> </div>
                 <Link href={'/team'} className='font-semibold text-lg text-muted-foreground border-dashed border-b-2 hover:text-secondary'>
-                  Experienced team  🡥
+                  <div className='flex flex-row items-center justify-center gap-1'>
+                    <p>Experienced team</p>
+                    <Icons.arrowUpRight className='h-4 w-4'/>
+                  </div>
                 </Link>
               </div>
               <p className="pb-4 text-muted-foreground">

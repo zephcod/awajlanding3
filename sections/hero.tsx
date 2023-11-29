@@ -11,6 +11,7 @@ import CtaHeadline from './ctas/cta_headline';
 import ColorButton from '@/components/button/color_btn';
 import RoundButton from '@/components/button/round';
 import ScrollLink from '@/components/UI/scroll_link'
+import { Icons } from '@/components/UI/icons'
 
 const Hero = () => {
   return (
@@ -33,21 +34,18 @@ const Hero = () => {
                     </div>
                     <div className='h-4 border-border border-dashed border-b-2 mb-8'></div>
                     <div className='flex md:hidden flex-row gap-4 justify-center items-center'>
-                        <ScrollLink href={'#deals'}>Check Deals 🡣</ScrollLink>
+                        <ScrollLink href={'#deals'}><p>Check Deals</p></ScrollLink>
                         <Link href={'/resources/overview'} target='_blank'>
-                            <div className={buttonVariants({
-                                variant:'outline',
-                                size: "default",
-                            })}
-                            >
-                            Take a Tour 🡥
-                            <span className="sr-only">Take a tour</span>
+                            <div className='text-muted-foreground flex flex-row items-center justify-center gap-1 ring-1 ring-border rounded-md px-4 py-2'>
+                                <p className='text-sm'>Take a Tour</p>
+                                <Icons.arrowUpRight className='h-4 w-4'/>
                             </div>
                         </Link>
                     </div>
                     <div className='relative hidden md:flex flex-row justify-evenly items-baseline gap-4'>
-                        <ColorButton text='Check Deals 🡣' url='#deals'></ColorButton>
-                        <RoundButton url='/resources/overview' text='Take a Tour 🡥'></RoundButton>
+                        <ColorButton text='Check Deals' url='#deals'><Icons.arrowDown className='h-4 w-4'/></ColorButton>
+                        <ColorButton text='Case Studies' url='#case_sec'><Icons.arrowDown className='h-4 w-4'/></ColorButton>
+                        {/* <RoundButton url='/resources/overview' text='Take a Tour'><Icons.arrowUpRight className='h-4 w-4'/></RoundButton> */}
                     </div>
                 </div>
                 <div className='hidden md:flex'><CtaHeadline/></div>

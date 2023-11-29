@@ -95,6 +95,17 @@
     position: absolute;
     background: #eee;
   }
+  .cloud {
+    position: relative;
+    /* padding-left: 100px; */
+    /* left: 50px; */
+    /* margin-left: 500px; */
+    margin-top: -10px;
+    margin-bottom: 20px;
+    /* margin:auto; */
+    background: transparent;
+    background-size: contain;
+  }
   .truck {
     /* position: absolute; */
     /* padding-left: 100px; */
@@ -141,7 +152,8 @@
   .statue3  { animation: statue3 30s -15s linear infinite; }
   .statue4  { animation: statue4 30s -20s linear infinite; }
   .statue5  { animation: statue5 30s -25s linear infinite; }
-  .truck  { animation: truck 4s   0.30s ease-in-out infinite; }
+  .cloud    { animation: cloud 36s   0.30s ease-in-out infinite; }
+  .truck    { animation: truck 4s   0.30s ease-in-out infinite; }
   .truck:before { animation: wind 4s   0.70s ease-in-out infinite; }
 
   .awaj:nth-child(2)  { animation: awaj 10s 1s ease-in-out infinite; }
@@ -200,6 +212,13 @@
     0%   { }
     50%   { transform: translateY(50px) }
     100%   { }
+  }
+  @keyframes cloud {
+    0%    {transform: translateY(-20px)  }
+    25%   {transform: translateX(50px) }
+    50%   {transform: translateX(0px) translateY(20px) }
+    75%   {transform: translateX(-50px) }
+  100%    {transform: translateY(-20px)}
   }
   @keyframes wind {
     0%   {  }

@@ -24,9 +24,9 @@ export const siteConfig = {
           items: [],
         },
         {
-          title: "Awaj Mela",
-          href: "/pricing/awaj-mela",
-          description: "Top up your Awaj Mela coins here.",
+          title: "Awaj Meda",
+          href: "/pricing/awaj-meda",
+          description: "Top up your Awaj Meda coins here.",
           items: [],
         },
         {

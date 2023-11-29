@@ -1,7 +1,5 @@
 import Hero from "@/sections/hero";
 import ServiceCarousel from "@/sections/service_carousel/service_carousel";
-import { BsRocketTakeoffFill } from "react-icons/bs";
-import InRoundButton from "./button/inround";
 import ValueProp from "@/sections/value_proposition";
 import styles from '@/components/page.module.css'
 import Headline1 from "@/sections/ctas/headline1";
@@ -27,6 +25,7 @@ export default function Main() {
       <ServiceCarousel/>
       <div className="h-12"></div>
       <DealsSection/>
+      <div className="h-24"></div>
       <Stats/>
       <ValueProp/>
       <DownloadSection/>

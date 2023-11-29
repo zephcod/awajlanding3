@@ -3,6 +3,7 @@ import { cases } from '@/config/cases'
 import type { Metadata, ResolvingMetadata } from 'next'
 import { Breadcrumbs } from '@/components/pagers/breadcrumbs'
 import { toTitleCase, unslugify } from '@/app/utils/utils'
+import UnderConstruction from '@/components/under_construction'
 
 interface IndustryPageProps {
     params: {
@@ -44,7 +45,7 @@ const Cases = ({ params }: IndustryPageProps) => {
           ]}
         />
       </div>
-      {cas?.title}
+      <UnderConstruction title={cas!.title} date={''}/>
     </div>
   )
 }

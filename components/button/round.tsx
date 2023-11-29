@@ -13,8 +13,8 @@ const RoundButton: FunctionComponent<ButtonProps> = ({children,url,text}) => {
     <div>
       <Link href={url} target='_blank'>
       <button className={styles.round}>
+      <p className='text-lg'>{text}</p>
           {children}
-      <span><p className='pb-1'>{text}</p></span>
       </button>
       </Link>
     </div>

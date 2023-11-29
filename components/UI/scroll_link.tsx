@@ -3,6 +3,7 @@
 import Link, { LinkProps } from "next/link";
 import React, { PropsWithChildren } from "react";
 import { buttonVariants } from "./button";
+import { Icons } from "./icons";
 // mirror the props of next/link component
 type AnchorProps = Omit<
   React.AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -23,13 +24,9 @@ const ScrollLink = ({ children, ...props }: ScrollLinkProps) => {
   };
   return (
     <Link scroll={false} {...props} onClick={handleScroll}>
-        <div className={buttonVariants({
-                variant:'default',
-                size: "default",
-            })}
-            >
-            {children}
-            <span className="sr-only">{children}</span>
+        <div className='text-gray-800 bg-primary hover:bg-amber-400 flex flex-row items-center justify-center gap-1 ring-1 ring-border rounded-md px-4 py-2'>
+            <p className='text-sm'>{children}</p>
+            <Icons.arrowDown className='h-4 w-4'/>
         </div>
     </Link>
   );

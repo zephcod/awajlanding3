@@ -21,7 +21,10 @@ const DownloadSection = () => {
                 Whether you&apos;re in the office or you&apos;re out and about - 
                 Awaj is ready whenever, and wherever, you are!</p>
                 <Link href={'/resources/downloads'} className=' font-semibold hover:underline'>
-                    Check Downloads 🡥
+                    <div className='flex flex-row items-center justify-center gap-1'>
+                        <p>Check Downloads</p>
+                        <Icons.arrowUpRight className='h-4 w-4'/>
+                    </div>
                 </Link>
             </div>
             <div className=''>
