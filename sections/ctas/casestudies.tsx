@@ -10,7 +10,7 @@ const CasesSection = () => {
     <div className='flex flex-col items-center '>
         <div className='h-10'></div>
         <div className='flex flex-row text-muted-foreground items-center justify-center text-center gap-2 w-full m-auto'>
-            <h3 className='text-2xl lg:text-3xl font-bold leading-[1.15]'>Get Results with Awaj
+            <h3 className='text-2xl lg:text-3xl font-bold leading-[1.15]'>Get results with Awaj
             <span className='text-primary'>{' '}AI</span>.</h3>
             <Icons.chart className='h-8 w-8 '/>
         </div>

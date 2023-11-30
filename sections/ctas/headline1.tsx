@@ -51,25 +51,25 @@ const Headline1 = () => {
           <div className={styles.headline_col}>
             <div className="relative flex flex-col p-4 gap-3 max-w-4xl mx-auto flex-1 text-center">
               <div className='ring-1 ring-accent bg-card opacity-70 rounded-md shadow-md p-4 items-center flex flex-col '>
-                <h2 className="p-1 font-semibold text-lg">
+                <h3 className="p-1 font-semibold text-lg">
                   7.2X <br/> Average ROAS 
-                </h2>
+                </h3>
                 <p className="py-2 border-t-2 border-dashed text-md font-light">
                  An average of 7-folds &apos;return on ad spent&apos; across all our campaigns.
                 </p>
               </div>
               <div className='ring-1 ring-accent bg-card opacity-70 rounded-md shadow-md p-4 items-center flex flex-col'>
-                <h2 className="p-1 font-semibold text-lg">
+                <h3 className="p-1 font-semibold text-lg">
                 300+ <br/>Templates
-                </h2>
+                </h3>
                 <p className="py-2 border-t-2 border-dashed text-md font-light">
                 More than 300 refined templates for all specific campaign schemes.
                 </p>
               </div>
               <div className='ring-1 ring-accent bg-card opacity-70 rounded-md shadow-md p-4 items-center flex flex-col'>
-                <h2 className="p-1 font-semibold text-lg">
+                <h3 className="p-1 font-semibold text-lg">
                 12M+ <br/>Online Reach
-                </h2>
+                </h3>
                 <p className="py-2 border-t-2 border-dashed text-md font-light">
                 Segmented reach of more than 12 million audience in Ethiopia and UAE.
                 </p>
@@ -88,25 +88,25 @@ const Headline1 = () => {
           <div className={styles.headline_col}>
             <div className="relative flex flex-col p-4 gap-3 max-w-4xl mx-auto flex-1  text-center">
               <div className='ring-1 ring-accent bg-card opacity-70 rounded-md shadow-md p-4 items-center flex flex-col'>
-                <h2 className="p-1 font-semibold text-lg ">
+                <h3 className="p-1 font-semibold text-lg ">
                   70+<br/>Pro AI Models
-                </h2>
+                </h3>
                 <p className="py-2 border-t-2 border-dashed text-md font-light">
-                Professionally AI models customized for marketing & sales tasks.
+                Professionall AI models customized for marketing & sales tasks.
                 </p>
               </div>
               <div className='ring-1 ring-accent bg-card opacity-70 rounded-md shadow-md p-4 items-center flex flex-col'>
-                <h2 className="p-1 font-semibold text-lg">
+                <h3 className="p-1 font-semibold text-lg">
                 15K+ <br/>Digital Resources
-                </h2>
+                </h3>
                 <p className="py-2 border-t-2 border-dashed text-md font-light">
                 Variety of essential digital assets for impressions & engagement.
                 </p>
               </div>
               <div className='ring-1 ring-accent bg-card opacity-70 rounded-md shadow-md p-4 items-center flex flex-col'>
-                <h2 className="p-1 font-semibold text-lg">
+                <h3 className="p-1 font-semibold text-lg">
                 100+ <br/> Partners
-                </h2>
+                </h3>
                 <p className="py-2 border-t-2 border-dashed text-md font-light">
                 Get exclusive access to more than 100 partner channels and platforms.
                 </p>

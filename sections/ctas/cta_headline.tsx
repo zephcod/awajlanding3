@@ -17,7 +17,7 @@ const CtaHeadline = () => {
           <div className="max-w-5xl mx-auto text-center flex flex-col w-full items-center">
             <Image className='cloud' src={Content} width={400} height={400} alt='Awaj AI Downloads Icon'/>
             <br />
-            <Link href="/signin">
+            <Link href="https://meda.awajai.com/">
                 <div
                   className={buttonVariants({
                     variant:'default',

@@ -42,7 +42,7 @@ const DealsSection = () => {
                     <Link href={'/resources/downloads'} className='cursor-pointer'>
                         <Icons.billing className='h-8 w-8 '/>
                     </Link>
-                    <h3 className='text-2xl lg:text-3xl font-bold leading-[1.15]'>Check
+                    <h3 className='text-2xl lg:text-3xl font-bold leading-[1.15]'>Bundled
                     <span className='text-primary'>{' '}Deals{" "}</span></h3>
                 </div>
                 <p className='px-4'>Awaj&apos;s digital marketing bundled deals are carefully tailored to meet specific marketing campaign schemes.</p>

@@ -106,6 +106,23 @@ import {Client, Databases, Account, ID, AppwriteException} from 'appwrite'
       }
     }
 
+    // Go to OAuth provider login page
+    async oauthSession(params:string) {
+      try {
+        
+        const userAccount = await account.createOAuth2Session(
+          params, 
+          'http://localhost:3000/', 
+          'http://localhost:3000/signin');
+
+        console.log(userAccount)
+        return userAccount
+
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
     // verify email
     async verifyEmail(){
       try {
