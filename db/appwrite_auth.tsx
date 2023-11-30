@@ -2,7 +2,6 @@ import { absoluteUrl } from '@/app/utils/utils';
 import {Client, Databases, Account, ID, AppwriteException} from 'appwrite'
 
 
-
   const client = new Client();
     client.setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
           .setProject('6504c902cef3dc9b138c');
@@ -112,8 +111,9 @@ import {Client, Databases, Account, ID, AppwriteException} from 'appwrite'
         
         const userAccount = await account.createOAuth2Session(
           params, 
-          'http://localhost:3000/', 
-          'http://localhost:3000/signin');
+          absoluteUrl("/"), 
+          absoluteUrl("/")
+          );
 
         console.log(userAccount)
         return userAccount
