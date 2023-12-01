@@ -112,9 +112,9 @@ import {Client, Databases, Account, ID, AppwriteException} from 'appwrite'
         const userAccount = await account.createOAuth2Session(
           params, 
           absoluteUrl("/"), 
-          absoluteUrl("/")
+          absoluteUrl("/signup")
           );
-
+          
         console.log(userAccount)
         return userAccount
 

@@ -110,12 +110,23 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
           className='peer disabled:opacity-50 pr-14 resize-none block w-full border-0 bg-accent py-1.5 text-muted-foreground focus:ring-0 text-sm sm:leading-6'
         />
 
-        <div className='absolute inset-y-0 right-0 flex py-1.5 pr-1.5'>
+        <div className='absolute inset-y-0 right-0 flex py-1.5 pr-1.5 hover:cursor-pointer hover:bg-accent'>
           <kbd className='inline-flex items-center rounded border bg-card border-border px-1 font-sans text-xs text-muted-foreground'>
             {isLoading ? (
               <Loader2 className='w-3 h-3 animate-spin' />
             ) : (
-              <CornerDownLeft className='w-3 h-3' />
+              <CornerDownLeft className='w-3 h-3 ' 
+              onClick={(e) => {
+                e.preventDefault()
+
+              const message: Message = {
+                id: nanoid(),
+                isUserMessage: true,
+                text: input,
+              }
+
+              sendMessage(message)
+              } }/>
             )}
           </kbd>
         </div>

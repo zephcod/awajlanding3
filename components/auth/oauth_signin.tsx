@@ -53,6 +53,22 @@ export function OAuthSignIn() {
               <Icons.google className="mr-2 h-4 w-4" aria-hidden="true" />
             )}
             Google
+          </Button><Button
+            aria-label={`Sign in with Google`}
+            variant="outline"
+            className="w-full bg-background sm:w-auto"
+            onClick={() => void onSubmit('facebook')}
+            disabled={isPending}
+          >
+            {isPending ? (
+              <Icons.spinner
+                className="mr-2 h-4 w-4 animate-spin"
+                aria-hidden="true"
+              />
+            ) : (
+              <Icons.facebook className="mr-2 h-4 w-4" aria-hidden="true" />
+            )}
+            Facebook
           </Button>
     </div>
   )

@@ -17,7 +17,7 @@ const CtaHeadline = () => {
           <div className="max-w-5xl mx-auto text-center flex flex-col w-full items-center">
             <Image className='cloud' src={Content} width={400} height={400} alt='Awaj AI Downloads Icon'/>
             <br />
-            <Link href="https://meda.awajai.com/">
+            <Link href="https://meda.awajai.com/" target='_blank'>
                 <div
                   className={buttonVariants({
                     variant:'default',
@@ -32,7 +32,7 @@ const CtaHeadline = () => {
                 </div>
               </Link>
             <p className='mt-2 text-base font-light text-muted-foreground'>
-              Claim your 50 free coins.
+              Claim 50 free coins.
             </p>
           </div>
     </div>

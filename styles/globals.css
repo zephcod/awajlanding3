@@ -186,7 +186,7 @@ body {
 .clearNav {
   backdrop-filter: saturate(180%) blur(6px) !important;
   background-color: var(--transparent) !important;
-  border-bottom-width: .5px;
+  /* border-bottom-width: .5px; */
   border-color: var(--border1);
   box-shadow: inset -10px -10px 10px var(--glow),
                 1px 1px 1px var(--shadow);
