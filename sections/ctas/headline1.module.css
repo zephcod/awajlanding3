@@ -29,7 +29,7 @@
     box-shadow: inset -2px -2px 22px var(--glow),
                   2px 2px 6px var(--shadow);
   }
-@media only  screen  and (min-width: 1280px){
+@media only  screen  and (min-width: 1500px){
     .headline1_canvas  {
       flex-direction: row;
       width: 75vw;

@@ -19,14 +19,12 @@ export function DashNav({name}:NavProps) {
   return (
     <div className="fixed top-14 z-30 flex w-full flex-col bg-transparent md:bg-card lg:bottom-0 lg:z-auto lg:w-72 lg:border-b-0 lg:border-r lg:border-border">
       <div className="flex h-14 items-center pl-4 pr-16 md:pr-4 py-4 lg:h-auto">
-        <Link
-            href="/"
-            className="group hidden md:flex w-full items-center gap-x-2.5"
-            onClick={close}>
+        <div
+            className="group hidden md:flex w-full items-center gap-x-2.5">
             <h3 className="font-semibold text-lg tracking-wide text-secondary group-hover:text-primary">
                 Hello 👋 {name}
             </h3>
-        </Link>
+        </div>
       </div>
       <button
         type="button"

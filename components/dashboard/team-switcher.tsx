@@ -52,7 +52,7 @@ const groups = [
     label: "Personal Account",
     teams: [
       {
-        label: "Alicia Koch",
+        label: "Admin Account",
         value: "personal",
       },
     ],
@@ -61,12 +61,12 @@ const groups = [
     label: "Teams",
     teams: [
       {
-        label: "Acme Inc.",
-        value: "acme-inc",
+        label: "Awaj AI",
+        value: "awajai",
       },
       {
-        label: "Monsters Inc.",
-        value: "monsters",
+        label: "Awaj Advert",
+        value: "awajad",
       },
     ],
   },
@@ -185,15 +185,15 @@ export default function TeamSwitcher({ className }: TeamSwitcherProps) {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="free">
-                    <span className="font-medium">Free</span> -{" "}
+                    <span className="font-medium">Essential</span> -{" "}
                     <span className="text-muted-foreground">
-                      Trial for two weeks
+                      2000ETB/Month
                     </span>
                   </SelectItem>
                   <SelectItem value="pro">
-                    <span className="font-medium">Pro</span> -{" "}
+                    <span className="font-medium">Bussiness</span> -{" "}
                     <span className="text-muted-foreground">
-                      $9/month per user
+                      5000ETB/Month
                     </span>
                   </SelectItem>
                 </SelectContent>

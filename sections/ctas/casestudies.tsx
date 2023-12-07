@@ -25,7 +25,7 @@ const CasesSection = () => {
             <Image src={Content} width={400} height={300} alt='Awaj AI Case Studies Icon'/>
                 <Link href={'/resources/awaj_case_studies'} className='text-primary font-semibold hover:underline'>
                     <div className='flex flex-row items-center justify-center gap-1'>
-                        <p>More Case Studies</p>
+                        <p>See Case Studies</p>
                         <Icons.arrowUpRight className='h-4 w-4'/>
                     </div>
                 </Link>

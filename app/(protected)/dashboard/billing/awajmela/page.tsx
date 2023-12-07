@@ -1,8 +1,9 @@
+import UnderConstruction from '@/components/under_construction'
 import React from 'react'
 
 const BillingAwajMela = () => {
   return (
-    <div>BillingAwajMela</div>
+    <UnderConstruction title={'Awaj Mela Billing'} date={''}/>
   )
 }
 

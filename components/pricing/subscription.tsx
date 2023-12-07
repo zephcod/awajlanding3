@@ -78,27 +78,27 @@ export default function Subscriptions(){
           price={selectMonthly?2000:1500} 
           title='📣 Essential' 
           id={1} 
-          feature1='key advertising workflows'
-          feature2='key advertising workflows'
-          feature3='key advertising workflows'
-          feature4='key advertising workflows'
-          feature5='key advertising workflows'
-          feature6='key advertising workflows'
-          feature7='key advertising workflows'
-          feature8='key advertising workflows'
+          feature1='Adaptive content strategy'
+          feature2='Awaj content store free access'
+          feature3='Performance monitoring'
+          feature4='Weekley insight report'
+          feature5='SEO on-page optimization'
+          feature6='Landing page optimization'
+          feature7='Lead generation strategy'
+          feature8='Sales funnel automation'
           />
           <PriceWrapper 
-          price={selectMonthly?4000:3500} 
+          price={selectMonthly?5000:3700} 
           title='📈 Business' 
           id={2} 
-          feature1='key advertising workflows'
-          feature2='key advertising workflows'
-          feature3='key advertising workflows'
-          feature4='key advertising workflows'
-          feature5='key advertising workflows'
-          feature6='key advertising workflows'
-          feature7='key advertising workflows'
-          feature8='key advertising workflows'
+          feature1='All essential features included'
+          feature2='Awaj AI Meda free access'
+          feature3='Ad targeting strategy'
+          feature4='SEO backlink building'
+          feature5='SMS automation'
+          feature6='Email automation'
+          feature7='Community building strategy'
+          feature8='Conversion rate optimization'
           />
           <div className={styles.canvas}>
             <div className= {styles.card}>
@@ -130,23 +130,25 @@ export default function Subscriptions(){
               </div>
               <div className={styles.detail2}>
                 <div className='px-2 flex flex-row items-center gap-2'>
-                  <BsCheck/><p>key advertising workflows</p>
+                  <BsCheck/><p>All business features included</p>
                 </div>
                 <div className='px-2 flex flex-row items-center gap-2'>
-                  <BsCheck/><p>key advertising workflows</p>
+                  <BsCheck/><p>High quality authorative content</p>
                 </div>
                 <div className='px-2 flex flex-row items-center gap-2'>
-                  <BsCheck/><p>key advertising workflows</p>
+                  <BsCheck/><p>Brand tone development</p>
                 </div>
                 <div className='px-2 flex flex-row items-center gap-2'>
-                  <BsCheck/><p>key advertising workflows</p>
+                  <BsCheck/><p>A/B testing workflows</p>
                 </div>
                 <div className='px-2 flex flex-row items-center gap-2'>
-                  <BsCheck/><p>key advertising workflows</p>
+                  <BsCheck/><p>CI/CD workflows</p>
                 </div>
               </div>
-              <p className="px-4 pb-1 font-extralight text-sm">* Enterprise invoices settled monthly</p>
-              <p className="px-4 pb-2 font-extralight text-sm">* Consult sales for further inquiry</p>
+              <div className="items-start flex flex-col">
+                <p className="px-4 pb-1 font-extralight text-sm">* Enterprise invoices settled monthly</p>
+                <p className="px-4 pb-2 font-extralight text-sm">* Consult sales for further inquiry</p>
+              </div>
               <div className="flex flex-row justify-evenly">
               <Outline text='Order' url='/pricing/check_out'/>
               <Outline text='Contact us' url='/pricing/help_center'/>

@@ -17,8 +17,8 @@ import {
 import { Icons } from "@/components/UI/icons"
 import '@/styles/globals.css'
 import useAuth from "@/hooks/use_auth"
-import appwriteDBService from "@/db/appwrite_db"
 import { AwajUser } from "@/lib/validations/user"
+import appwriteAuthService from "@/db/appwrite_auth"
 
 const UserMenu = () => {
   const {authStatus} = useAuth();
@@ -26,7 +26,7 @@ const UserMenu = () => {
   
   useEffect(()=>{
     (async () => {
-      const iuser = await appwriteDBService.getUser()
+      const iuser = await appwriteAuthService.currentUser()
       setUser(iuser)
     })()
   },[])
@@ -98,6 +98,20 @@ if (!authStatus) {
                           aria-hidden="true"
                         />
                         Support
+                        <DropdownMenuShortcut></DropdownMenuShortcut>
+                      </Link>
+                    </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                    <DropdownMenuItem asChild>
+                      <Link href="https://meda.awajai.com/">
+                        <Icons.settings
+                          className="mr-2 h-4 w-4"
+                          aria-hidden="true"
+                        />
+                        <div className='flex flex-row gap-1 items-center px-2 py-1'>
+                          Awaj Meda
+                          <Icons.arrowUpRight className='h-4 w-4'/>
+                        </div>
                         <DropdownMenuShortcut></DropdownMenuShortcut>
                       </Link>
                     </DropdownMenuItem>

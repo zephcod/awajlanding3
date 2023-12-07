@@ -5,10 +5,10 @@ import { AiTwotoneLike } from "react-icons/ai";
 import { AiOutlineLineChart } from "react-icons/ai";
 import { BsMegaphoneFill } from "react-icons/bs";
 import Image from "next/image";
-import Content from "@/public/screenb1.png";
-import Content2 from "@/public/screen2.png";
-import Content3 from "@/public/screen3.png";
-import Content4 from "@/public/screen4.png";
+import Content from "@/public/screenb1-min.webp";
+import Content2 from "@/public/screenb1-min.webp";
+import Content3 from "@/public/screenb1-min.webp";
+import Content4 from "@/public/screenb1-min.webp";
 import styles from '@/sections/service_carousel/service_caraouse.module.css'
 import { Icons } from "@/components/UI/icons";
 

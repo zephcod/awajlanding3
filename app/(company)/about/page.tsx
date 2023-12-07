@@ -54,7 +54,7 @@ const About = () => {
         and researchers the freedom to explore the vast potential of AI without the constraints of traditional pricing models. 
         With our Pay-As-You-Go model, you pay only for the resources you consume, enabling unlimited creativity and innovation at your fingertips.
         </p>
-        <h2 className="font-semibold text-3xl text-muted-foreground">Awaj the Agency.</h2>
+        <h2 className="font-semibold text-3xl text-muted-foreground">Awaj Ad Agency.</h2>
         <p className="mt-4 mb-10">
         Awaj agency is a subsidiary entity based on the Awaj AI CRM and led by the core team to provide marketing and sales services to clients. 
         We help businesses create and execute strategies to reach their target audience, increase brand awareness, generate leads, 

@@ -19,10 +19,10 @@ export default function MelaPricing(){
     const [loading2, setLoading2] = React.useState(false);
     const [silverMela, setSilverMela] = React.useState<[number]>([20])
     const silverMelaFormat = Number(silverMela)
-    const silverMelaPrice = (silverMelaFormat*5)
+    const silverMelaPrice = (silverMelaFormat*.1)
     const [goldMela, setGoldMela] = React.useState<[number]>([20])
     const goldPriceFormat = Number(goldMela)
-    const goldMelaPrice = (goldPriceFormat*20)
+    const goldMelaPrice = (goldPriceFormat*.5)
 
     const onSilverBuy = async () => {
       try {
@@ -66,7 +66,7 @@ export default function MelaPricing(){
             <div className= {styles.card}>
               <div className='flex flex-col gap-4 p-4 relative'>
                 <div className="flex flex-row justify-center gap-2">
-                  <p> Silver Mela </p>
+                  <p> Silver Coin </p>
                   <Badge variant='accent'>+{silverMela[0]}</Badge>
                 </div>
                 <Slider
@@ -75,10 +75,10 @@ export default function MelaPricing(){
                   aria-label="Enterprise package slider"
                   thickness="thin"
                   name="456"
-                  defaultValue={[20]}
-                  min={10}
-                  max={400}
-                  step={10}
+                  defaultValue={[2000]}
+                  min={500}
+                  max={10000}
+                  step={100}
                   value={silverMela}
                   onValueChange={(
                     value: typeof silverMela
@@ -87,15 +87,15 @@ export default function MelaPricing(){
                   }}
                 />
                 <div className="flex flex-row items-center gap-2 px-6">
-                    <p className="text-center font-extralight text-base">Mela: </p>
+                    <p className="text-center font-extralight text-base">Coin: </p>
                     <Input
                     type="number"
                     inputMode="numeric"
                     defaultValue={silverMela[0]}
                     value={silverMela[0]}
-                    min={10}
-                    step={10}
-                    max={400}
+                    min={500}
+                    step={100}
+                    max={10000}
                     onChange={(e) => {
                       const value = Number(e.target.value)
                       setSilverMela([value])
@@ -114,10 +114,10 @@ export default function MelaPricing(){
                   <BsCheck/><p>Members only gallery access</p>
                 </div>
                 <div className='p-2 flex flex-row items-center gap-2'>
-                  <BsCheck/><p>4X faster response times</p>
+                  <BsCheck/><p>Generative AI Images</p>
                 </div>
                 <div className='p-2 flex flex-row items-center gap-2'>
-                  <BsCheck/><p>No expiry date</p>
+                  <BsCheck/><p>Generative AI Audio</p>
                 </div>
               </div>
               <Button variant='accent' className="m-4"disabled={loading} onClick={onSilverBuy}>
@@ -126,14 +126,14 @@ export default function MelaPricing(){
                       className="mr-2 h-4 w-4 animate-spin"
                       aria-hidden="true"
                       />
-                      )} Buy Silver Mela</Button>
+                      )} Buy Silver Coin</Button>
             </div>
           </div>
           <div className={styles.canvas}>
             <div className= {styles.card}>
               <div className='flex flex-col gap-4 p-4 relative'>
                 <div className="flex flex-row justify-center gap-2">
-                  <p> Gold Mela </p>
+                  <p> Gold Coin </p>
                   <Badge>+{goldMela[0]}</Badge>
                 </div>
                 <Slider
@@ -141,10 +141,10 @@ export default function MelaPricing(){
                   aria-label="Enterprise package slider"
                   thickness="thin"
                   name="456"
-                  defaultValue={[20]}
-                  min={10}
-                  max={400}
-                  step={10}
+                  defaultValue={[1000]}
+                  min={100}
+                  max={2000}
+                  step={100}
                   value={goldMela}
                   onValueChange={(
                     value: typeof goldMela
@@ -152,15 +152,15 @@ export default function MelaPricing(){
                     setGoldMela(value)
                   }} />
                 <div className="flex flex-row items-center gap-2 px-6">
-                  <p className="text-center font-extralight text-base">Mela: </p>
+                  <p className="text-center font-extralight text-base">Coin: </p>
                   <Input
                   type="number"
                   inputMode="numeric"
                   defaultValue={goldMela[0]}
                   value={goldMela[0]}
-                  min={10}
-                  step={10}
-                  max={400}
+                  min={100}
+                  step={100}
+                  max={2000}
                   onChange={(e) => {
                     const value = Number(e.target.value)
                     setGoldMela([value])
@@ -179,13 +179,13 @@ export default function MelaPricing(){
                   <BsCheck/><p>AI Companions with memory</p>
                 </div>
                 <div className='p-2 flex flex-row items-center gap-2'>
-                  <BsCheck/><p>GPT-4 & LLaMA2 models</p>
+                  <BsCheck/><p>Generative AI Video</p>
                 </div>
                 <div className='p-2 flex flex-row items-center gap-2'>
-                  <BsCheck/><p>Images with Midjourney & Dall-e</p>
+                  <BsCheck/><p>Images with Midjourney</p>
                 </div>
               </div>
-              <Button className="m-4"disabled={loading2} onClick={onGoldBuy}>
+              <Button className="m-4"disabled onClick={onGoldBuy}>
                       {loading2 && (
                       <Icons.spinner
                       className="mr-2 h-4 w-4 animate-spin"

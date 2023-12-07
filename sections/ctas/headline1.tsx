@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from "next/image";
-import Funnel from "@/public/funnel-01.png";
+import Funnel from "@/public/funnel-min.webp";
 import ROI from "@/public/character/6_hand.png";
 import styles from '@/sections/ctas/headline1.module.css'
 import LogoSlider from './logoslider';
@@ -27,12 +27,12 @@ const Headline1 = () => {
                <span className='font-bold text-primary'>Offer & Sales</span>{' '}strategy"
             </h2>
             <Embed/>
-            <div className='mt-6 flex flex-col items-center text-center text-muted-foreground'>
-              <h2 className='text-2xl md:text-3xl md:font-bold font-semibold mb-2'>
+            <div className='mt-6 flex flex-col items-center text-center text-muted-foreground max-w-xl'>
+              <h2 className='text-2xl md:text-3xl md:font-bold font-semibold mb-2 '>
                 Work with Awaj AI.
               </h2>
               <p>
-              Take your business to the next level with Awaj AI. Captivate, nurture and organize your prospects, 
+              Take your digital marketing efforts to the next level with Awaj AI. <br /> Captivate, nurture and organize your prospects, 
               track interactions, automate workflows, generate reports, and more...
               </p>
                 <div className='mt-8 relative flex flex-col md:flex-row gap-6 items-center'>

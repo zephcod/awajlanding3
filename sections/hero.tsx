@@ -3,7 +3,7 @@ import '@/styles/hero_animation.css'
 import Image from "next/image"
 import styles from '@/sections/page.module.css'
 import Rocket from '@/public/character/awaj_hero.webp'
-import Statue1 from '@/public/landmark/ethiopian_landmark.png'
+import Statue1 from '@/public/landmark/ethiopian_landmark-min.webp'
 import BubbleBg from '@/components/UI/bubble_bg';
 import Link from 'next/link';
 import { buttonVariants } from '@/components/UI/button';

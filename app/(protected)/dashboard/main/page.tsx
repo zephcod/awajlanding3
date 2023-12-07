@@ -101,9 +101,9 @@ export default function DashboardPage() {
                     </svg>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold">$45,231.89</div>
+                    <div className="text-2xl font-bold">0.00ብር</div>
                     <p className="text-xs text-muted-foreground">
-                      +20.1% from last month
+                      +0.0% from last month
                     </p>
                   </CardContent>
                 </Card>
@@ -128,9 +128,9 @@ export default function DashboardPage() {
                     </svg>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold">+2350</div>
+                    <div className="text-2xl font-bold">+0</div>
                     <p className="text-xs text-muted-foreground">
-                      +180.1% from last month
+                      +0.0% from last month
                     </p>
                   </CardContent>
                 </Card>
@@ -152,9 +152,9 @@ export default function DashboardPage() {
                     </svg>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold">+12,234</div>
+                    <div className="text-2xl font-bold">+0.00ብር</div>
                     <p className="text-xs text-muted-foreground">
-                      +19% from last month
+                      +0% from last month
                     </p>
                   </CardContent>
                 </Card>
@@ -177,9 +177,9 @@ export default function DashboardPage() {
                     </svg>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold">+573</div>
+                    <div className="text-2xl font-bold">+0</div>
                     <p className="text-xs text-muted-foreground">
-                      +201 since last hour
+                      +0 since last hour
                     </p>
                   </CardContent>
                 </Card>
@@ -197,7 +197,7 @@ export default function DashboardPage() {
                   <CardHeader>
                     <CardTitle>Recent Sales</CardTitle>
                     <CardDescription>
-                      You made 265 sales this month.
+                      You made 0 sales this month.
                     </CardDescription>
                   </CardHeader>
                   <CardContent>

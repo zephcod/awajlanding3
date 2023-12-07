@@ -5,8 +5,8 @@ import MelaPricing from '@/components/pricing/melapricing'
 import PaymentOptions from '@/sections/payment_options'
 
 export const metadata: Metadata = {
-  title: 'Awaj Mela',
-  description: 'Awaj Mela Coins Topup',
+  title: 'Awaj Meda',
+  description: 'Awaj Meda Coins Topup',
 }
 
 const AwajAiCoins = () => {

@@ -1,8 +1,9 @@
+import UnderConstruction from '@/components/under_construction'
 import React from 'react'
 
 const AwajTools = () => {
   return (
-    <div>AwajTools</div>
+    <UnderConstruction title={'Awaj AI Tools'} date={''}/>
   )
 }
 

@@ -1,10 +1,9 @@
 import React from 'react'
 import styles from '@/components/pricing/page.module.css'
-import DealsPage from '@/sections/deals/deals'
 import PaymentOptions from '@/sections/payment_options'
 import Image from 'next/image'
-import Content from "@/public/character/1971.png";
-import Avatar from "@/public/profile/avatar2.png";
+import Content from "@/public/character/1971.png"
+import Avatar from "@/public/profile/avatar2.png"
 import Link from 'next/link'
 import { buttonVariants } from '@/components/UI/button'
 import { QuickCampaign } from '@/components/pricing/quick_campaign'
@@ -13,6 +12,7 @@ import ScrollLink from '@/components/UI/scroll_link'
 import type { Metadata } from 'next'
 import { Icons } from '@/components/UI/icons'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/UI/tooltip'
+import DealsCTA from '@/components/carousels/deals-cta'
 
 export const metadata: Metadata = {
   title: 'Awaj AI Deals',
@@ -59,7 +59,7 @@ const Deals = () => {
           </div>
           <Image src={Content} alt='awaj ai bundled deals' placeholder='blur' width={400}/>
         </div>
-        <DealsPage/>
+        <DealsCTA/>
         <div className='h-8'></div>
         <div className={styles.headline1_canvas}>
           <h3 className='text-center text-2xl font-semibold text-muted-foreground leading-[1.15] lg:text-3xl'>
@@ -106,7 +106,7 @@ const Deals = () => {
           </p>
             <div className='mt-8 relative flex flex-col md:flex-row gap-10 items-center'>
               <ScrollLink href={'#quick'}>
-              Get a quick review 🡣
+              Get a quick review
               </ScrollLink>
               <Link href="/resources/how_it_works">
                   <div

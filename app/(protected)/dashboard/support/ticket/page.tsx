@@ -1,8 +1,9 @@
+import UnderConstruction from '@/components/under_construction'
 import React from 'react'
 
 const SupportTicket = () => {
   return (
-    <div>SupportTicket</div>
+    <UnderConstruction title={'Support Ticket View'} date={''}/>
   )
 }
 

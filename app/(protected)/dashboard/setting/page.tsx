@@ -1,8 +1,9 @@
+import UnderConstruction from '@/components/under_construction'
 import React from 'react'
 
 const Settings = () => {
   return (
-    <div>Settings</div>
+    <UnderConstruction title={'Settings'} date={''}/>
   )
 }
 

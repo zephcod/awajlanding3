@@ -4,10 +4,10 @@ import { Icons } from '@/components/UI/icons'
 import { ProductImageCarousel } from '@/components/product-image-carousel'
 import InRoundButton from '@/components/button/inround'
 import { BsRocketTakeoffFill } from 'react-icons/bs'
-import Deal1 from '@/public/casestudy/app.png'
-import Deal2 from '@/public/casestudy/hand_heart.png'
-import Deal3 from '@/public/casestudy/hand_bulb.png'
-import Deal4 from '@/public/casestudy/hand_app.png'
+import Deal1 from '@/public/deals/deal-1-starter.png'
+import Deal2 from '@/public/deals/deal-2-launcher.png'
+import Deal3 from '@/public/deals/deal-3-booster.png'
+import Deal4 from '@/public/deals/deal-4-miner.png'
 
 const ima = [
     {

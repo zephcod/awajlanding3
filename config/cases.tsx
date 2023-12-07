@@ -24,4 +24,12 @@ export const cases: {id:string; title: string; cat:string, strategy:string; desc
         desc: '',
         strategy: ''
     },
+    {
+        title: '2Merkato',
+        id:'2merkato',
+        cat:'b2b',
+        image: Apps.src,
+        desc: '',
+        strategy: ''
+    },
 ]

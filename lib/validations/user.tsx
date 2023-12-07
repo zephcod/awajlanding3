@@ -6,7 +6,7 @@ export const userSchema = z.object ({
     phone: z.string().optional(),
     bio: z.string().optional(),
     profilePic: z.string().optional(),
-    newsletter: z.boolean().default(false),
+    // newsletter: z.boolean().default(false),
     createdat: z.date().optional(),
 
 })

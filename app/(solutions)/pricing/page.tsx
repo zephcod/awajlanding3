@@ -22,12 +22,12 @@ export default function Price(){
         <p className='text-base text-muted-foreground text-center max-w-3xl'>
           We offer subscription in three packages. 
           Test Awaj Essential monthly plan and see our services in action! 
-          Our Business and Premium packages will also be available starting from August 2023. 
+          Our Business and Premium packages will also be available starting from January 2024. 
           You can pre-order now, refunds are guaranteed.
         </p>
         <br />
         <em className='text-base text-muted-foreground text-center max-w-3xl'>
-          Prices DO NOT include 15% VAT.
+          No hidden fees - Everything included.
         </em>
         <br/>
       </>
@@ -45,8 +45,13 @@ export default function Price(){
       </div>
       </div>
       <div className='flex flex-row justify-center items-center align-middle gap-6 mb-8'>
-      <Button text="Try Awaj" url="/"/>
       <GlassModal/>
+      </div>
+      <div className='mt-8 text-base text-muted-foreground text-center max-w-3xl m-auto'>
+        <br/>
+        <h2 className=' font-semibold text-2xl'>
+          Popular one time solutions
+        </h2>
       </div>
       <PopularOrders/>
     </section>
