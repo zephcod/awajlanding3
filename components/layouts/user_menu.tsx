@@ -103,7 +103,7 @@ if (!authStatus) {
                     </DropdownMenuItem>
                   <DropdownMenuSeparator />
                     <DropdownMenuItem asChild>
-                      <Link href="https://meda.awajai.com/">
+                      <Link href="https://meda.awajai.com/" target="_blank">
                         <Icons.settings
                           className="mr-2 h-4 w-4"
                           aria-hidden="true"

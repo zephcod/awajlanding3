@@ -1,13 +1,11 @@
-import React, { ReactNode, Suspense } from 'react'
+'use client'
+import React, { ReactNode} from 'react'
 import { DashNav } from '@/components/layouts/sidenav_dashboard'
-import NavName from '@/components/dashboard/sidenav_name'
 
-const Layout = async ({ children }: { children: ReactNode }) =>{
+const Layout = ({ children }: { children: ReactNode }) =>{
   return (
     <div className="w-full pt-14">
-        {/* <Suspense fallback = {<DashNav name = ''/>}>
-        {await NavName()}
-        </Suspense> */}
+        <DashNav />
         <div className="lg:pl-72">
               {children}
         </div>

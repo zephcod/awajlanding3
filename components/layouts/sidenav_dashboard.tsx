@@ -1,20 +1,29 @@
 'use client';
 import { type Item } from '@/config/ai';
 import { dashItems } from '@/config/account';
+import appwriteAuthService from "@/db/appwrite_auth";
 import Link from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import clsx from 'clsx';
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import { Icons } from '@/components/UI/icons';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/UI/accordion';
 
-interface NavProps {
-  name:string
-}
 
-export function DashNav({name}:NavProps) {
+export function DashNav() {
   const [isOpen, setIsOpen] = useState(false);
   const close = () => setIsOpen(false);
+  const [loadingUser, setLoadingUser] = useState(true)
+  const [user, setUser] = useState<string|null>(null)
+
+  useEffect(() => {
+    (async ()=> {
+        const appuser = await appwriteAuthService.currentUser()
+        const username = appuser!.name
+        setUser(username)
+    }) ();
+        setLoadingUser(false)
+  }, [])
 
   return (
     <div className="fixed top-14 z-30 flex w-full flex-col bg-transparent md:bg-card lg:bottom-0 lg:z-auto lg:w-72 lg:border-b-0 lg:border-r lg:border-border">
@@ -22,7 +31,7 @@ export function DashNav({name}:NavProps) {
         <div
             className="group hidden md:flex w-full items-center gap-x-2.5">
             <h3 className="font-semibold text-lg tracking-wide text-secondary group-hover:text-primary">
-                Hello 👋 {name}
+                Hello 👋 {user}
             </h3>
         </div>
       </div>

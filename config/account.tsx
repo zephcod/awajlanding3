@@ -86,7 +86,7 @@ import { LucideIcon,
           description: 'Contact customer support',
         },
         {
-          name: 'Open Ticket',
+          name: 'Open Tickets',
           slug: 'dashboard/support/ticket',
           description: 'Open tickets with customer support',
         },
