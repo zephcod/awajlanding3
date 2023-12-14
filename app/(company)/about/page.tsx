@@ -48,7 +48,7 @@ const About = () => {
         <br />
         <h2 className="font-semibold text-3xl text-muted-foreground">Awaj AI Meda.</h2>
         <p className="mt-4 mb-10">
-        Welcome to the forefront of AI exploration with Awaj AI, we've redefined the landscape for AI experimentation, 
+        Welcome to the forefront of AI exploration with Awaj AI, we&apos;ve redefined the landscape for AI experimentation, 
         offering a flexible, cost-effective approach to accessing cutting-edge technologies. 
         Our platform serves as an expansive playground, providing developers, businesses, 
         and researchers the freedom to explore the vast potential of AI without the constraints of traditional pricing models. 

@@ -81,6 +81,7 @@ import {
     X,
     type LucideIcon,
     type LucideProps,
+    ExternalLink,
   } from "lucide-react"
   import { BsTiktok, BsFillMegaphoneFill, BsFillRocketTakeoffFill } from 'react-icons/bs'
 import { AwajLogoMono } from "./svgawaj"
@@ -102,6 +103,7 @@ import { AwajLogoMono } from "./svgawaj"
     chevronUpDown: ChevronsUpDown,
     arrowUp: ArrowUp,
     arrowDown: ArrowDown,
+    arrowExternalLink: ExternalLink,
     menu: Menu,
     hearthand:HeartHandshake,
     verticalThreeDots: MoreVertical,

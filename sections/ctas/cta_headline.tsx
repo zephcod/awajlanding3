@@ -11,7 +11,7 @@ const CtaHeadline = () => {
   return (
     <div className={styles.containerMain}>
           <p className='text-xl md:text-2xl text-muted-foreground py-3'>
-            Join the <span className='text-primary'>AI</span>  playground!
+            Join the <span className='text-primary'>AI</span>  workspace!
           </p>
           {/* <Icons.arrowDown className='text-muted-foreground animate-bounce'/> */}
           <div className="max-w-5xl mx-auto text-center flex flex-col w-full items-center">
@@ -26,7 +26,7 @@ const CtaHeadline = () => {
                 >
                   <div className='flex flex-row gap-1 items-center px-2 py-1'>
                     Get Started
-                    <Icons.arrowUpRight className='h-4 w-4'/>
+                    <Icons.arrowExternalLink className='h-4 w-4'/>
                   </div>
                   <span className="sr-only">Get started</span>
                 </div>

@@ -104,13 +104,13 @@ if (!authStatus) {
                   <DropdownMenuSeparator />
                     <DropdownMenuItem asChild>
                       <Link href="https://meda.awajai.com/" target="_blank">
-                        <Icons.settings
+                        <Icons.brain
                           className="mr-2 h-4 w-4"
                           aria-hidden="true"
                         />
                         <div className='flex flex-row gap-1 items-center px-2 py-1'>
                           Awaj Meda
-                          <Icons.arrowUpRight className='h-4 w-4'/>
+                          <Icons.arrowExternalLink className='h-4 w-4'/>
                         </div>
                         <DropdownMenuShortcut></DropdownMenuShortcut>
                       </Link>
