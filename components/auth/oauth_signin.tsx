@@ -36,7 +36,7 @@ export function OAuthSignIn() {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4">
+    <div className="grid grid-cols-1 sm:gap-4 m-auto">
           <Button
             aria-label={`Sign in with Google`}
             variant="outline"
@@ -52,13 +52,14 @@ export function OAuthSignIn() {
             ) : (
               <Icons.google className="mr-2 h-4 w-4" aria-hidden="true" />
             )}
-            Google
-          </Button><Button
+            Continue with Google
+          </Button>
+          {/* <Button
             aria-label={`Sign in with Google`}
             variant="outline"
             className="w-full bg-background sm:w-auto"
             onClick={() => void onSubmit('facebook')}
-            disabled={isPending}
+            disabled
           >
             {isPending ? (
               <Icons.spinner
@@ -69,7 +70,7 @@ export function OAuthSignIn() {
               <Icons.facebook className="mr-2 h-4 w-4" aria-hidden="true" />
             )}
             Facebook
-          </Button>
+          </Button> */}
     </div>
   )
 }

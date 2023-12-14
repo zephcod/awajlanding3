@@ -10,6 +10,7 @@ import NewHeader from '@/components/layouts/new_header'
 import { ModalProvider } from '@/components/ai/modal-provider'
 import appwriteAuthService from "@/db/appwrite_auth"
 import Chat from "@/components/chat/chat"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
  
 export default function RootLayout({children,}:{children: React.ReactNode}) {
@@ -40,6 +41,7 @@ export default function RootLayout({children,}:{children: React.ReactNode}) {
               </ThemeProvider>
               <Toaster />
               <Analytics />
+              <SpeedInsights/>
           </body>
         </Providers>
       </html>

@@ -1,5 +1,13 @@
 import Link from 'next/link'
 import React from 'react'
+import { Metadata } from 'next'
+
+
+export const metadata: Metadata = {
+  title: 'Terms and Conditions | Awaj AI',
+  description: 'Brief terms and conditions, agreement and legal terms about Awaj AI, the agency, and related platforms',
+}
+
 
 async function Terms () {
   

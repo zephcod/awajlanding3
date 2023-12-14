@@ -1,6 +1,13 @@
 import ScrollLinkBlank from '@/components/UI/scroll_link_blank'
 import Link from 'next/link'
 import React from 'react'
+import { Metadata } from 'next'
+
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | Awaj AI',
+  description: 'Brief summary of key privacy policies about Awaj AI, the agency, and related platforms',
+}
 
 async function Privacy () {
   

@@ -54,7 +54,7 @@ const Hero = () => {
                     <Image className='cloud' src={Content} width={400} height={400} alt='Awaj AI Downloads Icon'/>
                     <div className='flex flex-row mt-2 gap-4 justify-center items-center'>
                         <ScrollLink href={'#deals'}><p>Check Deals</p></ScrollLink>
-                        <Link href={'https://www.meda.awajai.com/'} target='_blank'>
+                        <Link href={'https://meda.awajai.com/'} target='_blank'>
                             <div className='text-muted-foreground flex flex-row items-center justify-center gap-1 ring-1 ring-border rounded-md px-4 py-2'>
                                 <p className='text-sm'>Get Started</p>
                                 <Icons.arrowUpRight className='h-4 w-4'/>

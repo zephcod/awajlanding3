@@ -11,8 +11,8 @@ export const siteConfig = {
   name: "Awaj AI",
   description:
     "All in one digital marketing and sales platform with everything included to boost your ad campaigns.",
-  url: "https://awajai.com",
-  ogImage: 'https://awajai.com/public/results.jpg',
+  url: "https://www.awajai.com",
+  ogImage: 'https://cloud.appwrite.io/v1/storage/buckets/650d2f3abd9c8148bda2/files/650d2ffc5182a242dd32/view?project=6504c902cef3dc9b138c&mode=admin',
   mainNav: [
     {
       title: "Pricing",
