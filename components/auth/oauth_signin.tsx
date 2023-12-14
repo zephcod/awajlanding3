@@ -8,6 +8,8 @@ import { Button } from "@/components/UI/button"
 import { Icons } from "@/components/UI/icons"
 import appwriteAuthService from "@/db/appwrite_auth"
 import useAuth from "@/hooks/use_auth"
+import Image from "next/image"
+import Content from "@/public/logo/google-logo.png"
 
 
 export function OAuthSignIn() {
@@ -50,7 +52,8 @@ export function OAuthSignIn() {
                 aria-hidden="true"
               />
             ) : (
-              <Icons.google className="mr-2 h-4 w-4" aria-hidden="true" />
+              <Image className="mr-3" src={Content} width={30} height={30} alt='Google Icon'/>
+              // <Icons.google className="mr-2 h-4 w-4" aria-hidden="true" />
             )}
             Continue with Google
           </Button>
