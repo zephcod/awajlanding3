@@ -19,6 +19,7 @@ import '@/styles/globals.css'
 import useAuth from "@/hooks/use_auth"
 import { AwajUser } from "@/lib/validations/user"
 import appwriteAuthService from "@/db/appwrite_auth"
+import { ThemeToggle } from "./theme_toggle"
 
 const UserMenu = () => {
   const {authStatus} = useAuth();
@@ -116,15 +117,20 @@ if (!authStatus) {
                       </Link>
                     </DropdownMenuItem>
                   <DropdownMenuSeparator />
-                    <DropdownMenuItem asChild disabled>
-                      <Link href="/dashboard/settings">
-                        <Icons.settings
-                          className="mr-2 h-4 w-4"
-                          aria-hidden="true"
-                        />
-                        Settings
-                        <DropdownMenuShortcut></DropdownMenuShortcut>
-                      </Link>
+                    <DropdownMenuItem asChild >
+                        <div className="flex flex-row w-full justify-between">
+                          <Link href="/dashboard/settings" >
+                            <div className="flex flex-row">
+                              <Icons.settings
+                                className="mr-2 h-4 w-4"
+                                aria-hidden="true"
+                              />
+                              Settings
+                            </div>
+                            <DropdownMenuShortcut></DropdownMenuShortcut>
+                          </Link>
+                          <div><ThemeToggle/></div>
+                        </div>
                     </DropdownMenuItem>
                   </DropdownMenuGroup>
                 </DropdownMenuContent>

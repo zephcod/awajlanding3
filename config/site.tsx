@@ -102,6 +102,7 @@ export const siteConfig = {
           title: "Downloads",
           href: "/resources/downloads",
           description: "Awaj AI applications and plugins.",
+          icon:"book",
           items: [],
         },
         {

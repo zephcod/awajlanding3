@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import styles from "./page.module.css"
 import { Separator } from "@/components/UI/separator"
 import Image from "next/image"
-import Banner from "@/public/character/awaj_team_banner.jpg"
+import Banner from "@/public/character/awaj-team-banner2.jpg"
 import Content from "@/public/character/3995.png"
 import ETH from "@/public/logo/et.svg"
 import UAE from "@/public/logo/ae.svg"
@@ -15,15 +15,15 @@ import GlassFlash from '@/components/UI/flash_glass'
 import Aman from '@/public/profile/aman.jpg'
 import Ibsa from '@/public/profile/ibsaa.jpg'
 import Sof from '@/public/profile/sofi.jpg'
-import Leul from '@/public/profile/leul.png'
-import Nat from '@/public/profile/nati.png'
+import Leul from '@/public/profile/leul.jpg'
+import Nat from '@/public/profile/nati.jpg'
 import Eden from '@/public/profile/edu.jpg'
-import Nahom from '@/public/profile/nahom.png'
-import Maya from '@/public/profile/maya.png'
-import Samri from '@/public/profile/samri.png'
-import Kal from '@/public/profile/kal.png'
-import Ela from '@/public/profile/ela.png'
-import Abel from '@/public/profile/abel.png'
+import Nahom from '@/public/profile/nahom.jpg'
+import Maya from '@/public/profile/maya.jpg'
+import Samri from '@/public/profile/samri.jpg'
+import Kal from '@/public/profile/kal.jpg'
+import Ela from '@/public/profile/ela.jpg'
+import Abel from '@/public/profile/abel.jpg'
 
 export const metadata: Metadata = {
   title: 'Teams and Career Opportunities | Awaj AI ',

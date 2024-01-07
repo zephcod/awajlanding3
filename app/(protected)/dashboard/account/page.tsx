@@ -98,9 +98,19 @@ const AccountPage = () => {
             <p>Verification:{' '}</p>
               <div className="flex flex-row gap-3"><p>Email: </p>{appuser?.emailVerification?<p>✔️</p>:<p>❌</p>}</div>
               <div className="flex flex-row gap-3"><p>Phone: </p>{appuser?.phoneVerification?<p>✔️</p>:<p>❌</p>}</div>
-            {appuser?.emailVerification && appuser?.phoneVerification ?<></>:
+              {appuser?.emailVerification && appuser?.phoneVerification ?<></>:
+            appuser?.emailVerification?
+            <Link href="/signup/verify/update-phone" className="text-card-foreground underline-offset-4 transition-colors hover:underline">
+                <div className='text-muted-foreground flex flex-row items-center justify-center gap-1 ring-1 ring-border rounded-md px-4 py-2'>
+                  <p className='text-sm'>Verify phone</p>
+                  <Icons.arrowUpRight className='h-4 w-4'/>
+                </div>
+            </Link>:
             <Link href="/signup/verify" className="text-card-foreground underline-offset-4 transition-colors hover:underline">
-                Verify now 🡥
+                <div className='text-muted-foreground flex flex-row items-center justify-center gap-1 ring-1 ring-border rounded-md px-4 py-2'>
+                  <p className='text-sm'>Verify now</p>
+                  <Icons.arrowUpRight className='h-4 w-4'/>
+                </div>
             </Link>}
           </div>
           <p>Memberships:{' '}{appuser?.labels}</p>

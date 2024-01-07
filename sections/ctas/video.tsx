@@ -3,7 +3,7 @@ import React, { useState,useEffect } from "react";
 import style from '@/sections/ctas/video.module.css';
 import { Icons } from "@/components/UI/icons";
 
-const embedID = "3cTtzwTGRB8";
+const embedID = "w-bYHrIDj7Q";
 
 const Embed = () => {
   const [imageClicked, setImageClicked] = useState(false);

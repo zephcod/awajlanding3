@@ -25,11 +25,12 @@ const NewHeader = () => {
         />
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-2">
-            <ThemeToggle/>
             {/* <CartSheet /> */}
             {authStatus ? 
             (<UserMenu/>)
              : (
+              <div className="flex flex-row gap-2 items-center">
+              <ThemeToggle/>
               <Link href="/signin">
                 <div
                   className={buttonVariants({
@@ -41,6 +42,7 @@ const NewHeader = () => {
                   <span className="sr-only">Get started</span>
                 </div>
               </Link>
+              </div>
             )}
           </nav>
         </div>
