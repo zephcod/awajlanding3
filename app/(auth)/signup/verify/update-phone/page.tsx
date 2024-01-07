@@ -1,7 +1,7 @@
 import { UpdatePhoneForm } from '@/components/forms/update_phone_form'
 import { VerifyPhoneForm } from '@/components/forms/verify_phone_form'
 import { Shell } from '@/components/shells/shell'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/UI/card'
 import React from 'react'
 
 const updatePhone = () => {

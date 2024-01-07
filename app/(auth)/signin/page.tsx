@@ -67,7 +67,7 @@ export default async function SignInPage() {
           </Link>
           <Separator/>
           <p className="text-muted-foreground text-sm font-light text-center w-full">
-            By continuing you agree to Awaj AI's{' '}
+            By continuing you agree to Awaj AI&apos;s{' '}
             <Link className="font-normal underline" href={'https://www.awajai.com/privacy'} target="_blank">Privacy Policy</Link>{' '}and{' '} 
             <Link className="font-normal underline" href={'https://www.awajai.com/terms'} target="_blank">Terms</Link>.
           </p>
