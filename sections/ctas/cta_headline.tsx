@@ -32,7 +32,7 @@ const CtaHeadline = () => {
                 </div>
               </Link>
             <p className='mt-2 text-base font-light text-muted-foreground'>
-              Claim 50 free coins.
+              Claim 100 free coins.
             </p>
           </div>
     </div>
